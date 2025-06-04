@@ -1,0 +1,42 @@
+import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+
+const SingleFeature = ({ feature }) => {
+  const { icon, title, description } = feature;
+
+  return (
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: -10 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      initial="hidden"
+      whileInView="visible"
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="animate_top z-40 rounded-lg border border-gray-100 hover:border-primary bg-white p-7.5 shadow-solid-3 transition-all hover:shadow-solid-4 dark:border-strokedark dark:bg-blacksection dark:hover:bg-hoverdark xl:p-12.5"
+    >
+      {/* Image Container */}
+      <div className="relative w-full h-[200px] rounded-md overflow-hidden bg-primary">
+        <Image src={icon} alt={title} fill className="object-cover" />
+      </div>
+
+      {/* Title */}
+      <h3 className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle">
+        {title}
+      </h3>
+
+      {/* Description */}
+      <p className="mb-5 text-gray-600 dark:text-gray-300">{description}</p>
+
+      {/* Learn More Link */}
+      <Link href="/datasets" className="text-primary hover:underline">
+        Learn more
+      </Link>
+    </motion.div>
+  );
+};
+
+export default SingleFeature;

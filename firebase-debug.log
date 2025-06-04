@@ -1,0 +1,317 @@
+[debug] [2025-05-15T19:36:31.276Z] ----------------------------------------------------------------------
+[debug] [2025-05-15T19:36:31.278Z] Command:       /home/pandajp/.nvm/versions/node/v20.19.2/bin/node /home/pandajp/nodejs/bin/firebase deploy
+[debug] [2025-05-15T19:36:31.278Z] CLI Version:   14.3.1
+[debug] [2025-05-15T19:36:31.278Z] Platform:      linux
+[debug] [2025-05-15T19:36:31.278Z] Node Version:  v20.19.2
+[debug] [2025-05-15T19:36:31.278Z] Time:          Thu May 15 2025 15:36:31 GMT-0400 (Eastern Daylight Time)
+[debug] [2025-05-15T19:36:31.278Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-05-15T19:36:31.417Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-05-15T19:36:31.417Z] > authorizing via signed-in user (jppanda.iit@gmail.com)
+[debug] [2025-05-15T19:36:31.417Z] [iam] checking project jyoti-c87d8 for permissions ["cloudsql.databases.create","cloudsql.databases.update","cloudsql.instances.connect","cloudsql.instances.create","cloudsql.instances.get","cloudsql.instances.list","cloudsql.instances.update","cloudsql.users.create","firebase.projects.get","firebasedataconnect.connectors.create","firebasedataconnect.connectors.delete","firebasedataconnect.connectors.list","firebasedataconnect.connectors.update","firebasedataconnect.operations.get","firebasedataconnect.schemas.create","firebasedataconnect.schemas.delete","firebasedataconnect.schemas.list","firebasedataconnect.schemas.update","firebasedataconnect.services.create","firebasedataconnect.services.delete","firebasedataconnect.services.list","firebasedataconnect.services.update"]
+[debug] [2025-05-15T19:36:31.418Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:31.418Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:31.419Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/jyoti-c87d8:testIamPermissions [none]
+[debug] [2025-05-15T19:36:31.419Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/jyoti-c87d8:testIamPermissions x-goog-quota-user=projects/jyoti-c87d8
+[debug] [2025-05-15T19:36:31.419Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jyoti-c87d8:testIamPermissions {"permissions":["cloudsql.databases.create","cloudsql.databases.update","cloudsql.instances.connect","cloudsql.instances.create","cloudsql.instances.get","cloudsql.instances.list","cloudsql.instances.update","cloudsql.users.create","firebase.projects.get","firebasedataconnect.connectors.create","firebasedataconnect.connectors.delete","firebasedataconnect.connectors.list","firebasedataconnect.connectors.update","firebasedataconnect.operations.get","firebasedataconnect.schemas.create","firebasedataconnect.schemas.delete","firebasedataconnect.schemas.list","firebasedataconnect.schemas.update","firebasedataconnect.services.create","firebasedataconnect.services.delete","firebasedataconnect.services.list","firebasedataconnect.services.update"]}
+[debug] [2025-05-15T19:36:31.596Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/jyoti-c87d8:testIamPermissions 200
+[debug] [2025-05-15T19:36:31.596Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jyoti-c87d8:testIamPermissions {"permissions":["cloudsql.databases.create","cloudsql.databases.update","cloudsql.instances.connect","cloudsql.instances.create","cloudsql.instances.get","cloudsql.instances.list","cloudsql.instances.update","cloudsql.users.create","firebase.projects.get","firebasedataconnect.connectors.create","firebasedataconnect.connectors.delete","firebasedataconnect.connectors.list","firebasedataconnect.connectors.update","firebasedataconnect.operations.get","firebasedataconnect.schemas.create","firebasedataconnect.schemas.delete","firebasedataconnect.schemas.list","firebasedataconnect.schemas.update","firebasedataconnect.services.create","firebasedataconnect.services.delete","firebasedataconnect.services.list","firebasedataconnect.services.update"]}
+[info] 
+[info] === Deploying to 'jyoti-c87d8'...
+[info] 
+[info] i  deploying dataconnect 
+[debug] [2025-05-15T19:36:31.598Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:31.598Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:31.598Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/jyoti-c87d8/billingInfo [none]
+[debug] [2025-05-15T19:36:31.907Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/jyoti-c87d8/billingInfo 200
+[debug] [2025-05-15T19:36:31.907Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/jyoti-c87d8/billingInfo {"name":"projects/jyoti-c87d8/billingInfo","projectId":"jyoti-c87d8","billingAccountName":"billingAccounts/01B516-4E07C3-79958D","billingEnabled":true}
+[info] i  dataconnect: ensuring required API firebasedataconnect.googleapis.com is enabled... 
+[debug] [2025-05-15T19:36:31.908Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:31.908Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:31.908Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-05-15T19:36:31.909Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/jyoti-c87d8
+[debug] [2025-05-15T19:36:32.223Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-05-15T19:36:32.223Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/firebasedataconnect.googleapis.com [omitted]
+[warn] ⚠  dataconnect: missing required API firebasedataconnect.googleapis.com. Enabling now... 
+[debug] [2025-05-15T19:36:32.224Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:32.224Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:32.224Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/firebasedataconnect.googleapis.com:enable [none]
+[debug] [2025-05-15T19:36:32.224Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/firebasedataconnect.googleapis.com:enable x-goog-quota-user=projects/jyoti-c87d8
+[debug] [2025-05-15T19:36:32.447Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/firebasedataconnect.googleapis.com:enable 200
+[debug] [2025-05-15T19:36:32.447Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/firebasedataconnect.googleapis.com:enable [omitted]
+[debug] [2025-05-15T19:36:42.451Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:42.452Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:42.452Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-05-15T19:36:42.452Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/jyoti-c87d8
+[debug] [2025-05-15T19:36:42.684Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-05-15T19:36:42.684Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/firebasedataconnect.googleapis.com [omitted]
+[info] ✔  dataconnect: required API firebasedataconnect.googleapis.com is enabled 
+[info] i  dataconnect: ensuring required API sqladmin.googleapis.com is enabled... 
+[debug] [2025-05-15T19:36:42.689Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:42.689Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:42.689Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/sqladmin.googleapis.com [none]
+[debug] [2025-05-15T19:36:42.689Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/sqladmin.googleapis.com x-goog-quota-user=projects/jyoti-c87d8
+[debug] [2025-05-15T19:36:42.826Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/sqladmin.googleapis.com 200
+[debug] [2025-05-15T19:36:42.826Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/sqladmin.googleapis.com [omitted]
+[info] ✔  dataconnect: required API sqladmin.googleapis.com is enabled 
+[info] i  dataconnect: ensuring required API compute.googleapis.com is enabled... 
+[debug] [2025-05-15T19:36:42.827Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:42.827Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:42.827Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com [none]
+[debug] [2025-05-15T19:36:42.827Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com x-goog-quota-user=projects/jyoti-c87d8
+[debug] [2025-05-15T19:36:43.221Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com 200
+[debug] [2025-05-15T19:36:43.221Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com [omitted]
+[warn] ⚠  dataconnect: missing required API compute.googleapis.com. Enabling now... 
+[debug] [2025-05-15T19:36:43.222Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:43.222Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:43.222Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com:enable [none]
+[debug] [2025-05-15T19:36:43.222Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com:enable x-goog-quota-user=projects/jyoti-c87d8
+[debug] [2025-05-15T19:36:43.706Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com:enable 200
+[debug] [2025-05-15T19:36:43.706Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com:enable [omitted]
+[debug] [2025-05-15T19:36:53.712Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:53.712Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:36:53.712Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com [none]
+[debug] [2025-05-15T19:36:53.713Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com x-goog-quota-user=projects/jyoti-c87d8
+[debug] [2025-05-15T19:36:54.103Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com 200
+[debug] [2025-05-15T19:36:54.103Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com [omitted]
+[info] i  dataconnect: waiting for API compute.googleapis.com to activate... 
+[debug] [2025-05-15T19:37:04.108Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:04.108Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:04.109Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com [none]
+[debug] [2025-05-15T19:37:04.109Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com x-goog-quota-user=projects/jyoti-c87d8
+[debug] [2025-05-15T19:37:04.595Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com 200
+[debug] [2025-05-15T19:37:04.595Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com [omitted]
+[info] i  dataconnect: waiting for API compute.googleapis.com to activate... 
+[debug] [2025-05-15T19:37:14.601Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:14.602Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:14.602Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com [none]
+[debug] [2025-05-15T19:37:14.602Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com x-goog-quota-user=projects/jyoti-c87d8
+[debug] [2025-05-15T19:37:14.980Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com 200
+[debug] [2025-05-15T19:37:14.980Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com [omitted]
+[info] i  dataconnect: waiting for API compute.googleapis.com to activate... 
+[debug] [2025-05-15T19:37:24.985Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:24.985Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:24.986Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com [none]
+[debug] [2025-05-15T19:37:24.986Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com x-goog-quota-user=projects/jyoti-c87d8
+[debug] [2025-05-15T19:37:25.405Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com 200
+[debug] [2025-05-15T19:37:25.405Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com [omitted]
+[info] i  dataconnect: waiting for API compute.googleapis.com to activate... 
+[debug] [2025-05-15T19:37:35.411Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:35.412Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:35.412Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com [none]
+[debug] [2025-05-15T19:37:35.412Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com x-goog-quota-user=projects/jyoti-c87d8
+[debug] [2025-05-15T19:37:35.818Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com 200
+[debug] [2025-05-15T19:37:35.818Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com [omitted]
+[info] i  dataconnect: waiting for API compute.googleapis.com to activate... 
+[debug] [2025-05-15T19:37:45.823Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:45.824Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:45.824Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com [none]
+[debug] [2025-05-15T19:37:45.824Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com x-goog-quota-user=projects/jyoti-c87d8
+[debug] [2025-05-15T19:37:46.190Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com 200
+[debug] [2025-05-15T19:37:46.191Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/jyoti-c87d8/services/compute.googleapis.com [omitted]
+[info] ✔  dataconnect: required API compute.googleapis.com is enabled 
+[debug] [2025-05-15T19:37:46.195Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:46.195Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:46.195Z] >>> [apiv2][query] GET https://mobilesdk-pa.googleapis.com/v1/accessmanagement/tos:getStatus [none]
+[debug] [2025-05-15T19:37:46.574Z] <<< [apiv2][status] GET https://mobilesdk-pa.googleapis.com/v1/accessmanagement/tos:getStatus 200
+[debug] [2025-05-15T19:37:46.575Z] <<< [apiv2][body] GET https://mobilesdk-pa.googleapis.com/v1/accessmanagement/tos:getStatus {"overallStatus":"ACCEPTED","uTosStatus":{"tos":{"id":"firebase","tosId":"FIREBASE_UNIVERSAL"},"status":"ACCEPTED","acceptedVersion":7},"childTosStatus":[{"tos":{"id":"cloud","tosId":"CLOUD_PLATFORM"},"status":"ACCEPTED","acceptedVersion":36},{"tos":{"id":"firebase_b2b","tosId":"FIREBASE_B2B"},"status":"ACCEPTED","acceptedVersion":1},{"tos":{"id":"universal","tosId":"GOOGLE_APIS"},"status":"ACCEPTED","acceptedVersion":6}],"termsUrl":"https://firebase.google.com/terms","perServiceStatus":[{"tosId":"APP_CHECK","serviceStatus":{"tos":{"id":"app_check","tosId":"APP_CHECK"},"status":"ACCEPTED","acceptedVersion":3}},{"tosId":"APP_HOSTING_TOS","serviceStatus":{"tos":{"id":"app_hosting","tosId":"APP_HOSTING_TOS"},"status":"ACCEPTED","acceptedVersion":3}},{"tosId":"FIREBASE_DATA_CONNECT","serviceStatus":{"tos":{"id":"data_connect","tosId":"FIREBASE_DATA_CONNECT"},"status":"ACCEPTED","acceptedVersion":3}},{"tosId":"CORE_APPS","serviceStatus":{"tos":{"id":"core_apps","tosId":"CORE_APPS"},"status":"ACCEPTED","acceptedVersion":1}},{"tosId":"VERTEX_AI_IN_FIREBASE","serviceStatus":{"tos":{"id":"vertex_ai_in_firebase","tosId":"VERTEX_AI_IN_FIREBASE"},"status":"ACCEPTED","acceptedVersion":2}},{"tosId":"FIREBASE_CRASHLYTICS_APP_DISTRIBUTION","serviceStatus":{"tos":{"id":"firebase_crashlytics_app_distribution","tosId":"FIREBASE_CRASHLYTICS_APP_DISTRIBUTION"},"status":"ACCEPTED","acceptedVersion":4}},{"tosId":"GENERATIVE_LANGUAGE","serviceStatus":{"tos":{"id":"generative-language-api","tosId":"GENERATIVE_LANGUAGE"},"status":"NEVER_ACCEPTED","acceptedVersion":3}}]}
+[info] i  dataconnect: Preparing to deploy 
+[debug] [2025-05-15T19:37:46.611Z] defaultcredentials: writing to file /home/pandajp/.config/firebase/jppanda_iit_gmail.com_application_default_credentials.json
+[debug] [2025-05-15T19:37:46.615Z] Setting GAC to /home/pandajp/.config/firebase/jppanda_iit_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"dataconnect"},"message":"Setting GAC to /home/pandajp/.config/firebase/jppanda_iit_gmail.com_application_default_credentials.json"}}
+[debug] [2025-05-15T19:37:47.325Z] I0515 15:37:47.275140 2049074 build.go:55] No deployed sources found for service datahubgui-main
+I0515 15:37:47.302957 2049074 control.go:73] [/emulator/datahubgui-main 2fd2] UpdateResources(): done
+Schema: sources: schema/schema.gql [2088B] 
+Connector "default": sources: connector/mutations.gql [1233B] connector/queries.gql [1802B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0515 15:37:47.275140 2049074 build.go:55] No deployed sources found for service datahubgui-main\nI0515 15:37:47.302957 2049074 control.go:73] [/emulator/datahubgui-main 2fd2] UpdateResources(): done\nSchema: sources: schema/schema.gql [2088B] \nConnector \"default\": sources: connector/mutations.gql [1233B] connector/queries.gql [1802B] \n"}}
+[info] i  dataconnect: Successfully prepared schema and connectors 
+[debug] [2025-05-15T19:37:47.326Z] {
+  "serviceInfos": [
+    {
+      "serviceName": "projects/jyoti-c87d8/locations/us-central1/services/datahubgui-main",
+      "sourceDirectory": "/home/pandajp/DataHubGUI-main/dataconnect",
+      "schema": {
+        "name": "projects/jyoti-c87d8/locations/us-central1/services/datahubgui-main/schemas/main",
+        "datasources": [
+          {
+            "postgresql": {
+              "database": "fdcdb",
+              "cloudSql": {
+                "instance": "projects/jyoti-c87d8/locations/us-central1/instances/datahubgui-main-fdc"
+              }
+            }
+          }
+        ],
+        "source": {
+          "files": [
+            {
+              "path": "schema.gql",
+              "content": "# # Example schema for simple movie review app\n\n# # User table is keyed by Firebase Auth UID.\n# type User @table {\n#   # `@default(expr: \"auth.uid\")` sets it to Firebase Auth UID during insert and upsert.\n#   id: String! @default(expr: \"auth.uid\")\n#   username: String! @col(dataType: \"varchar(50)\")\n#   # The `user: User!` field in the Review table generates the following one-to-many query field.\n#   #  reviews_on_user: [Review!]!\n#   # The `Review` join table the following many-to-many query field.\n#   #  movies_via_Review: [Movie!]!\n# }\n\n# # Movie is keyed by a randomly generated UUID.\n# type Movie @table {\n#   # If you do not pass a 'key' to `@table`, Data Connect automatically adds the following 'id' column.\n#   # Feel free to uncomment and customize it.\n#   #  id: UUID! @default(expr: \"uuidV4()\")\n#   title: String!\n#   imageUrl: String!\n#   genre: String\n# }\n\n# # MovieMetadata is a metadata attached to a Movie.\n# # Movie <-> MovieMetadata is a one-to-one relationship\n# type MovieMetadata @table {\n#   # @unique ensures each Movie can only one MovieMetadata.\n#   movie: Movie! @unique\n#   # The movie field adds the following foreign key field. Feel free to uncomment and customize it.\n#   #  movieId: UUID!\n#   rating: Float\n#   releaseYear: Int\n#   description: String\n# }\n\n# # Reviews is a join table between User and Movie.\n# # It has a composite primary keys `userUid` and `movieId`.\n# # A user can leave reviews for many movies. A movie can have reviews from many users.\n# # User  <-> Review is a one-to-many relationship\n# # Movie <-> Review is a one-to-many relationship\n# # Movie <-> User is a many-to-many relationship\n# type Review @table(name: \"Reviews\", key: [\"movie\", \"user\"]) {\n#   user: User!\n#   # The user field adds the following foreign key field. Feel free to uncomment and customize it.\n#   #  userUid: String!\n#   movie: Movie!\n#   # The movie field adds the following foreign key field. Feel free to uncomment and customize it.\n#   #  movieId: UUID!\n#   rating: Int\n#   reviewText: String\n#   reviewDate: Date! @default(expr: \"request.time\")\n# }\n"
+            }
+          ]
+        }
+      },
+      "dataConnectYaml": {
+        "specVersion": "v1",
+        "serviceId": "datahubgui-main",
+        "location": "us-central1",
+        "schema": {
+          "source": "./schema",
+          "datasource": {
+            "postgresql": {
+              "database": "fdcdb",
+              "cloudSql": {
+                "instanceId": "datahubgui-main-fdc"
+              }
+            }
+          }
+        },
+        "connectorDirs": [
+          "./connector"
+        ]
+      },
+      "connectorInfo": [
+        {
+          "directory": "/home/pandajp/DataHubGUI-main/dataconnect/connector",
+          "connectorYaml": {
+            "connectorId": "default",
+            "generate": {
+              "javascriptSdk": {
+                "outputDir": "../../dataconnect-generated/js/default-connector",
+                "package": "@firebasegen/default-connector",
+                "packageJsonDir": "../..",
+                "react": true
+              }
+            }
+          },
+          "connector": {
+            "name": "projects/jyoti-c87d8/locations/us-central1/services/datahubgui-main/connectors/default",
+            "source": {
+              "files": [
+                {
+                  "path": "mutations.gql",
+                  "content": "# # Example mutations for a simple movie app\n\n# # Create a movie based on user input\n# mutation CreateMovie($title: String!, $genre: String!, $imageUrl: String!)\n# @auth(level: USER_EMAIL_VERIFIED) {\n#   movie_insert(data: { title: $title, genre: $genre, imageUrl: $imageUrl })\n# }\n\n# # Upsert (update or insert) a user's username based on their auth.uid\n# mutation UpsertUser($username: String!) @auth(level: USER) {\n#   # The \"auth.uid\" server value ensures that users can only register their own user.\n#   user_upsert(data: { id_expr: \"auth.uid\", username: $username })\n# }\n\n# # Add a review for a movie\n# mutation AddReview($movieId: UUID!, $rating: Int!, $reviewText: String!)\n# @auth(level: USER) {\n#   review_upsert(\n#     data: {\n#       userId_expr: \"auth.uid\"\n#       movieId: $movieId\n#       rating: $rating\n#       reviewText: $reviewText\n#       # reviewDate defaults to today in the schema. No need to set it manually.\n#     }\n#   )\n# }\n\n# # Logged in user can delete their review for a movie\n# mutation DeleteReview($movieId: UUID!) @auth(level: USER) {\n#   # The \"auth.uid\" server value ensures that users can only delete their own reviews.\n#   review_delete(key: { userId_expr: \"auth.uid\", movieId: $movieId })\n# }\n"
+                },
+                {
+                  "path": "queries.gql",
+                  "content": "# # Example queries for a simple movie app.\n\n# # @auth() directives control who can call each operation.\n# # Anyone should be able to list all movies, so the auth level is set to PUBLIC\n# query ListMovies @auth(level: PUBLIC) {\n#   movies {\n#     id\n#     title\n#     imageUrl\n#     genre\n#   }\n# }\n\n# # List all users, only admins should be able to list all users, so we use NO_ACCESS\n# query ListUsers @auth(level: NO_ACCESS) {\n#   users {\n#     id\n#     username\n#   }\n# }\n\n# # Logged in users can list all their reviews and movie titles associated with the review\n# # Since the query uses the uid of the current authenticated user, we set auth level to USER\n# query ListUserReviews @auth(level: USER) {\n#   user(key: { id_expr: \"auth.uid\" }) {\n#     id\n#     username\n#     # <field>_on_<foreign_key_field> makes it easy to grab info from another table\n#     # Here, we use it to grab all the reviews written by the user.\n#     reviews: reviews_on_user {\n#       rating\n#       reviewDate\n#       reviewText\n#       movie {\n#         id\n#         title\n#       }\n#     }\n#   }\n# }\n\n# # Get movie by id\n# query GetMovieById($id: UUID!) @auth(level: PUBLIC) {\n#   movie(id: $id) {\n#     id\n#     title\n#     imageUrl\n#     genre\n#     metadata: movieMetadata_on_movie {\n#       rating\n#       releaseYear\n#       description\n#     }\n#     reviews: reviews_on_movie {\n#       reviewText\n#       reviewDate\n#       rating\n#       user {\n#         id\n#         username\n#       }\n#     }\n#   }\n# }\n\n# # Search for movies, actors, and reviews\n# query SearchMovie($titleInput: String, $genre: String) @auth(level: PUBLIC) {\n#   movies(\n#     where: {\n#       _and: [{ genre: { eq: $genre } }, { title: { contains: $titleInput } }]\n#     }\n#   ) {\n#     id\n#     title\n#     genre\n#     imageUrl\n#   }\n# }\n"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "deploymentMetadata": {
+        "primaryDataSource": {
+          "postgres": {
+            "requiredExtensions": null
+          }
+        }
+      }
+    }
+  ]
+}
+[debug] [2025-05-15T19:37:47.327Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:47.327Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:47.327Z] >>> [apiv2][query] GET https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/-/services [none]
+[debug] [2025-05-15T19:37:47.796Z] <<< [apiv2][status] GET https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/-/services 200
+[debug] [2025-05-15T19:37:47.797Z] <<< [apiv2][body] GET https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/-/services {}
+[debug] [2025-05-15T19:37:47.797Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:47.797Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:47.798Z] >>> [apiv2][query] POST https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/us-central1/services service_id=datahubgui-main
+[debug] [2025-05-15T19:37:47.798Z] >>> [apiv2][body] POST https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/us-central1/services {"name":"projects/jyoti-c87d8/locations/us-central1/services/datahubgui-main"}
+[debug] [2025-05-15T19:37:49.060Z] <<< [apiv2][status] POST https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/us-central1/services 200
+[debug] [2025-05-15T19:37:49.060Z] <<< [apiv2][body] POST https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/us-central1/services {"name":"projects/jyoti-c87d8/locations/us-central1/operations/operation-1747337867922-63531cceb8d87-dc3210f7-b6b4bbf5","metadata":{"@type":"type.googleapis.com/google.firebase.dataconnect.v1.OperationMetadata","createTime":"2025-05-15T19:37:49.030071431Z","target":"projects/jyoti-c87d8/locations/us-central1/services/datahubgui-main","verb":"create","requestedCancellation":false,"apiVersion":"v1"},"done":false}
+[debug] [2025-05-15T19:37:49.062Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:49.062Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:49.062Z] >>> [apiv2][query] GET https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/us-central1/operations/operation-1747337867922-63531cceb8d87-dc3210f7-b6b4bbf5 [none]
+[debug] [2025-05-15T19:37:49.127Z] <<< [apiv2][status] GET https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/us-central1/operations/operation-1747337867922-63531cceb8d87-dc3210f7-b6b4bbf5 200
+[debug] [2025-05-15T19:37:49.127Z] <<< [apiv2][body] GET https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/us-central1/operations/operation-1747337867922-63531cceb8d87-dc3210f7-b6b4bbf5 {"name":"projects/jyoti-c87d8/locations/us-central1/operations/operation-1747337867922-63531cceb8d87-dc3210f7-b6b4bbf5","metadata":{"@type":"type.googleapis.com/google.firebase.dataconnect.v1.OperationMetadata","createTime":"2025-05-15T19:37:49.030071431Z","target":"projects/jyoti-c87d8/locations/us-central1/services/datahubgui-main","verb":"create","requestedCancellation":false,"apiVersion":"v1"},"done":false}
+[debug] [2025-05-15T19:37:49.628Z] [LRO Poller] Retrying task index 0
+[debug] [2025-05-15T19:37:49.628Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:49.628Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:49.628Z] >>> [apiv2][query] GET https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/us-central1/operations/operation-1747337867922-63531cceb8d87-dc3210f7-b6b4bbf5 [none]
+[debug] [2025-05-15T19:37:49.704Z] <<< [apiv2][status] GET https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/us-central1/operations/operation-1747337867922-63531cceb8d87-dc3210f7-b6b4bbf5 200
+[debug] [2025-05-15T19:37:49.704Z] <<< [apiv2][body] GET https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/us-central1/operations/operation-1747337867922-63531cceb8d87-dc3210f7-b6b4bbf5 {"name":"projects/jyoti-c87d8/locations/us-central1/operations/operation-1747337867922-63531cceb8d87-dc3210f7-b6b4bbf5","metadata":{"@type":"type.googleapis.com/google.firebase.dataconnect.v1.OperationMetadata","createTime":"2025-05-15T19:37:49.030071431Z","target":"projects/jyoti-c87d8/locations/us-central1/services/datahubgui-main","verb":"create","requestedCancellation":false,"apiVersion":"v1"},"done":false}
+[debug] [2025-05-15T19:37:50.705Z] [LRO Poller] Retrying task index 0
+[debug] [2025-05-15T19:37:50.706Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:50.706Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:50.706Z] >>> [apiv2][query] GET https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/us-central1/operations/operation-1747337867922-63531cceb8d87-dc3210f7-b6b4bbf5 [none]
+[debug] [2025-05-15T19:37:50.748Z] <<< [apiv2][status] GET https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/us-central1/operations/operation-1747337867922-63531cceb8d87-dc3210f7-b6b4bbf5 200
+[debug] [2025-05-15T19:37:50.749Z] <<< [apiv2][body] GET https://firebasedataconnect.googleapis.com/v1/projects/jyoti-c87d8/locations/us-central1/operations/operation-1747337867922-63531cceb8d87-dc3210f7-b6b4bbf5 {"name":"projects/jyoti-c87d8/locations/us-central1/operations/operation-1747337867922-63531cceb8d87-dc3210f7-b6b4bbf5","metadata":{"@type":"type.googleapis.com/google.firebase.dataconnect.v1.OperationMetadata","createTime":"2025-05-15T19:37:49.030071431Z","endTime":"2025-05-15T19:37:50.317383767Z","target":"projects/jyoti-c87d8/locations/us-central1/services/datahubgui-main","verb":"create","requestedCancellation":false,"apiVersion":"v1"},"done":true,"response":{"@type":"type.googleapis.com/google.firebase.dataconnect.v1.Service","name":"projects/jyoti-c87d8/locations/us-central1/services/datahubgui-main","createTime":"2025-05-15T19:37:49.024895818Z","updateTime":"2025-05-15T19:37:49.024895818Z","uid":"24882316-7f8c-4f25-b0f7-8df97a01bb98","reconciling":false,"etag":"QokE9gZdVhy_S0Kt7bGBbiysX_9uYGuiNu05MFm8VWU"}}
+[info] ✔  dataconnect: Created service projects/jyoti-c87d8/locations/us-central1/services/datahubgui-main 
+[info] i  dataconnect: Checking for CloudSQL resources... 
+[debug] [2025-05-15T19:37:50.750Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:50.750Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:50.751Z] >>> [apiv2][query] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances/datahubgui-main-fdc [none]
+[debug] [2025-05-15T19:37:51.213Z] <<< [apiv2][status] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances/datahubgui-main-fdc 404
+[debug] [2025-05-15T19:37:51.213Z] <<< [apiv2][body] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances/datahubgui-main-fdc {"error":{"code":404,"message":"The Cloud SQL instance does not exist.","errors":[{"message":"The Cloud SQL instance does not exist.","domain":"global","reason":"instanceDoesNotExist"}]}}
+[warn] ⚠  dataconnect: Cloud SQL instances created via the Firebase CLI do not support customer managed encryption keys.
+If you'd like to use a CMEK to encrypt your data, first create a CMEK encrypted instance (https://cloud.google.com/sql/docs/postgres/configure-cmek#createcmekinstance).
+Then, edit your `dataconnect.yaml` file to use the encrypted instance and redeploy. 
+[info] i  dataconnect: Checking Cloud SQL no cost trial eligibility... 
+[debug] [2025-05-15T19:37:51.216Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:51.216Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:51.216Z] >>> [apiv2][query] GET https://monitoring.googleapis.com/v3/projects/jyoti-c87d8/timeSeries/ filter=metric.type%3D%22serviceruntime.googleapis.com%2Fquota%2Fallocation%2Fusage%22+AND+metric.label.quota_metric+%3D+%22sqladmin.googleapis.com%2Ffdc_lifetime_free_trial_per_project%22&interval.endTime=2025-05-15T19%3A37%3A51.216Z&interval.startTime=2025-05-08T19%3A37%3A51.215Z
+[debug] [2025-05-15T19:37:52.400Z] <<< [apiv2][status] GET https://monitoring.googleapis.com/v3/projects/jyoti-c87d8/timeSeries/ 200
+[debug] [2025-05-15T19:37:52.400Z] <<< [apiv2][body] GET https://monitoring.googleapis.com/v3/projects/jyoti-c87d8/timeSeries/ {"unit":"1"}
+[info] ✔  dataconnect: CloudSQL no cost trial available! 
+[info] i  dataconnect:  
+[debug] [2025-05-15T19:37:52.406Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:52.406Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:52.406Z] >>> [apiv2][query] POST https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances [none]
+[debug] [2025-05-15T19:37:52.406Z] >>> [apiv2][body] POST https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances {"name":"datahubgui-main-fdc","region":"us-central1","databaseVersion":"POSTGRES_15","settings":{"tier":"db-f1-micro","edition":"ENTERPRISE","ipConfiguration":{"authorizedNetworks":[]},"enableGoogleMlIntegration":false,"databaseFlags":[{"name":"cloudsql.iam_authentication","value":"on"}],"storageAutoResize":false,"userLabels":{"firebase-data-connect":"ft"},"insightsConfig":{"queryInsightsEnabled":true,"queryPlansPerMinute":5,"queryStringLength":1024}}}
+[debug] [2025-05-15T19:37:54.683Z] <<< [apiv2][status] POST https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances 200
+[debug] [2025-05-15T19:37:54.684Z] <<< [apiv2][body] POST https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances {"kind":"sql#operation","targetLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances/datahubgui-main-fdc","status":"PENDING","user":"jppanda.iit@gmail.com","insertTime":"2025-05-15T19:37:54.640Z","operationType":"CREATE","name":"efb46dea-179b-4d32-9e98-920100000032","targetId":"datahubgui-main-fdc","selfLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032","targetProject":"jyoti-c87d8"}
+[debug] [2025-05-15T19:37:54.684Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:54.684Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:54.684Z] >>> [apiv2][query] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 [none]
+[debug] [2025-05-15T19:37:54.826Z] <<< [apiv2][status] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 200
+[debug] [2025-05-15T19:37:54.826Z] <<< [apiv2][body] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 {"kind":"sql#operation","targetLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances/datahubgui-main-fdc","status":"PENDING","user":"jppanda.iit@gmail.com","insertTime":"2025-05-15T19:37:54.640Z","operationType":"CREATE","name":"efb46dea-179b-4d32-9e98-920100000032","targetId":"datahubgui-main-fdc","selfLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032","targetProject":"jyoti-c87d8"}
+[debug] [2025-05-15T19:37:55.326Z] [LRO Poller] Retrying task index 0
+[debug] [2025-05-15T19:37:55.327Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:55.327Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:55.327Z] >>> [apiv2][query] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 [none]
+[debug] [2025-05-15T19:37:55.439Z] <<< [apiv2][status] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 200
+[debug] [2025-05-15T19:37:55.440Z] <<< [apiv2][body] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 {"kind":"sql#operation","targetLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances/datahubgui-main-fdc","status":"RUNNING","user":"jppanda.iit@gmail.com","insertTime":"2025-05-15T19:37:54.640Z","startTime":"2025-05-15T19:37:54.775Z","operationType":"CREATE","name":"efb46dea-179b-4d32-9e98-920100000032","targetId":"datahubgui-main-fdc","selfLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032","targetProject":"jyoti-c87d8"}
+[debug] [2025-05-15T19:37:56.440Z] [LRO Poller] Retrying task index 0
+[debug] [2025-05-15T19:37:56.441Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:56.441Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:56.441Z] >>> [apiv2][query] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 [none]
+[debug] [2025-05-15T19:37:56.567Z] <<< [apiv2][status] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 200
+[debug] [2025-05-15T19:37:56.567Z] <<< [apiv2][body] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 {"kind":"sql#operation","targetLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances/datahubgui-main-fdc","status":"RUNNING","user":"jppanda.iit@gmail.com","insertTime":"2025-05-15T19:37:54.640Z","startTime":"2025-05-15T19:37:54.775Z","operationType":"CREATE","name":"efb46dea-179b-4d32-9e98-920100000032","targetId":"datahubgui-main-fdc","selfLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032","targetProject":"jyoti-c87d8"}
+[debug] [2025-05-15T19:37:58.568Z] [LRO Poller] Retrying task index 0
+[debug] [2025-05-15T19:37:58.568Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:58.568Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:37:58.568Z] >>> [apiv2][query] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 [none]
+[debug] [2025-05-15T19:37:58.693Z] <<< [apiv2][status] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 200
+[debug] [2025-05-15T19:37:58.693Z] <<< [apiv2][body] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 {"kind":"sql#operation","targetLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances/datahubgui-main-fdc","status":"RUNNING","user":"jppanda.iit@gmail.com","insertTime":"2025-05-15T19:37:54.640Z","startTime":"2025-05-15T19:37:54.775Z","operationType":"CREATE","name":"efb46dea-179b-4d32-9e98-920100000032","targetId":"datahubgui-main-fdc","selfLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032","targetProject":"jyoti-c87d8"}
+[debug] [2025-05-15T19:38:02.693Z] [LRO Poller] Retrying task index 0
+[debug] [2025-05-15T19:38:02.693Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:38:02.693Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:38:02.693Z] >>> [apiv2][query] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 [none]
+[debug] [2025-05-15T19:38:02.826Z] <<< [apiv2][status] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 200
+[debug] [2025-05-15T19:38:02.826Z] <<< [apiv2][body] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 {"kind":"sql#operation","targetLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances/datahubgui-main-fdc","status":"RUNNING","user":"jppanda.iit@gmail.com","insertTime":"2025-05-15T19:37:54.640Z","startTime":"2025-05-15T19:37:54.775Z","operationType":"CREATE","name":"efb46dea-179b-4d32-9e98-920100000032","targetId":"datahubgui-main-fdc","selfLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032","targetProject":"jyoti-c87d8"}
+[debug] [2025-05-15T19:38:10.826Z] [LRO Poller] Retrying task index 0
+[debug] [2025-05-15T19:38:10.826Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:38:10.826Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:38:10.827Z] >>> [apiv2][query] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 [none]
+[debug] [2025-05-15T19:38:11.038Z] <<< [apiv2][status] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 200
+[debug] [2025-05-15T19:38:11.038Z] <<< [apiv2][body] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 {"kind":"sql#operation","targetLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances/datahubgui-main-fdc","status":"RUNNING","user":"jppanda.iit@gmail.com","insertTime":"2025-05-15T19:37:54.640Z","startTime":"2025-05-15T19:37:54.775Z","operationType":"CREATE","name":"efb46dea-179b-4d32-9e98-920100000032","targetId":"datahubgui-main-fdc","selfLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032","targetProject":"jyoti-c87d8"}
+[debug] [2025-05-15T19:38:27.038Z] [LRO Poller] Retrying task index 0
+[debug] [2025-05-15T19:38:27.039Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:38:27.039Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:38:27.039Z] >>> [apiv2][query] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 [none]
+[debug] [2025-05-15T19:38:27.248Z] <<< [apiv2][status] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 200
+[debug] [2025-05-15T19:38:27.249Z] <<< [apiv2][body] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 {"kind":"sql#operation","targetLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances/datahubgui-main-fdc","status":"RUNNING","user":"jppanda.iit@gmail.com","insertTime":"2025-05-15T19:37:54.640Z","startTime":"2025-05-15T19:37:54.775Z","operationType":"CREATE","name":"efb46dea-179b-4d32-9e98-920100000032","targetId":"datahubgui-main-fdc","selfLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032","targetProject":"jyoti-c87d8"}
+[debug] [2025-05-15T19:38:59.249Z] [LRO Poller] Retrying task index 0
+[debug] [2025-05-15T19:38:59.249Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:38:59.249Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:38:59.250Z] >>> [apiv2][query] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 [none]
+[debug] [2025-05-15T19:38:59.476Z] <<< [apiv2][status] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 200
+[debug] [2025-05-15T19:38:59.476Z] <<< [apiv2][body] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 {"kind":"sql#operation","targetLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances/datahubgui-main-fdc","status":"RUNNING","user":"jppanda.iit@gmail.com","insertTime":"2025-05-15T19:37:54.640Z","startTime":"2025-05-15T19:37:54.775Z","operationType":"CREATE","name":"efb46dea-179b-4d32-9e98-920100000032","targetId":"datahubgui-main-fdc","selfLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032","targetProject":"jyoti-c87d8"}
+[debug] [2025-05-15T19:39:59.477Z] [LRO Poller] Retrying task index 0
+[debug] [2025-05-15T19:39:59.477Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:39:59.477Z] Checked if tokens are valid: true, expires at: 1747340095522
+[debug] [2025-05-15T19:39:59.477Z] >>> [apiv2][query] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 [none]
+[debug] [2025-05-15T19:39:59.686Z] <<< [apiv2][status] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 200
+[debug] [2025-05-15T19:39:59.687Z] <<< [apiv2][body] GET https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032 {"kind":"sql#operation","targetLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/instances/datahubgui-main-fdc","status":"RUNNING","user":"jppanda.iit@gmail.com","insertTime":"2025-05-15T19:37:54.640Z","startTime":"2025-05-15T19:37:54.775Z","operationType":"CREATE","name":"efb46dea-179b-4d32-9e98-920100000032","targetId":"datahubgui-main-fdc","selfLink":"https://sqladmin.googleapis.com/v1/projects/jyoti-c87d8/operations/efb46dea-179b-4d32-9e98-920100000032","targetProject":"jyoti-c87d8"}
