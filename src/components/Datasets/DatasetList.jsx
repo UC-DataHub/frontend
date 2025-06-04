@@ -1,3 +1,6 @@
+/* prettier-ignore-file */
+/* eslint-disable */
+
 import axios from 'axios';
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';

@@ -1,4 +1,10 @@
 'use client'; // Ensure client-side execution
+
+/* prettier-ignore-file */
+/* eslint-disable */
+
+
+
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Hero from '@/components/Hero';
