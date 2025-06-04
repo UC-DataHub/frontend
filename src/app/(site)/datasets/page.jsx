@@ -25,7 +25,10 @@ export default function DatasetPage() {
   useEffect(() => {
     async function fetchDatasets() {
       try {
-        const response = await axios.get(`${backendURL}/api/files/`);
+        // const response = await axios.get('https://datahubbe.onrender.com/api/files/');
+        const response = await axios.get(backendURL + '/api/files/');
+
+
         // console.log("Fetched datasets:", response.data); // Debugging
 
         // Map the response to match the expected structure

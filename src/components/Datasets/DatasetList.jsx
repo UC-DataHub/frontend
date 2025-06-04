@@ -50,7 +50,9 @@ export default function DatasetList() {
   const fetchDatasets = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`${backendURL}/api/files/`);
+      // const response = await axios.get(`https://datahubbe.onrender.com/api/files/`);
+      const response = await axios.get(backendURL+'/api/files/');
+
       if (response.status === 200) {
         setDatasets(groupByDataset(response.data));
       }
@@ -115,7 +117,8 @@ export default function DatasetList() {
 
     try {
       const response = await axios.post(
-        `${backendURL}/api/files/upload-folder/`,
+        // `https://datahubbe.onrender.com/api/files/upload-folder/`,
+        backendURL + '/api/files/upload-folder/',
         formData,
         { headers: { 'Content-Type': 'multipart/form-data' } }
       );
@@ -140,7 +143,8 @@ export default function DatasetList() {
     try {
       // Start download process
       const response = await axios.get(
-        `${backendURL}/api/files/download-dataset/?dataset_name=${datasetName}`,
+        // `https://datahubbe.onrender.com/api/files/download-dataset/?dataset_name=${datasetName}`,
+        backendURL + `/api/files/download-dataset/?dataset_name=${datasetName}`,
         { responseType: 'blob' }
       );
 
