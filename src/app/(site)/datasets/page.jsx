@@ -20,10 +20,12 @@ export default function DatasetPage() {
   const [selectedDataset, setSelectedDataset] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://datahubbe.onrender.com';
+
   useEffect(() => {
     async function fetchDatasets() {
       try {
-        const response = await axios.get('https://datahubbe.onrender.com/api/files/');
+        const response = await axios.get(`${backendURL}/api/files/`);
         // console.log("Fetched datasets:", response.data); // Debugging
 
         // Map the response to match the expected structure

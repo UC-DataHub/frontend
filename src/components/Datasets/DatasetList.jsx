@@ -14,6 +14,8 @@ export default function DatasetList() {
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://datahubbe.onrender.com';
+
   useEffect(() => {
     let filtered = datasets;
 
@@ -48,7 +50,7 @@ export default function DatasetList() {
   const fetchDatasets = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await axios.get('https://datahubbe.onrender.com/api/files/');
+      const response = await axios.get(`${backendURL}/api/files/`);
       if (response.status === 200) {
         setDatasets(groupByDataset(response.data));
       }
@@ -113,7 +115,7 @@ export default function DatasetList() {
 
     try {
       const response = await axios.post(
-        'https://datahubbe.onrender.com/api/files/upload-folder/',
+        `${backendURL}/api/files/upload-folder/`,
         formData,
         { headers: { 'Content-Type': 'multipart/form-data' } }
       );
@@ -138,7 +140,7 @@ export default function DatasetList() {
     try {
       // Start download process
       const response = await axios.get(
-        `https://datahubbe.onrender.com/api/files/download-dataset/?dataset_name=${datasetName}`,
+        `${backendURL}/api/files/download-dataset/?dataset_name=${datasetName}`,
         { responseType: 'blob' }
       );
 
@@ -202,7 +204,7 @@ export default function DatasetList() {
             </div>
 
             <h3
-              className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle sm:text-lg md:text-xl lg:text-2xl 
+              className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle sm:text-lg md:text-xl lg:text-2xl
                 break-words sm:break-all md:break-normal md:break-words"
             >
               {dataset.name}
