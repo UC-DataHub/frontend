@@ -5,9 +5,11 @@ import featuresData from './featuresData';
 import SingleFeature from './SingleFeature';
 import SectionHeader from '../Common/SectionHeader';
 import { Target, Users, Globe, Database, Download, Eye } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const About = () => {
   const datasets = featuresData; // Using featuresData as datasets
+  const router = useRouter();
 
   return (
     <div className="bg-white dark:bg-gray-900 py-16">
@@ -64,7 +66,7 @@ const About = () => {
         </div>
 
         {/* Features Section */}
-        <div id="recent-publications" className="mt-10 pt-32 md:pt-24 px-6 py-12">
+        <div id="recent-publications" className="mt-24 pt-32 md:pt-24 px-6 py-12">
           <SectionHeader
             headerInfo={{
               title: 'Datahub for Multiphase Transport',
@@ -111,7 +113,10 @@ const About = () => {
                   </span>
                 </div>
                 <div className="flex space-x-4">
-                  <button className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
+                  <button
+                    className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
+                    onClick={() => router.push(`/datasets/`)}
+                  >
                     Download
                   </button>
                   <button className="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors dark:border-gray-600 dark:hover:bg-gray-700">

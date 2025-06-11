@@ -8,6 +8,8 @@ import { motion } from 'framer-motion';
 import DatasetSearchFilter from './DatasetSearchFilter';
 import UploadModal from './FileUploadModal';
 import LoadingOverlay from './LoadingOverlay';
+// import { BubbleID_image, Condensation_image, ImmersionCooling_image} from '@/app/'
+
 export default function DatasetList() {
   const [datasets, setDatasets] = useState([]); // Store grouped datasets
   const [uploading, setUploading] = useState(false);
@@ -45,6 +47,8 @@ export default function DatasetList() {
         (dataset) => new Date(dataset.created_at) <= new Date(filters.created_to)
       );
     }
+
+
 
     setFilteredDatasets(filtered);
   }, [filters, datasets]);
@@ -112,6 +116,21 @@ export default function DatasetList() {
     if (!files.length) return;
     setUploading(true);
 
+    // files size limit 10MB filter
+    const totalSize = files.reduce((acc, file) => acc + file.size, 0);
+    if (totalSize > 10 * 1024 * 1024) {
+      alert('Total file size exceeds 10MB limit. Please select smaller files.');
+      setUploading(false);
+      return;
+    }
+
+    // dict datasetName: image path
+    const datasetIcons = {
+      'Bubble_ID_Dataset': '/images/icon/BubbleID.png',
+      'Condensation_Dataset': '/images/icon/Condensation.png',
+      'Immersion_Cooling_Dataset': '/images/icon/ImmersionCooling.png',
+    }
+
     const formData = new FormData();
     files.forEach((file) => formData.append('files', file));
     formData.append('dataset_name', datasetName);
@@ -127,7 +146,7 @@ export default function DatasetList() {
       );
 
       if (response.status === 201) {
-        alert(`Dataset "${datasetName}" uploaded successfully!`);
+        alert(`Dataset "${datasetName}" uploaded successfully! We will review it soon.`);
         fetchDatasets();
         setShowUploadModal(false);
       } else {
@@ -207,14 +226,15 @@ export default function DatasetList() {
             {/* Dynamic Icon Size with Tailwind classes */}
             {/* <div className="relative w-full aspect-square mx-auto rounded-md overflow-hidden"> */}
             <div className="relative w-[100px] sm:w-[100px] md:w-[250px] lg:w-[350px] aspect-square mx-auto rounded-md overflow-hidden">
-              <Image src={dataset.icon} alt="Dataset Icon" fill className="object-contain" />
+              <Image src={dataset.name == 'Bubble_ID_Dataset' ? '/images/icon/BubbleID.png' : dataset.name === 'Condensation_Dataset' ? '/images/icon/Condensation.png' : dataset.name === 'Immersion_Cooling_Dataset' ? '/images/icon/ImmersionCooling.png' : '/images/icon/BubbleID.png'}
+                alt="Dataset Icon" fill className="object-contain" />
             </div>
 
             <h3
               className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle sm:text-lg md:text-xl lg:text-2xl
                 break-words sm:break-all md:break-normal md:break-words"
             >
-              {dataset.name}
+              {dataset.name?.replace(/_/g, ' ')}
             </h3>
             <p className="mb-5">{dataset.description}</p>
 
@@ -254,3 +274,4 @@ export default function DatasetList() {
     </div>
   );
 }
+
