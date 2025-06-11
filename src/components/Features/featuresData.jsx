@@ -1,3 +1,5 @@
+// prettier-ignore
+
 const featuresData = [
   {
     id: 1,
