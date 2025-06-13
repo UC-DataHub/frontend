@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import DatasetSearchFilter from './DatasetSearchFilter';
 import UploadModal from './FileUploadModal';
 import LoadingOverlay from './LoadingOverlay';
+import FileTreeSelector from './FileTreeSelector';
 // import { BubbleID_image, Condensation_image, ImmersionCooling_image} from '@/app/'
 
 export default function DatasetList() {
@@ -208,7 +209,7 @@ export default function DatasetList() {
       </div>
 
       {/* Dataset List */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-4 pt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 pt-10">
         {/* {filteredDatasets.map((dataset) => ( */}
         {filteredDatasets.slice(0, 3).map((dataset) => (
           <motion.div
@@ -221,14 +222,27 @@ export default function DatasetList() {
             whileInView="visible"
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="animate_top z-40 rounded-lg border border-gray-100 hover:border-primary bg-white p-7.5 shadow-solid-3 transition-all hover:shadow-solid-4 dark:border-strokedark dark:bg-blacksection dark:hover:bg-hoverdark xl:p-12.5"
+            className="md:flex md:flex-col md:h-full animate_top z-40 rounded-lg border border-gray-100 hover:border-primary bg-white p-7.5 shadow-solid-3 transition-all hover:shadow-solid-4 dark:border-strokedark dark:bg-blacksection dark:hover:bg-hoverdark xl:p-12.5"
           >
             {/* Dynamic Icon Size with Tailwind classes */}
             {/* <div className="relative w-full aspect-square mx-auto rounded-md overflow-hidden"> */}
-            <div className="relative w-[100px] sm:w-[100px] md:w-[250px] lg:w-[350px] aspect-square mx-auto rounded-md overflow-hidden">
-              <Image src={dataset.name == 'Bubble_ID_Dataset' ? '/images/icon/BubbleID.png' : dataset.name === 'Condensation_Dataset' ? '/images/icon/Condensation.png' : dataset.name === 'Immersion_Cooling_Dataset' ? '/images/icon/ImmersionCooling.png' : '/images/icon/BubbleID.png'}
-                alt="Dataset Icon" fill className="object-contain" />
+            <div className="relative w-full h-[200px] mx-auto rounded-md overflow-hidden bg-white">
+              <Image
+                src={
+                  dataset.name === 'Bubble_ID_Dataset'
+                    ? '/images/icon/BubbleID.png'
+                    : dataset.name === 'Condensation_Dataset'
+                    ? '/images/icon/Condensation.png'
+                    : dataset.name === 'Immersion_Cooling_Dataset'
+                    ? '/images/icon/ImmersionCooling.png'
+                    : '/images/icon/BubbleID.png'
+                }
+                alt="Dataset Icon"
+                fill
+                className="object-cover"
+              />
             </div>
+
 
             <h3
               className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle sm:text-lg md:text-xl lg:text-2xl
@@ -236,10 +250,10 @@ export default function DatasetList() {
             >
               {dataset.name?.replace(/_/g, ' ')}
             </h3>
-            <p className="mb-5">{dataset.description}</p>
+            <p className="mb-5 sm:h-[160px] overflow-hidden text-ellipsis">{dataset.description}</p>
 
             {/* View Details Button */}
-            <button
+            {/* <button
               onClick={() => handleViewDetails(dataset.name)}
               className="bg-gray-800 text-white py-2 px-4 rounded-lg text-sm hover:bg-gray-700 transition"
             >
@@ -259,7 +273,10 @@ export default function DatasetList() {
                   ))}
                 </ul>
               </div>
-            )}
+            )} */}
+
+
+            <FileTreeSelector backendURL={backendURL} datasetName={dataset.name} />
 
             {/* Download Entire Dataset Button */}
             <button

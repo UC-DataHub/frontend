@@ -16,7 +16,7 @@ const SingleFeature = ({ feature }) => {
       whileInView="visible"
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="animate_top z-40 rounded-lg border border-gray-100 hover:border-primary bg-white p-7.5 shadow-solid-3 transition-all hover:shadow-solid-4 dark:border-strokedark dark:bg-blacksection dark:hover:bg-hoverdark xl:p-12.5"
+      className="flex flex-col h-full animate_top z-40 rounded-lg border border-gray-100 hover:border-primary bg-white p-7.5 shadow-solid-3 transition-all hover:shadow-solid-4 dark:border-strokedark dark:bg-blacksection dark:hover:bg-hoverdark xl:p-12.5"
     >
       {/* Image Container */}
       <div className="relative w-full h-[200px] rounded-md overflow-hidden bg-primary">
@@ -32,7 +32,10 @@ const SingleFeature = ({ feature }) => {
       <p className="mb-5 text-gray-600 dark:text-gray-300">{description}</p>
 
       {/* Learn More Link */}
-      <Link href="/datasets" className="text-primary hover:underline">
+      <Link
+        href="/datasets"
+        className="inline-block mt-auto pt-2 text-sm font-medium text-violet-600 hover:text-violet-800 transition-colors"
+      >
         Learn more
       </Link>
     </motion.div>

@@ -27,14 +27,14 @@ const menuData = [
         id: 35,
         title: 'APIs',
         newTab: false,
-        path: '/#apis', // Link to the APIs section
+        path: 'https://backend-nx4f.onrender.com/', // Link to the APIs section
       },
-      {
-        id: 35.1,
-        title: 'Documents',
-        newTab: false,
-        path: '/#documents', // Link to the Documents section
-      },
+      // {
+      //   id: 35.1,
+      //   title: 'Documents',
+      //   newTab: false,
+      //   path: '/#documents', // Link to the Documents section
+      // },
     ],
   },
   {

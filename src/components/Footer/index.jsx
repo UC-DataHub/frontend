@@ -63,20 +63,20 @@ const Footer = () => {
 
                   <ul>
                     <li>
-                      <a href="#" className="mb-3 inline-block hover:text-primary">
+                      <a href="/" className="mb-3 inline-block hover:text-primary">
                         Home
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="mb-3 inline-block hover:text-primary">
-                        Product
+                      <a href="/datasets/" className="mb-3 inline-block hover:text-primary">
+                        Datasets
                       </a>
                     </li>
-                    <li>
+                    {/* <li>
                       <a href="#" className="mb-3 inline-block hover:text-primary">
                         Careers
                       </a>
-                    </li>
+                    </li> */}
                     <li>
                       <a href="#" className="mb-3 inline-block hover:text-primary">
                         Legal
@@ -108,13 +108,13 @@ const Footer = () => {
 
                   <ul>
                     <li>
-                      <a href="#" className="mb-3 inline-block hover:text-primary">
+                      <a href="/" className="mb-3 inline-block hover:text-primary">
                         Company
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="mb-3 inline-block hover:text-primary">
-                        Press media
+                      <a href="/#recent-publications" className="mb-3 inline-block hover:text-primary">
+                        Recent Publications
                       </a>
                     </li>
                     <li>

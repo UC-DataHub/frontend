@@ -73,7 +73,7 @@ const DatasetSearchFilter = ({ filters, setFilters, attributes }) => {
       {/* Reset Filters Button */}
       <button
         onClick={() => setFilters({})}
-        className="mt-3 bg-red-500 text-white py-1 px-3 rounded-md text-sm hover:bg-red-600 transition"
+        className="mt-3 bg-blue-500 text-white py-1 px-3 rounded-md text-sm hover:bg-blue-600 transition"
       >
         Reset Filters
       </button>

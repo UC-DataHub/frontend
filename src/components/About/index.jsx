@@ -25,9 +25,9 @@ const About = () => {
               viewport={{ once: true }}
               className="animate_left relative mx-auto hidden aspect-[760/450] md:block md:w-1/2"
             >
-              <Image src="/images/about/about-1.png" alt="About" className="dark:hidden" fill />
+              <Image src="/images/icon/new-datahub-landing.png" alt="About" className="dark:hidden" fill />
               <Image
-                src="/images/about/about-1.png"
+                src="/images/icon/new-datahub-landing.png"
                 alt="About"
                 className="hidden dark:block"
                 fill
@@ -118,7 +118,7 @@ const About = () => {
               whileInView="visible"
               transition={{ duration: 1, delay: 0.1 }}
               viewport={{ once: true }}
-              className="animate_left md:w-1/2"
+              className="animate_left ml-40"
             >
               <h4 className="font-medium uppercase text-black dark:text-white">
                 Empower Your Projects Efficiently
@@ -160,8 +160,8 @@ const About = () => {
               viewport={{ once: true }}
               className="animate_right relative mx-auto hidden aspect-[688/526.5] md:block md:w-1/2"
             >
-              <Image src="/images/about/about.png" alt="About" className="dark:hidden" fill />
-              <Image src="/images/about/about.png" alt="About" className="hidden dark:block" fill />
+              {/* <Image src="/images/about/about.png" alt="About" className="dark:hidden" fill />
+              <Image src="/images/about/about.png" alt="About" className="hidden dark:block" fill /> */}
             </motion.div>
           </div>
         </div>

@@ -2,15 +2,17 @@
 
 import React, { useState } from 'react';
 import { Search, Database, Cloud, Waves, Gauge, Atom } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const Hero = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
 
   const topics = [
-    { icon: <Database size={24} />, name: 'Datasets' },
+    { icon: <Database size={24} />, name: 'Datasets', link: '/datasets' },
     { icon: <Waves size={24} />, name: 'Analysis' },
     { icon: <Cloud size={24} />, name: 'Flow Pattern' },
-    { icon: <Gauge size={24} />, name: 'Gas-Liquid' },
+    // { icon: <Gauge size={24} />, name: 'Gas-Liquid' },
     { icon: <Atom size={24} />, name: 'Properties' },
   ];
 
@@ -53,9 +55,10 @@ const Hero = () => {
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             {topics.map((topic, index) => (
               <button
+                onClick={() => (topic.link ? router.push(topic.link) : null)}
                 key={index}
-                className="flex flex-col items-center justify-center p-3 rounded-full bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
-              >
+                className="w-28 h-28 flex flex-col items-center justify-center rounded-full bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
+>
                 <div className="p-2 rounded-full bg-white shadow-sm dark:bg-gray-800">
                   {topic.icon}
                 </div>
@@ -65,7 +68,7 @@ const Hero = () => {
           </div>
 
           {/* Search Bar */}
-          <div className="relative z-10 mt-8 max-w-2xl mx-auto">
+          {/* <div className="relative z-10 mt-8 max-w-2xl mx-auto">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Search className="h-5 w-5 text-gray-400 dark:text-gray-500" />
@@ -78,7 +81,7 @@ const Hero = () => {
                 placeholder="Search for datasets, experiments, or properties..."
               />
             </div>
-          </div>
+          </div> */}
 
           {/* Quick Link Cards */}
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

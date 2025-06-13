@@ -93,7 +93,7 @@ const About = () => {
             {datasets.map((dataset) => (
               <div
                 key={dataset.id}
-                className="border rounded-lg p-6 hover:shadow-lg transition-shadow dark:border-gray-700"
+                className="border rounded-lg p-6 hover:shadow-lg transition-shadow dark:border-gray-700 flex flex-col"
               >
                 <div className="flex items-center mb-4">
                   <Database className="h-6 w-6 text-blue-600 mr-2" />
@@ -105,14 +105,14 @@ const About = () => {
                   {dataset.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">{dataset.description}</p>
-                <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4">
+                {/* <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4 mt-auto">
                   <span>Size: {dataset.size}</span>
                   <span className="flex items-center">
                     <Download className="h-4 w-4 mr-1" />
                     {dataset.downloads.toLocaleString()}
                   </span>
                 </div>
-                <div className="flex space-x-4">
+                <div className="flex space-x-4 mt-auto">
                   <button
                     className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
                     onClick={() => router.push(`/datasets/`)}
@@ -122,6 +122,19 @@ const About = () => {
                   <button className="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors dark:border-gray-600 dark:hover:bg-gray-700">
                     <Eye className="h-4 w-4 text-gray-500 dark:text-gray-300" />
                   </button>
+                </div> */}
+                <div className="mt-auto">
+                  <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+                    Size: {dataset.size}
+                  </div>
+                  <div className="flex space-x-4">
+                    <button
+                      className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
+                      onClick={() => router.push(`/datasets/`)}
+                    >
+                      Download
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
