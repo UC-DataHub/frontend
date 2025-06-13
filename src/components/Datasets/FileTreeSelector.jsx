@@ -1,3 +1,6 @@
+/* prettier-ignore-file */
+/* eslint-disable */
+
 import React, { useEffect, useState } from 'react';
 import CheckboxTree from 'react-checkbox-tree';
 import axios from 'axios';

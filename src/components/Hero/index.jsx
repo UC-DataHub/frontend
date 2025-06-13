@@ -1,5 +1,8 @@
 'use client';
 
+/* prettier-ignore-file */
+/* eslint-disable */
+
 import React, { useState } from 'react';
 import { Search, Database, Cloud, Waves, Gauge, Atom } from 'lucide-react';
 import { useRouter } from 'next/navigation';

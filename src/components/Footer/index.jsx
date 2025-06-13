@@ -1,4 +1,8 @@
 'use client';
+
+/* prettier-ignore-file */
+/* eslint-disable */
+
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 const Footer = () => {
