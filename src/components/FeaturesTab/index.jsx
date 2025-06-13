@@ -27,7 +27,7 @@ const FeaturesTab = () => {
           </div>
 
           {/* <!-- Tab Menues Start --> */}
-          <motion.div
+          {/* <motion.div
             variants={{
               hidden: {
                 opacity: 0,
@@ -95,11 +95,11 @@ const FeaturesTab = () => {
                 </button>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
           {/* <!-- Tab Menues End --> */}
 
           {/* <!-- Tab Content Start --> */}
-          <motion.div
+          {/* <motion.div
             variants={{
               hidden: {
                 opacity: 0,
@@ -121,7 +121,7 @@ const FeaturesTab = () => {
                 <FeaturesTabItem featureTab={feature} />
               </div>
             ))}
-          </motion.div>
+          </motion.div> */}
           {/* <!-- Tab Content End --> */}
         </div>
       </section>

@@ -186,7 +186,7 @@ export default function DatasetList() {
   };
 
   return (
-    <div>
+    <div id="dataset-list">
       {loading && <LoadingOverlay message="Fetching datasets..." />}
       <UploadModal
         isOpen={showUploadModal}

@@ -61,7 +61,7 @@ const Hero = () => {
                 onClick={() => (topic.link ? router.push(topic.link) : null)}
                 key={index}
                 className="w-28 h-28 flex flex-col items-center justify-center rounded-full bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
->
+              >
                 <div className="p-2 rounded-full bg-white shadow-sm dark:bg-gray-800">
                   {topic.icon}
                 </div>
@@ -87,7 +87,7 @@ const Hero = () => {
           </div> */}
 
           {/* Quick Link Cards */}
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 hidden sm:flex">
             {quickLinks.map((link, index) => (
               <div
                 key={index}

@@ -43,7 +43,7 @@ const Footer = () => {
                 </a>
               </motion.div>
 
-              <div className="flex w-full flex-col gap-8 md:flex-row md:justify-between md:gap-0 lg:w-2/3 xl:w-7/12">
+              <div className="flex w-full flex-col gap-32 md:flex-row lg:w-2/3 xl:w-7/12">
                 <motion.div
                   variants={{
                     hidden: {
@@ -81,15 +81,15 @@ const Footer = () => {
                         Careers
                       </a>
                     </li> */}
-                    <li>
+                    {/* <li>
                       <a href="#" className="mb-3 inline-block hover:text-primary">
                         Legal
                       </a>
-                    </li>
+                    </li> */}
                   </ul>
                 </motion.div>
 
-                <motion.div
+                {/* <motion.div
                   variants={{
                     hidden: {
                       opacity: 0,
@@ -132,7 +132,7 @@ const Footer = () => {
                       </a>
                     </li>
                   </ul>
-                </motion.div>
+                </motion.div> */}
 
                 <motion.div
                   variants={{

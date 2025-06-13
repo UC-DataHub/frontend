@@ -70,7 +70,7 @@ const About = () => {
           <SectionHeader
             headerInfo={{
               title: 'Datahub for Multiphase Transport',
-              subtitle: 'Most Recent Publications',
+              subtitle: 'Most Recent Datasets',
             }}
           />
 
