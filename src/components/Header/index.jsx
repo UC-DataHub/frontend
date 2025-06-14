@@ -140,11 +140,10 @@ const Header = () => {
             </ul>
           </nav>
 
-          <div className="mt-7 flex items-center gap-6 xl:mt-0">
+          {/* <div className="mt-7 flex items-center gap-6 xl:mt-0">
             <ThemeToggler />
             {user ? (
               <>
-                {/* ✅ Hello message */}
                 <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
                   Hello,{' '}
                   {user.displayName
@@ -176,7 +175,7 @@ const Header = () => {
                 </Link>
               </>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

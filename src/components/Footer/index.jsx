@@ -56,7 +56,7 @@ const Footer = () => {
                   </p>
                 </a>
 
-                <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">Multiphase Datahub</p>
+                <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">MultiphaseHUB</p>
                 {/* <a href="#" className="text-itemtitle font-medium text-black dark:text-white">
                   info@datahub.com
                 </a> */}
@@ -321,7 +321,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="animate_top"
             >
-              <p>&copy; {new Date().getFullYear()} Multiphase DataHub. All rights reserved</p>
+              <p>&copy; {new Date().getFullYear()} MultiphaseHUB. All rights reserved</p>
             </motion.div>
 
             {/* <motion.div
