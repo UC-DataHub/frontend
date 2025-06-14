@@ -27,6 +27,8 @@ export default function FileTreeSelector({ backendURL, datasetName }) {
   const [treeData, setTreeData] = useState([]);
   const [checked, setChecked] = useState([]);
   const [expanded, setExpanded] = useState([]);
+  const [showError, setShowError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     const fetchTree = async () => {
@@ -35,6 +37,14 @@ export default function FileTreeSelector({ backendURL, datasetName }) {
     };
     fetchTree();
   }, [backendURL, datasetName]);
+
+  // clear the error if user selects smth
+  useEffect(() => {
+    if (checked.length > 0) {
+      setShowError(false);
+      setErrorMessage('');
+    }
+  }, [checked]);
 
 
   const filterDatasetTree = (fullTree, datasetName) => {
@@ -77,6 +87,18 @@ export default function FileTreeSelector({ backendURL, datasetName }) {
 
 
   const handleDownload = async () => {
+    // Check if any files are selected
+    if (checked.length === 0) {
+      setShowError(true);
+      setErrorMessage('Please select at least one file or folder to download.');
+
+      setTimeout(() => {
+        setShowError(false);
+        setErrorMessage('');
+      }
+      , 3000);
+      return;
+    }
     try {
       const res = await axios.post(
         `${backendURL}/api/files/download-selection/`,
@@ -117,12 +139,20 @@ export default function FileTreeSelector({ backendURL, datasetName }) {
           leaf: <FaFile />,
         }}
       />
-      {/* <button
+      {showError && (
+        <div className="mt-4 text-red-600">
+          <p>{errorMessage}</p>
+        </div>
+      )}
+      <p className="mt-2 text-gray-500">
+        Selected: {checked.length} {checked.length === 1 ? 'item' : 'items'}
+      </p>
+      <button
         onClick={handleDownload}
         className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition"
       >
         Download Selected
-      </button> */}
+      </button>
     </div>
   );
 }

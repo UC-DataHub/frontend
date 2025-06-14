@@ -3,13 +3,21 @@
 /* prettier-ignore-file */
 /* eslint-disable */
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Search, Database, Cloud, Waves, Gauge, Atom } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const Hero = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [isHomePage, setIsHomePage] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // Check if the current path is the home page
+    setIsHomePage(pathname === '/');
+  }
+  , [pathname]);
 
   const topics = [
     { icon: <Database size={24} />, name: 'Datasets', link: '/datasets' },
@@ -46,9 +54,16 @@ const Hero = () => {
     },
   ];
 
+  // Determine if this is the home page
+  // const isHomePage = window.location.pathname === '/';
+
   return (
     <div className="bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:py-32 sm:px-6 lg:px-8">
+      <div
+        className={`max-w-7xl mx-auto py-16 px-4 ${
+          isHomePage ? 'sm:py-32' : 'sm:pt-32 sm:pb-12'
+        } sm:px-6 lg:px-8`}
+      >
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
             Datahub for Multiphase Transport

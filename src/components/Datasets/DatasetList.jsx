@@ -226,7 +226,7 @@ export default function DatasetList() {
           >
             {/* Dynamic Icon Size with Tailwind classes */}
             {/* <div className="relative w-full aspect-square mx-auto rounded-md overflow-hidden"> */}
-            <div className="relative w-full h-[200px] mx-auto rounded-md overflow-hidden bg-white">
+            <div className="relative w-full h-[200px] mx-auto flex items-center justify-center bg-white">
               <Image
                 src={
                   dataset.name === 'Bubble_ID_Dataset'
@@ -235,11 +235,11 @@ export default function DatasetList() {
                     ? '/images/icon/Condensation.png'
                     : dataset.name === 'Immersion_Cooling_Dataset'
                     ? '/images/icon/ImmersionCooling.png'
-                    : '/images/icon/BubbleID.png'
+                    : '/images/icon/db.png'
                 }
                 alt="Dataset Icon"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
 
@@ -248,7 +248,13 @@ export default function DatasetList() {
               className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle sm:text-lg md:text-xl lg:text-2xl
                 break-words sm:break-all md:break-normal md:break-words"
             >
-              {dataset.name?.replace(/_/g, ' ')}
+              {dataset.name
+                ?.split('_')                            // split into words
+                .filter((w, i, arr) =>                  // remove "dataset" if it’s the last word
+                  i !== arr.length - 1 || w.toLowerCase() !== 'dataset'
+                )
+                .join(' ')                              // join back with space
+              }
             </h3>
             <p className="mb-5 sm:h-[160px] overflow-hidden text-ellipsis">{dataset.description}</p>
 
@@ -279,12 +285,12 @@ export default function DatasetList() {
             <FileTreeSelector backendURL={backendURL} datasetName={dataset.name} />
 
             {/* Download Entire Dataset Button */}
-            <button
+            {/* <button
               onClick={() => handleDownload(dataset.name)}
               className="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg text-sm hover:bg-blue-500 transition block text-center"
             >
               Download Dataset
-            </button>
+            </button> */}
           </motion.div>
         ))}
       </div>

@@ -3,16 +3,36 @@
 /* prettier-ignore-file */
 /* eslint-disable */
 
+import { useState } from 'react';
+import axios from 'axios';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+
 const Footer = () => {
+
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('sending');
+    try {
+      await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/contact/`, form);
+      setStatus('success');
+      setForm({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error(error);
+      setStatus('error');
+    }
+  };
+
   return (
     <>
       <footer className="border-t border-stroke bg-white dark:border-strokedark dark:bg-blacksection">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           {/* <!-- Footer Top --> */}
-          <div className="py-20 lg:py-25">
-            <div className="flex flex-wrap gap-8 lg:justify-between lg:gap-0">
+          <div className="pb-8 pt-12">
+            <div className="flex flex-col md:flex-row justify-between gap-12">
               <motion.div
                 variants={{
                   hidden: {
@@ -28,22 +48,74 @@ const Footer = () => {
                 whileInView="visible"
                 transition={{ duration: 1, delay: 0.5 }}
                 viewport={{ once: true }}
-                className="animate_top w-1/2 lg:w-1/4"
+                className="animate_top w-full md:w-1/2 lg:w-1/3 flex-col flex gap-8"
               >
                 <a href="/" className="relative">
                   <p className="font-bold text-3xl">
-                    <span className="text-primary">DataHub</span>
+                    <span className="text-primary">CONTACT US</span>
                   </p>
                 </a>
-                <p className="mb-10 mt-5"></p>
 
-                <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">contact</p>
-                <a href="#" className="text-itemtitle font-medium text-black dark:text-white">
+                <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">Multiphase Datahub</p>
+                {/* <a href="#" className="text-itemtitle font-medium text-black dark:text-white">
                   info@datahub.com
-                </a>
+                </a> */}
               </motion.div>
 
-              <div className="flex w-full flex-col gap-32 md:flex-row lg:w-2/3 xl:w-7/12">
+              <div className="w-full md:w-1/2 lg:w-2/3">
+              <form onSubmit={handleSubmit} className="space-y-2 w-full">
+                {/* Row 1: Name and Email */}
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <div className="flex-1">
+                    <label className="block text-xs font-medium text-black dark:text-white">Name</label>
+                    <input
+                      type="text"
+                      required
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      className="w-full rounded-md border border-gray-300 dark:border-strokedark p-2 bg-white dark:bg-blacksection text-black dark:text-white text-sm"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <label className="block text-xs font-medium text-black dark:text-white">Email</label>
+                    <input
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      className="w-full rounded-md border border-gray-300 dark:border-strokedark p-2 bg-white dark:bg-blacksection text-black dark:text-white text-sm"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 2: Message */}
+                <div>
+                  <label className="block text-xs font-medium text-black dark:text-white">Message</label>
+                  <textarea
+                    rows="3"
+                    required
+                    value={form.message}
+                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    className="w-full rounded-md border border-gray-300 dark:border-strokedark p-2 bg-white dark:bg-blacksection text-black dark:text-white text-sm"
+                  />
+                </div>
+
+                {/* Row 3: Button */}
+                <div className="pt-1">
+                  <button
+                    type="submit"
+                    className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-500 text-sm transition"
+                  >
+                    {status === 'sending' ? 'Sending...' : 'Send'}
+                  </button>
+                  {status === 'success' && <p className="text-green-600 mt-1 text-xs">Message sent!</p>}
+                  {status === 'error' && <p className="text-red-600 mt-1 text-xs">Something went wrong.</p>}
+                </div>
+              </form>
+
+              </div>
+
+              {/* <div className="flex w-full flex-col gap-32 md:flex-row lg:w-2/3 xl:w-7/12">
                 <motion.div
                   variants={{
                     hidden: {
@@ -76,20 +148,20 @@ const Footer = () => {
                         Datasets
                       </a>
                     </li>
-                    {/* <li>
+                    <li>
                       <a href="#" className="mb-3 inline-block hover:text-primary">
                         Careers
                       </a>
-                    </li> */}
-                    {/* <li>
+                    </li>
+                    <li>
                       <a href="#" className="mb-3 inline-block hover:text-primary">
                         Legal
                       </a>
-                    </li> */}
+                    </li>
                   </ul>
                 </motion.div>
 
-                {/* <motion.div
+                <motion.div
                   variants={{
                     hidden: {
                       opacity: 0,
@@ -132,7 +204,7 @@ const Footer = () => {
                       </a>
                     </li>
                   </ul>
-                </motion.div> */}
+                </motion.div>
 
                 <motion.div
                   variants={{
@@ -189,14 +261,14 @@ const Footer = () => {
                     </div>
                   </form>
                 </motion.div>
-              </div>
+              </div> */}
             </div>
           </div>
           {/* <!-- Footer Top --> */}
 
           {/* <!-- Footer Bottom --> */}
-          <div className="flex flex-col flex-wrap items-center justify-center gap-5 border-t border-stroke py-7 dark:border-strokedark lg:flex-row lg:justify-between lg:gap-0">
-            <motion.div
+          <div className="flex flex-col flex-wrap items-center justify-center gap-5 border-t border-stroke py-7 dark:border-strokedark">
+            {/* <motion.div
               variants={{
                 hidden: {
                   opacity: 0,
@@ -230,7 +302,7 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-            </motion.div>
+            </motion.div> */}
 
             <motion.div
               variants={{
@@ -249,10 +321,10 @@ const Footer = () => {
               viewport={{ once: true }}
               className="animate_top"
             >
-              <p>&copy; {new Date().getFullYear()} DataHub. All rights reserved</p>
+              <p>&copy; {new Date().getFullYear()} Multiphase DataHub. All rights reserved</p>
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
               variants={{
                 hidden: {
                   opacity: 0,
@@ -344,7 +416,7 @@ const Footer = () => {
                 </li>
                 <li></li>
               </ul>
-            </motion.div>
+            </motion.div> */}
           </div>
           {/* <!-- Footer Bottom --> */}
         </div>

@@ -6,13 +6,30 @@ import SingleFeature from './SingleFeature';
 import SectionHeader from '../Common/SectionHeader';
 import { Target, Users, Globe, Database, Download, Eye } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import LoadingOverlay from '../Datasets/LoadingOverlay';
 
 const About = () => {
-  const datasets = featuresData; // Using featuresData as datasets
+
+  const [datasets, setDatasets] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/datasets/`)
+      .then(res => res.json())
+      .then(data => {
+        setDatasets(data);
+        setLoading(false);
+      })
+      .catch(err => console.error('Error fetching datasets:', err));
+  }, []);
+
+  // const datasets = featuresData; // Using featuresData as datasets
   const router = useRouter();
 
   return (
     <div className="bg-white dark:bg-gray-900 py-16">
+      {loading && <LoadingOverlay message="Fetching datasets..." />}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* About Us Section */}
         <div className="lg:text-center">
@@ -66,7 +83,7 @@ const About = () => {
         </div>
 
         {/* Features Section */}
-        <div id="recent-publications" className="mt-24 pt-32 md:pt-24 px-6 py-12">
+        <div id="recent-publications" className="mt-16 px-6 py-12">
           <SectionHeader
             headerInfo={{
               title: 'Datahub for Multiphase Transport',
@@ -75,21 +92,21 @@ const About = () => {
           />
 
           <div className="mt-12.5 grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:mt-15 lg:grid-cols-3 xl:mt-20 xl:gap-12.5 ">
-            {featuresData.map((feature, key) => (
+            {datasets.map((feature, key) => (
               <SingleFeature feature={feature} key={key} />
             ))}
           </div>
         </div>
 
         {/* Datasets Section */}
-        <div id="datasets" className="mt-10 pt-18">
+        <div id="datasets" className="mt-10">
           <SectionHeader
             headerInfo={{
               title: 'Popular Datasets',
               subtitle: 'Most Downloaded Datasets',
             }}
           />
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-6 lg:grid-cols-3 mt-12.5">
             {datasets.map((dataset) => (
               <div
                 key={dataset.id}
@@ -98,11 +115,18 @@ const About = () => {
                 <div className="flex items-center mb-4">
                   <Database className="h-6 w-6 text-blue-600 mr-2" />
                   <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
-                    {dataset.category}
+                    {dataset.category ? dataset.category : ''}
                   </span>
                 </div>
                 <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-2">
-                  {dataset.title}
+                  {/* {dataset.title} */}
+                  {dataset.name
+                    ?.split('_')                            // split into words
+                    .filter((w, i, arr) =>                  // remove "dataset" if it’s the last word
+                      i !== arr.length - 1 || w.toLowerCase() !== 'dataset'
+                    )
+                    .join(' ')                              // join back with space
+                  }
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">{dataset.description}</p>
                 {/* <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4 mt-auto">
@@ -124,9 +148,12 @@ const About = () => {
                   </button>
                 </div> */}
                 <div className="mt-auto">
-                  <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">
-                    Size: {dataset.size}
-                  </div>
+                  {dataset.size ?
+                    (<div className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+                      Size: {dataset.size}
+                    </div>)
+                    : null
+                  }
                   <div className="flex space-x-4">
                     <button
                       className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"

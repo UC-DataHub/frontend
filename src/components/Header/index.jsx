@@ -52,11 +52,11 @@ const Header = () => {
               {' '}
               {/* Adjust size as needed */}
               <Image
-                src="/datahubLogo-cropped.jpg"
-                width={300}
+                src="/LogoV1.png"
+                width={200}
                 height={100}
                 alt="Logo"
-                className="object-contain w-full h-full"
+                className="object-contain w-full h-full p-3"
               />
             </div>
           </a>
