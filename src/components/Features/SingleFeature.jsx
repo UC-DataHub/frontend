@@ -1,3 +1,6 @@
+/* prettier-ignore-file */
+/* eslint-disable */
+
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';

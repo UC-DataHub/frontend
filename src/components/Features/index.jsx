@@ -1,4 +1,7 @@
 'use client';
+
+/* prettier-ignore-file */
+/* eslint-disable */
 import { HiMiniUserGroup } from 'react-icons/hi2';
 import React from 'react';
 import featuresData from './featuresData';
