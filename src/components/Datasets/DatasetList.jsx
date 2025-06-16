@@ -115,7 +115,7 @@ export default function DatasetList() {
   };
 
   // Handle file upload
-  const handleModalSubmit = async ({ author, datasetName, description, files }) => {
+  const handleModalSubmit = async ({ author, email, datasetName, description, files }) => {
     if (!files.length) return;
     setUploading(true);
 
@@ -139,6 +139,9 @@ export default function DatasetList() {
     formData.append('dataset_name', datasetName);
     formData.append('description', description);
     formData.append('author', author);
+    formData.append('email', email);
+    //print form data as json from formdata variable
+    console.log('Form data:', JSON.stringify(Object.fromEntries(formData.entries()), null, 2));
 
     try {
       const response = await axios.post(

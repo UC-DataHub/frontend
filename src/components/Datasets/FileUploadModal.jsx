@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 export default function UploadModal({ isOpen, onClose, onSubmit, uploading }) {
   const [author, setAuthor] = useState('');
+  const [email, setEmail] = useState('');
   const [datasetName, setDatasetName] = useState('');
   const [description, setDescription] = useState('');
   const [files, setFiles] = useState([]);
@@ -13,12 +14,14 @@ export default function UploadModal({ isOpen, onClose, onSubmit, uploading }) {
       setDatasetName('');
       setDescription('');
       setFiles([]);
+      setEmail('');
+      setFileError('');
     }
   }, [isOpen]);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ author, datasetName, description, files });
+    onSubmit({ author, email, datasetName, description, files });
   };
 
   if (!isOpen) return null;
@@ -36,6 +39,18 @@ export default function UploadModal({ isOpen, onClose, onSubmit, uploading }) {
               value={author}
               onChange={(e) => setAuthor(e.target.value)}
               placeholder="Author name"
+              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
               className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
