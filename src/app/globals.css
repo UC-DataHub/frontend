@@ -145,3 +145,17 @@ html::-webkit-scrollbar {
 .react-checkbox-tree label {
   font-size: 0.85rem;
 }
+
+/* styles/globals.css or custom override */
+.rct-node-icon {
+  color: #ccc;
+  /* or adjust to fit your dark theme */
+}
+
+.dark .rct-text {
+  color: #f0f0f0;
+}
+
+.dark .rct-title:hover {
+  background-color: #2c2c2c;
+}

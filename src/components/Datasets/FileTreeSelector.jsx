@@ -120,8 +120,10 @@ export default function FileTreeSelector({ backendURL, datasetName }) {
   };
 
   return (
-    <div className="text-sm mt-10 p-4 border rounded shadow bg-white">
-      <h2 className="text-base font-semibold mb-4">Select Files or Folders to Download</h2>
+    <div className="text-sm mt-10 p-5 rounded-lg border border-gray-200 dark:border-strokedark shadow-lg bg-white dark:bg-blacksection dark:text-white transition-all">
+      <h2 className="text-base font-semibold mb-4 text-black dark:text-white">
+        Select Files or Folders to Download
+      </h2>
       <CheckboxTree
         nodes={treeData}
         checked={checked}
@@ -140,16 +142,16 @@ export default function FileTreeSelector({ backendURL, datasetName }) {
         }}
       />
       {showError && (
-        <div className="mt-4 text-red-600">
+        <div className="mt-4 text-red-600 dark:text-red-400">
           <p>{errorMessage}</p>
         </div>
       )}
-      <p className="mt-2 text-gray-500">
+      <p className="mt-2 text-gray-500 dark:text-gray-400">
         Selected: {checked.length} {checked.length === 1 ? 'item' : 'items'}
       </p>
       <button
         onClick={handleDownload}
-        className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition"
+        className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 dark:hover:bg-blue-400 transition"
       >
         Download Selected
       </button>

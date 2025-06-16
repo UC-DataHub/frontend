@@ -5,6 +5,7 @@ export default function UploadModal({ isOpen, onClose, onSubmit, uploading }) {
   const [datasetName, setDatasetName] = useState('');
   const [description, setDescription] = useState('');
   const [files, setFiles] = useState([]);
+  const [fileError, setFileError] = useState('');
 
   useEffect(() => {
     if (isOpen) {
@@ -70,6 +71,20 @@ export default function UploadModal({ isOpen, onClose, onSubmit, uploading }) {
               type="file"
               multiple
               onChange={(e) => setFiles(Array.from(e.target.files))}
+              // onChange={(e) => {
+              //   const selectedFiles = Array.from(e.target.files);
+              //   const maxSize = 2 * 1024 * 1024;
+              //   const validFiles = selectedFiles.filter(file => file.size <= maxSize);
+
+              //   if (validFiles.length < selectedFiles.length) {
+              //     setFileError("Some files were too large (max 2MB) and were skipped.");
+              //     setFiles(validFiles);
+              //   } else {
+              //     setFileError('');
+              //   }
+
+              //   setFiles(validFiles);
+              // }}
               className="block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4
                          file:rounded-lg file:border-0 file:text-sm file:font-semibold
                          file:bg-blue-600 file:text-white hover:file:bg-blue-700"
@@ -82,6 +97,9 @@ export default function UploadModal({ isOpen, onClose, onSubmit, uploading }) {
                 ))}
               </ul>
             )}
+            {/* {fileError && (
+              <p className="text-sm text-red-600 mt-2">{fileError}</p>
+            )} */}
           </div>
 
           <div className="flex justify-end gap-3 pt-4 border-t border-gray-200 mt-6">

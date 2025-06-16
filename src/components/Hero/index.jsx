@@ -61,7 +61,7 @@ const Hero = () => {
     <div className="bg-white dark:bg-gray-900">
       <div
         className={`max-w-7xl mx-auto py-16 px-4 ${
-          isHomePage ? 'sm:py-32' : 'sm:pt-32 sm:pb-12'
+          isHomePage ? 'sm:pb-20 sm:pt-32' : 'sm:pt-32 sm:pb-12'
         } sm:px-6 lg:px-8`}
       >
         <div className="text-center">
@@ -70,7 +70,7 @@ const Hero = () => {
           </h1>
 
           {/* Topic Circles */}
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
+          <div className="flex flex-wrap justify-center gap-4 mt-8 sm:hidden">
             {topics.map((topic, index) => (
               <button
                 onClick={() => (topic.link ? router.push(topic.link) : null)}

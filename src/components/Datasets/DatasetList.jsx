@@ -2,7 +2,7 @@
 /* eslint-disable */
 
 import axios from 'axios';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import DatasetSearchFilter from './DatasetSearchFilter';
@@ -195,16 +195,59 @@ export default function DatasetList() {
         uploading={uploading}
       />
       {/* Upload Button */}
-      <div className="flex justify-end mb-6 my-6">
+      {/* <div className="flex justify-end mb-6 my-6">
         <button
           onClick={() => setShowUploadModal(true)}
           className="bg-blue-600 text-white py-2 px-4 rounded-lg text-sm hover:bg-blue-500 transition"
         >
           Upload Dataset
         </button>
-      </div>
-      <div>
-        {/* Search Filters */}
+      </div> */}
+      <section className="w-full px-6 py-10 bg-white dark:bg-blacksection rounded-lg border border-gray-200 dark:border-gray-700 shadow-md mb-10">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-black dark:text-white mb-3">
+            Upload Your Dataset
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
+            Upload experimental or simulation data with complete folder structure. You can upload a ZIP
+            or a structured folder directly. Once reviewed by admin, it will be visible on the platform.
+          </p>
+
+          <div
+            className="border-2 border-dashed border-blue-500 p-8 rounded-lg cursor-pointer hover:bg-blue-50 dark:hover:bg-gray-700 transition"
+            onClick={() => setShowUploadModal(true)}
+          >
+            <svg
+              className="mx-auto mb-4 text-blue-600 dark:text-blue-400"
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="17 8 12 3 7 8" />
+              <line x1="12" y1="3" x2="12" y2="15" />
+            </svg>
+            <p className="text-blue-600 dark:text-blue-400 font-semibold">Click to Upload</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+              Opens the upload form with author, description, and file selection
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+
+      <div className="w-full px-6 py-14 bg-gradient-to-br from-white to-blue-50 dark:from-blacksection dark:to-gray-900 rounded-2xl border border-blue-100 dark:border-blue-800 shadow-xl mb-14 transition-all duration-300">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-blue-700 dark:text-blue-400 mb-6">
+          Available Datasets
+        </h2>
+        <div className="w-16 h-1 bg-blue-600 mx-auto mb-6 rounded-full" />
         <DatasetSearchFilter filters={filters} setFilters={setFilters} attributes={{}} />
       </div>
 
@@ -226,7 +269,7 @@ export default function DatasetList() {
           >
             {/* Dynamic Icon Size with Tailwind classes */}
             {/* <div className="relative w-full aspect-square mx-auto rounded-md overflow-hidden"> */}
-            <div className="relative w-full h-[200px] mx-auto flex items-center justify-center bg-white">
+            <div className="relative w-full h-[200px] mx-auto flex items-center justify-center bg-white dark:bg-blacksection">
               <Image
                 src={
                   dataset.name === 'Bubble_ID_Dataset'

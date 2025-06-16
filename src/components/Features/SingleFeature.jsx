@@ -22,7 +22,7 @@ const SingleFeature = ({ feature, formatDatasetName }) => {
       className="flex flex-col h-full animate_top z-40 rounded-lg border border-gray-100 hover:border-primary bg-white p-7.5 shadow-solid-3 transition-all hover:shadow-solid-4 dark:border-strokedark dark:bg-blacksection dark:hover:bg-hoverdark xl:p-12.5"
     >
       {/* Image Container */}
-      <div className="relative w-full h-[200px] flex items-center justify-center rounded-md bg-white overflow-hidden">
+      <div className="relative w-full h-[200px] flex items-center justify-center rounded-md bg-white overflow-hidden dark:bg-blacksection">
         {/* <Image src={icon} alt={name} fill className="object-contain" /> */}
         <Image
           src={

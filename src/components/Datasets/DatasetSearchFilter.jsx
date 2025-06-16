@@ -7,36 +7,44 @@ const DatasetSearchFilter = ({ filters, setFilters, attributes }) => {
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md">
-      <h3 className="text-sm font-semibold text-gray-700 mb-2">Filters</h3>
+    <div className="">
+      <h3 className="text-sm font-semibold text-gray-700 mb-2 dark:text-gray-300 bg:transparent dark:bg-transparent">
+        Filters
+      </h3>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         {/* Dataset Name Filter */}
-        <input
-          type="text"
-          name="name"
-          placeholder="Dataset Name"
-          value={filters.name || ''}
-          onChange={handleFilterChange}
-          className="border p-2 rounded-md text-sm"
-        />
+        <div className="flex flex-col justify-end">
+          <label className="text-xs text-gray-600"></label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Dataset Name"
+            value={filters.name || ''}
+            onChange={handleFilterChange}
+            className="border border-gray-300 dark:border-strokedark bg-white dark:bg-blacksection text-sm rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
 
         {/* Description Filter */}
-        <input
-          type="text"
-          name="description"
-          placeholder="Description"
-          value={filters.description || ''}
-          onChange={handleFilterChange}
-          className="border p-2 rounded-md text-sm"
-        />
+        <div className="flex flex-col justify-end">
+          <label className="text-xs text-gray-600"></label>
+          <input
+            type="text"
+            name="description"
+            placeholder="Description"
+            value={filters.description || ''}
+            onChange={handleFilterChange}
+            className="border border-gray-300 dark:border-strokedark bg-white dark:bg-blacksection text-sm rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
 
         {/* //Type Dropdown Filter
         <select
           name="type"
           value={filters.type || ""}
           onChange={handleFilterChange}
-          className="border p-2 rounded-md text-sm"
+          className="border border-gray-300 dark:border-strokedark bg-white dark:bg-blacksection text-sm rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="">Select Type</option>
           {attributes.types?.map((type) => (
@@ -54,7 +62,7 @@ const DatasetSearchFilter = ({ filters, setFilters, attributes }) => {
             name="created_from"
             value={filters.created_from || ''}
             onChange={handleFilterChange}
-            className="border p-2 rounded-md text-sm"
+            className="border border-gray-300 dark:border-strokedark bg-white dark:bg-blacksection text-sm rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
@@ -65,7 +73,7 @@ const DatasetSearchFilter = ({ filters, setFilters, attributes }) => {
             name="created_to"
             value={filters.created_to || ''}
             onChange={handleFilterChange}
-            className="border p-2 rounded-md text-sm"
+            className="border border-gray-300 dark:border-strokedark bg-white dark:bg-blacksection text-sm rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
       </div>
