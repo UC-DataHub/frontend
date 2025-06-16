@@ -1,4 +1,8 @@
-'use client';
+// 'use client';
+
+/* prettier-ignore-file */
+/* eslint-disable */
+
 // import Footer from "../../components/Footer/index";
 // import Header from "../../components/Header/index";
 // import Lines from "../../components/Lines/index";
@@ -17,6 +21,14 @@ import { Provider } from 'react-redux';
 import NextTopLoader from 'nextjs-toploader';
 
 const inter = Inter({ subsets: ['latin'] });
+
+export const metadata = {
+  title: {
+    default: "MulphaseHUB",
+    template: "%s | MulphaseHUB",
+  },
+  description: "MulphaseHUB is a collaborative platform for sharing and accessing structured multiphase datasets from simulations and experiments. Upload, browse, and download high-quality datasets with rich metadata and folder hierarchy.",
+};
 
 export default function RootLayout({ children }) {
   return (
