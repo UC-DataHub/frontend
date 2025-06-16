@@ -27,6 +27,14 @@ const About = () => {
       .catch(err => console.error('Error fetching datasets:', err));
   }, []);
 
+  const formatSize = (bytes) => {
+    if (bytes === 0) return '0 B';
+    const k = 1024;
+    const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+  };
+
   // const datasets = featuresData; // Using featuresData as datasets
   const router = useRouter();
 
@@ -153,7 +161,7 @@ const About = () => {
                 <div className="mt-auto">
                   {dataset.size ?
                     (<div className="text-sm text-gray-500 dark:text-gray-400 mb-3">
-                      Size: {dataset.size}
+                      Size: {formatSize(dataset.size)}
                     </div>)
                     : null
                   }
