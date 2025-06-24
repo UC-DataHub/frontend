@@ -3,25 +3,48 @@
 /* prettier-ignore-file */
 /* eslint-disable */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useSelector } from 'react-redux';
+import toast from 'react-hot-toast';
 
 const Footer = () => {
 
+  const user = useSelector((state) => state.auth.user);
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState(null);
+
+  useEffect(() => {
+    if (user) {
+      setForm((prev) => ({
+        ...prev,
+        name: user.name || '',
+        email: user.email || '',
+      }));
+    }
+  }, [user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
     try {
-      await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/contact/`, form);
+      const payload = {
+        name: user?.name || form.name,
+        email:  user?.email || form.email,
+        message: form.message,
+      };
+      // await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/contact/`, form);
+      await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/contact/`, payload, {
+        withCredentials: true,
+      });
       setStatus('success');
-      setForm({ name: '', email: '', message: '' });
+      toast.success('Message sent successfully!');
+      setForm({ name: user?.name || '', email: user?.email || '', message: '' });
     } catch (error) {
       console.error(error);
+      toast.error('Failed to send message.');
       setStatus('error');
     }
   };
@@ -50,11 +73,9 @@ const Footer = () => {
                 viewport={{ once: true }}
                 className="animate_top w-full md:w-1/2 lg:w-1/3 flex-col flex gap-8"
               >
-                <a href="/" className="relative">
-                  <p className="font-bold text-3xl">
-                    <span className="text-primary">CONTACT US</span>
-                  </p>
-                </a>
+                <p className="font-bold text-3xl">
+                  <span className="text-primary">CONTACT US</span>
+                </p>
 
                 <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">MultiphaseHUB</p>
                 {/* <a href="#" className="text-itemtitle font-medium text-black dark:text-white">
@@ -67,24 +88,60 @@ const Footer = () => {
                 {/* Row 1: Name and Email */}
                 <div className="flex flex-col sm:flex-row gap-2">
                   <div className="flex-1">
-                    <label className="block text-xs font-medium text-black dark:text-white">Name</label>
-                    <input
-                      type="text"
-                      required
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full rounded-md border border-gray-300 dark:border-strokedark p-2 bg-white dark:bg-blacksection text-black dark:text-white text-sm"
-                    />
+                    <label className="block text-xs font-medium text-black dark:text-white" htmlFor='name'>
+                      Name{' '}
+                      {user?.name && (
+                        <span className="text-xs text-gray-500 dark:text-gray-400">(readonly)</span>
+                      )}
+                    </label>
+                    <div className="relative">
+                      <input
+                        id="name"
+                        type="text"
+                        required
+                        value={form.name}
+                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                        readOnly={!!user?.name}
+                        className={`w-full rounded-md border p-2 ${
+                          user?.email
+                            ? 'bg-gray-100 text-gray-500 cursor-not-allowed dark:bg-gray-700'
+                            : 'bg-white text-black dark:bg-blacksection dark:text-white'
+                        } border-gray-300 dark:border-strokedark`}
+                      />
+                      {user?.name && (
+                        <div className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" title="Pre-filled">
+                          🔒
+                        </div>
+                        )}
+                    </div>
                   </div>
                   <div className="flex-1">
-                    <label className="block text-xs font-medium text-black dark:text-white">Email</label>
-                    <input
-                      type="email"
-                      required
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full rounded-md border border-gray-300 dark:border-strokedark p-2 bg-white dark:bg-blacksection text-black dark:text-white text-sm"
-                    />
+                    <label className="block text-xs font-medium text-black dark:text-white">
+                      Email{' '}
+                      {user?.email && (
+                        <span className="text-xs text-gray-500 dark:text-gray-400">(readonly)</span>
+                      )}
+                    </label>
+                    <div className="relative">
+                      <input
+                        id="email"
+                        type="email"
+                        required
+                        value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        readOnly={!!user?.email}
+                        className={`w-full rounded-md border p-2 ${
+                          user?.email
+                            ? 'bg-gray-100 text-gray-500 cursor-not-allowed dark:bg-gray-700'
+                            : 'bg-white text-black dark:bg-blacksection dark:text-white'
+                        } border-gray-300 dark:border-strokedark`}
+                      />
+                      {user?.email && (
+                        <div className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" title="Pre-filled">
+                          🔒
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
 
@@ -108,8 +165,6 @@ const Footer = () => {
                   >
                     {status === 'sending' ? 'Sending...' : 'Send'}
                   </button>
-                  {status === 'success' && <p className="text-green-600 mt-1 text-xs">Message sent!</p>}
-                  {status === 'error' && <p className="text-red-600 mt-1 text-xs">Something went wrong.</p>}
                 </div>
               </form>
 

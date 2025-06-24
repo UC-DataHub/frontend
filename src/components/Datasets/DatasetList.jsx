@@ -11,7 +11,9 @@ import DatasetSearchFilter from './DatasetSearchFilter';
 import UploadModal from './FileUploadModal';
 import LoadingOverlay from './LoadingOverlay';
 import FileTreeSelector from './FileTreeSelector';
-// import { BubbleID_image, Condensation_image, ImmersionCooling_image} from '@/app/'
+import { useSelector } from 'react-redux';
+import toast from 'react-hot-toast';
+
 
 export default function DatasetList() {
   const [datasets, setDatasets] = useState([]); // Store grouped datasets
@@ -21,8 +23,9 @@ export default function DatasetList() {
   const [expandedDataset, setExpandedDataset] = useState(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [loading, setLoading] = useState(true);
+  const user = useSelector((state) => state.auth.user);
 
-  const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://datahubbe.onrender.com';
+  const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://backend-nx4f.onrender.com';
 
   useEffect(() => {
     let filtered = datasets;
@@ -116,13 +119,17 @@ export default function DatasetList() {
 
   // Handle file upload
   const handleModalSubmit = async ({ author, email, datasetName, description, files }) => {
+    if (!user) {
+      toast.error('You must be logged in to upload datasets.');
+      return;
+    }
     if (!files.length) return;
     setUploading(true);
 
     // files size limit 10MB filter
     const totalSize = files.reduce((acc, file) => acc + file.size, 0);
     if (totalSize > 10 * 1024 * 1024) {
-      alert('Total file size exceeds 10MB limit. Please select smaller files.');
+      toast.error('Total file size exceeds 10MB limit. Please select smaller files.');
       setUploading(false);
       return;
     }
@@ -138,55 +145,34 @@ export default function DatasetList() {
     files.forEach((file) => formData.append('files', file));
     formData.append('dataset_name', datasetName);
     formData.append('description', description);
-    formData.append('author', author);
-    formData.append('email', email);
+    formData.append('author', user?.name || author);
+    formData.append('email',  user?.email || email);
     //print form data as json from formdata variable
-    console.log('Form data:', JSON.stringify(Object.fromEntries(formData.entries()), null, 2));
+    // console.log('Form data:', JSON.stringify(Object.fromEntries(formData.entries()), null, 2));
 
     try {
       const response = await axios.post(
         // `https://datahubbe.onrender.com/api/files/upload-folder/`,
         backendURL + '/api/files/upload-folder/',
         formData,
-        { headers: { 'Content-Type': 'multipart/form-data' } }
+        {
+          headers: { 'Content-Type': 'multipart/form-data' },
+          withCredentials: true,
+        }
       );
 
       if (response.status === 201) {
-        alert(`Dataset "${datasetName}" uploaded successfully! We will review it soon.`);
+        toast.success(`Dataset "${datasetName}" uploaded successfully! We will review it soon.`);
         fetchDatasets();
         setShowUploadModal(false);
       } else {
-        alert('Upload failed.');
+        toast.error('Upload failed.');
       }
     } catch (error) {
       console.error('Upload error:', error);
-      alert('Error uploading files.');
+      toast.error('Error uploading files.');
     } finally {
       setUploading(false);
-    }
-  };
-
-  // Handle file download
-  const handleDownload = async (datasetName) => {
-    try {
-      // Start download process
-      const response = await axios.get(
-        // `https://datahubbe.onrender.com/api/files/download-dataset/?dataset_name=${datasetName}`,
-        backendURL + `/api/files/download-dataset/?dataset_name=${datasetName}`,
-        { responseType: 'blob' }
-      );
-
-      const blob = response.data;
-      const url = window.URL.createObjectURL(new Blob([blob]));
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', `${datasetName}.zip`); // Set filename for the downloaded dataset
-      document.body.appendChild(link);
-      link.click();
-      link.remove(); // Clean up the DOM after download
-    } catch (error) {
-      console.error('Download error:', error);
-      alert('Error downloading the dataset.');
     }
   };
 
@@ -198,6 +184,7 @@ export default function DatasetList() {
         onClose={() => setShowUploadModal(false)}
         onSubmit={handleModalSubmit}
         uploading={uploading}
+        user={user}
       />
       {/* Upload Button */}
       {/* <div className="flex justify-end mb-6 my-6">
@@ -328,7 +315,17 @@ export default function DatasetList() {
 
           <div
             className="border-2 border-dashed border-blue-500 p-8 rounded-lg cursor-pointer hover:bg-blue-50 dark:hover:bg-gray-700 transition"
-            onClick={() => setShowUploadModal(true)}
+            onClick={() => {
+              if (user) {
+                if (user?.is_verified) {
+                  setShowUploadModal(true);
+                } else {
+                  toast.error('Please verify your email to upload files.');
+                }
+              } else {
+                toast.error('Login required to upload');
+              }
+            }}
           >
             <svg
               className="mx-auto mb-4 text-blue-600 dark:text-blue-400"

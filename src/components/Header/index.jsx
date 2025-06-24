@@ -1,57 +1,53 @@
-'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import ThemeToggler from './ThemeToggler';
-import menuData from './menuData';
-import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from '@/app/api/auth/firebase'; // your Firebase config (default export)
+'use client'
+
+import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchUser, logout } from '@/redux/authSlice' // ✅ Your Redux actions
+import ThemeToggler from './ThemeToggler'
+import menuData from './menuData'
+import EmailVerificationBanner from './EmailVerificationBanner'
+import { resendVerificationEmail } from '@/utils/auth'
 
 const Header = () => {
-  const [user, setUser] = useState(null);
-  const [navigationOpen, setNavigationOpen] = useState(false);
-  const [dropdownToggler, setDropdownToggler] = useState(false);
-  const [stickyMenu, setStickyMenu] = useState(false);
-  const pathUrl = usePathname();
-  const router = useRouter();
+  const [navigationOpen, setNavigationOpen] = useState(false)
+  const [dropdownToggler, setDropdownToggler] = useState(false)
+  const [stickyMenu, setStickyMenu] = useState(false)
 
-  // Listen for Firebase Auth user
+  const user = useSelector((state) => state.auth.user)
+
+  const pathUrl = usePathname()
+  const router = useRouter()
+  const dispatch = useDispatch()
+
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-    return () => unsubscribe();
-  }, []);
+    dispatch(fetchUser()) // ✅ Try to get current user on mount
+  }, [dispatch])
 
   const handleLogout = async () => {
-    await signOut(auth);
-    router.push('/');
-  };
+    await dispatch(logout())
+    router.push('/')
+  }
 
   const handleStickyMenu = () => {
-    if (window.scrollY >= 40) {
-      setStickyMenu(true);
-    } else {
-      setStickyMenu(false);
-    }
-  };
+    setStickyMenu(window.scrollY >= 40)
+  }
 
   useEffect(() => {
-    window.addEventListener('scroll', handleStickyMenu);
-    return () => window.removeEventListener('scroll', handleStickyMenu);
-  }, []);
+    window.addEventListener('scroll', handleStickyMenu)
+    return () => window.removeEventListener('scroll', handleStickyMenu)
+  }, [])
 
   return (
     <header
-      className={`fixed left-0 top-0 z-99999 w-full ${stickyMenu ? 'bg-white shadow transition duration-100 dark:bg-black' : ''}`}
+      className={`fixed left-0 top-0 z-50 w-full bg-white shadow dark:bg-black`}
     >
-      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
-        <div className="flex w-full mx-4 sm:mx-0 my-6 sm:my-0 items-center justify-between xl:w-1/4">
-          <a href="/" className="hidden md:flex items-center">
-            <div className="w-68 h-22 flex items-center">
-              {' '}
-              {/* Adjust size as needed */}
+      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 sm:px-8 sm:flex 2xl:px-0">
+        <div className="flex w-full mx-4 sm:mx-0 my-0 sm:my-0 items-center justify-between sm:w-1/4 sm:w-1/3">
+          <Link href="/" className="flex items-center">
+            <div className="sm:w-68 w-32 h-16 sm:h-22 flex items-center">
               <Image
                 src="/LogoV1.png"
                 width={200}
@@ -60,31 +56,24 @@ const Header = () => {
                 className="object-contain w-full h-full p-3"
               />
             </div>
-          </a>
+          </Link>
 
           <button
             aria-label="hamburger Toggler"
-            className="block xl:hidden"
+            className="block sm:hidden"
             onClick={() => setNavigationOpen(!navigationOpen)}
           >
+            {/* Hamburger button */}
             <span className="relative block h-5.5 w-5.5 cursor-pointer">
-              <span className="absolute right-0 block h-full w-full">
+              <span className="absolute right-8 block h-full w-full">
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-[0] duration-200 ease-in-out dark:bg-white ${!navigationOpen ? '!w-full delay-300' : 'w-0'}`}
+                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-[0.0s] duration-200 ease-in-out dark:bg-white`}
                 ></span>
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-150 duration-200 ease-in-out dark:bg-white ${!navigationOpen ? 'delay-400 !w-full' : 'w-0'}`}
+                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-150 duration-200 ease-in-out dark:bg-white `}
                 ></span>
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-200 duration-200 ease-in-out dark:bg-white ${!navigationOpen ? '!w-full delay-500' : 'w-0'}`}
-                ></span>
-              </span>
-              <span className="du-block absolute right-0 h-full w-full rotate-45">
-                <span
-                  className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black delay-300 duration-200 ease-in-out dark:bg-white ${!navigationOpen ? '!h-0 delay-[0]' : 'h-full'}`}
-                ></span>
-                <span
-                  className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-black duration-200 ease-in-out dark:bg-white ${!navigationOpen ? '!h-0 delay-200' : 'h-0.5'}`}
+                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-200 duration-200 ease-in-out dark:bg-white `}
                 ></span>
               </span>
             </span>
@@ -92,10 +81,13 @@ const Header = () => {
         </div>
 
         <div
-          className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${navigationOpen && 'navbar !visible mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent'}`}
+          className={`invisible h-0 w-full items-center justify-between sm:visible sm:flex sm:h-auto sm:w-full ${
+            navigationOpen &&
+            'navbar !visible mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection sm:h-auto sm:p-0 sm:shadow-none sm:dark:bg-transparent'
+          }`}
         >
           <nav>
-            <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
+            <ul className="flex flex-col gap-5 sm:flex-row xl:items-center sm:gap-10">
               {menuData.map((menuItem, key) => (
                 <li key={key} className={menuItem.submenu && 'group relative'}>
                   {menuItem.submenu ? (
@@ -141,21 +133,16 @@ const Header = () => {
             </ul>
           </nav>
 
-          <div className="mt-7 flex items-center gap-6 xl:mt-0">
+          <div className="mt-7 flex items-center gap-6 sm:mt-0">
             <ThemeToggler />
-            {/* {user ? (
+            {user ? (
               <>
                 <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
-                  Hello,{' '}
-                  {user.displayName
-                    ? user.displayName.split(' ').slice(-1)[0]
-                    : user.email.split('@')[1]}{' '}
-                  👋
+                  Hello, {user.name || user.email} 👋
                 </span>
-
                 <button
                   onClick={handleLogout}
-                  className="flex items-center justify-center rounded-lg bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
+                  className="flex items-center justify-center rounded-lg bg-primary px-7.5 py-2.5 text-regular text-white ease-in-out hover:bg-primaryho"
                 >
                   Logout
                 </button>
@@ -170,17 +157,30 @@ const Header = () => {
                 </Link>
                 <Link
                   href="/auth/select"
-                  className="flex items-center justify-center rounded-lg bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
+                  className="flex items-center justify-center rounded-lg bg-primary px-7.5 py-2.5 text-regular text-white ease-in-out hover:bg-primaryho"
                 >
                   Sign up
                 </Link>
               </>
-            )} */}
+            )}
           </div>
         </div>
       </div>
-    </header>
-  );
-};
+      {user && !user.is_verified && (
+        <div className="bg-yellow-100 border-t border-yellow-400 text-yellow-800 px-4 py-2 text-sm text-center flex sm:flex-row flex-col sm:gap-10 gap-1 items-center justify-center">
+          <span>Please verify your email to access all features. Check your inbox!</span>
+          <button
+            onClick={resendVerificationEmail}
+            className="underline text-blue-600 hover:text-blue-800"
+          >
+            Resend verification email
+          </button>
+        </div>
+      )}
+      <EmailVerificationBanner/>
 
-export default Header;
+    </header>
+  )
+}
+
+export default Header

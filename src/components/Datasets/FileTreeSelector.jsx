@@ -15,6 +15,8 @@ import {
   FaRegSquare,
   FaMinusSquare,
 } from 'react-icons/fa';
+import { toast } from 'react-hot-toast';
+import { useSelector } from "react-redux";
 
 
 const truncateName = (name, maxLength = 15) => {
@@ -29,6 +31,7 @@ export default function FileTreeSelector({ backendURL, datasetName }) {
   const [expanded, setExpanded] = useState([]);
   const [showError, setShowError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const user = useSelector((state) => state.auth.user);
 
   useEffect(() => {
     const fetchTree = async () => {
@@ -87,35 +90,41 @@ export default function FileTreeSelector({ backendURL, datasetName }) {
 
 
   const handleDownload = async () => {
-    // Check if any files are selected
+    if (!user) {
+      toast.error('Please sign in to download datasets.');
+      return;
+    }
+    if (!user?.is_verified) {
+      toast.error('Please verify your email to download files.');
+      return;
+    }
     if (checked.length === 0) {
       setShowError(true);
       setErrorMessage('Please select at least one file or folder to download.');
-
       setTimeout(() => {
         setShowError(false);
         setErrorMessage('');
-      }
-      , 3000);
+      }, 3000);
       return;
     }
+
+    const toastId = toast.loading('Preparing download...');
+
     try {
       const res = await axios.post(
         `${backendURL}/api/files/download-selection/`,
         { paths: checked },
-        { responseType: 'blob' }
+        { withCredentials: true }
       );
-      const blob = new Blob([res.data]);
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', 'selected_files.zip');
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
+
+      const downloadUrl = res.data.url;
+      toast.success('Download ready', { id: toastId });
+
+      // Trigger browser download
+      window.location.href = downloadUrl;
     } catch (err) {
       console.error('Download error:', err);
-      alert('Error downloading selected files.');
+      toast.error('Error preparing download', { id: toastId });
     }
   };
 

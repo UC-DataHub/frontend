@@ -40,7 +40,7 @@ const About = () => {
 
   return (
     <div className="bg-white dark:bg-gray-900 py-16">
-      {loading && <LoadingOverlay message="Fetching datasets..." />}
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* About Us Section */}
         <div className="lg:text-center">

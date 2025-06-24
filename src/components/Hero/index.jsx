@@ -6,12 +6,15 @@
 import React, { useEffect, useState } from 'react';
 import { Search, Database, Cloud, Waves, Gauge, Atom } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
+import { useSelector } from 'react-redux';
 
 const Hero = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isHomePage, setIsHomePage] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+
+  const user = useSelector((state) => state.auth.user);
 
   useEffect(() => {
     // Check if the current path is the home page
@@ -60,9 +63,10 @@ const Hero = () => {
   return (
     <div className="bg-white dark:bg-gray-900">
       <div
-        className={`max-w-7xl mx-auto py-16 px-4 ${
-          isHomePage ? 'sm:pb-20 sm:pt-32' : 'sm:pt-32 sm:pb-12'
-        } sm:px-6 lg:px-8`}
+        className={`max-w-7xl mx-auto pb-16 pt-48 px-4 ${
+          isHomePage ? 'sm:pb-20' : 'sm:pb-12'
+          }
+          sm:px-6 lg:px-8 sm:pt-40`}
       >
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
@@ -70,7 +74,7 @@ const Hero = () => {
           </h1>
 
           {/* Topic Circles */}
-          <div className="flex flex-wrap justify-center gap-4 mt-8 sm:hidden">
+          <div className="flex flex-wrap justify-center gap-4 mt-8 md:hidden">
             {topics.map((topic, index) => (
               <button
                 onClick={() => (topic.link ? router.push(topic.link) : null)}
@@ -102,7 +106,7 @@ const Hero = () => {
           </div> */}
 
           {/* Quick Link Cards */}
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 hidden sm:flex">
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 hidden md:flex">
             {quickLinks.map((link, index) => (
               <div
                 key={index}

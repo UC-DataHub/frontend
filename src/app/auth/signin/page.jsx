@@ -8,9 +8,9 @@ export const metadata = {
 
 const SigninPage = () => {
   return (
-    <Suspense fallback={<div className="text-center p-8">Loading sign-in form...</div>}>
+    // <Suspense fallback={<div className="text-center p-8">Loading sign-in form...</div>}>
       <Signin />
-    </Suspense>
+    // </Suspense>
   );
 };
 
