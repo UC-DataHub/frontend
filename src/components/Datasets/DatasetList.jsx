@@ -236,8 +236,8 @@ export default function DatasetList() {
                     ? '/images/icon/ImmersionCooling.png'
                     : dataset.name === 'Drop_Impact_Dataset'
                     ? '/images/icon/DropImpact.png'
-                    : dataset.name === 'Particle_Motion_Dataset'
-                    ? '/images/icon/ParticleMotion.png'
+                    : dataset.name === 'Particle_Deposition_Dataset'
+                    ? '/images/icon/ParticleDeposition.png'
                     : '/images/icon/db.png'
                 }
                 alt="Dataset Icon"
@@ -321,11 +321,12 @@ export default function DatasetList() {
             className="border-2 border-dashed border-blue-500 p-8 rounded-lg cursor-pointer hover:bg-blue-50 dark:hover:bg-gray-700 transition"
             onClick={() => {
               if (user) {
-                if (user?.is_verified) {
-                  setShowUploadModal(true);
-                } else {
-                  toast.error('Please verify your email to upload files.');
-                }
+                setShowUploadModal(true);
+                // if (user?.is_verified) {
+                //   setShowUploadModal(true);
+                // } else {
+                //   toast.error('Please verify your email to upload files.');
+                // }
               } else {
                 toast.error('Login required to upload');
               }

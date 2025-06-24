@@ -166,9 +166,9 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {user && !user.is_verified && (
+      {/* {user && !user.is_verified && (
         <div className="bg-yellow-100 border-t border-yellow-400 text-yellow-800 px-4 py-2 text-sm text-center flex sm:flex-row flex-col sm:gap-10 gap-1 items-center justify-center">
-          <span>Please verify your email to access all features. Check your inbox!</span>
+          <span>Please check your inbox (and spam folder) to verify your email. Verification is required to access all features.</span>
           <button
             onClick={resendVerificationEmail}
             className="underline text-blue-600 hover:text-blue-800"
@@ -177,7 +177,7 @@ const Header = () => {
           </button>
         </div>
       )}
-      <EmailVerificationBanner/>
+      <EmailVerificationBanner/> */}
 
     </header>
   )

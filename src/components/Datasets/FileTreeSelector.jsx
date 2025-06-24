@@ -94,10 +94,10 @@ export default function FileTreeSelector({ backendURL, datasetName }) {
       toast.error('Please sign in to download datasets.');
       return;
     }
-    if (!user?.is_verified) {
-      toast.error('Please verify your email to download files.');
-      return;
-    }
+    // if (!user?.is_verified) {
+    //   toast.error('Please verify your email to download files.');
+    //   return;
+    // }
     if (checked.length === 0) {
       setShowError(true);
       setErrorMessage('Please select at least one file or folder to download.');

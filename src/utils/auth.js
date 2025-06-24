@@ -22,7 +22,7 @@ export const resendVerificationEmail = async () => {
   try {
     const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000'
     const res = await axios.post(
-      `${backendURL}/api/auth/resend-verification-email/`,
+      `${backendURL}/api/auth/resend-verification/`,
       {},
       { withCredentials: true }
     )
