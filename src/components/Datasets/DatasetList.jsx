@@ -210,7 +210,7 @@ export default function DatasetList() {
       {/* Dataset List */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 pt-10">
         {/* {filteredDatasets.map((dataset) => ( */}
-        {filteredDatasets.slice(0, 3).map((dataset) => (
+        {filteredDatasets.slice(0, 5).map((dataset) => (
           <motion.div
             key={dataset.id}
             variants={{
@@ -234,6 +234,10 @@ export default function DatasetList() {
                     ? '/images/icon/Condensation.png'
                     : dataset.name === 'Immersion_Cooling_Dataset'
                     ? '/images/icon/ImmersionCooling.png'
+                    : dataset.name === 'Drop_Impact_Dataset'
+                    ? '/images/icon/DropImpact.png'
+                    : dataset.name === 'Particle_Motion_Dataset'
+                    ? '/images/icon/ParticleMotion.png'
                     : '/images/icon/db.png'
                 }
                 alt="Dataset Icon"

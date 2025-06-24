@@ -32,6 +32,10 @@ const SingleFeature = ({ feature, formatDatasetName }) => {
               ? '/images/icon/Condensation.png'
               : name === 'Immersion_Cooling_Dataset'
               ? '/images/icon/ImmersionCooling.png'
+              : name === 'Drop_Impact_Dataset'
+              ? '/images/icon/DropImpact.png'
+              : name === 'Particle_Motion_Dataset'
+              ? '/images/icon/ParticleMotion.png'
               : '/images/icon/db.png'
             }
           alt={name} fill className="object-contain" />
