@@ -13,6 +13,7 @@ import LoadingOverlay from './LoadingOverlay';
 import FileTreeSelector from './FileTreeSelector';
 import { useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
+import axiosInstance from '@/utils/axiosInstance';
 
 
 export default function DatasetList() {
@@ -151,13 +152,24 @@ export default function DatasetList() {
     // console.log('Form data:', JSON.stringify(Object.fromEntries(formData.entries()), null, 2));
 
     try {
-      const response = await axios.post(
-        // `https://datahubbe.onrender.com/api/files/upload-folder/`,
-        backendURL + '/api/files/upload-folder/',
+      // const response = await axios.post(
+      //   // `https://datahubbe.onrender.com/api/files/upload-folder/`,
+      //   backendURL + '/api/files/upload-folder/',
+      //   formData,
+      //   {
+      //     headers: { 'Content-Type': 'multipart/form-data' },
+      //     withCredentials: true,
+      //   }
+      // );
+
+      const accessToken = localStorage.getItem('accessToken');
+      const response = await axiosInstance.post('/api/files/upload-folder/',
         formData,
         {
-          headers: { 'Content-Type': 'multipart/form-data' },
-          withCredentials: true,
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            // 'Authorization': `Bearer ${accessToken}`,
+          }
         }
       );
 

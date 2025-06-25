@@ -27,44 +27,46 @@ export const metadata = {
 };
 
 async function getUser() {
-  const incomingHeaders = await headers();
-  const cookie = incomingHeaders.get('cookie') || '';
+  // const incomingHeaders = await headers();
+  // const cookie = incomingHeaders.get('cookie') || '';
 
-  // First try accessing user
-  let res = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/auth/user`, {
-    cache: 'no-store',
-    credentials: 'include',
-    headers: {
-      cookie: cookie,
-    },
-  });
+  // // First try accessing user
+  // let res = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/auth/user`, {
+  //   cache: 'no-store',
+  //   credentials: 'include',
+  //   headers: {
+  //     cookie: cookie,
+  //   },
+  // });
 
-  if (res.status === 403 || res.status === 401) {
-    // Try refreshing access token
-    const refreshRes = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/auth/refresh`, {
-      method: 'POST',
-      credentials: 'include',
-      headers: {
-        cookie: cookie,
-      },
-    });
+  // if (res.status === 403 || res.status === 401) {
+  //   // Try refreshing access token
+  //   const refreshRes = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/auth/refresh`, {
+  //     method: 'POST',
+  //     credentials: 'include',
+  //     headers: {
+  //       cookie: cookie,
+  //     },
+  //   });
 
-    if (refreshRes.ok) {
-      // Try again to get user with the new token
-      res = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/auth/user`, {
-        cache: 'no-store',
-        credentials: 'include',
-        headers: {
-          cookie: cookie,
-        },
-      });
-    }
-  }
+  //   if (refreshRes.ok) {
+  //     // Try again to get user with the new token
+  //     res = await fetch(`${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/auth/user`, {
+  //       cache: 'no-store',
+  //       credentials: 'include',
+  //       headers: {
+  //         cookie: cookie,
+  //       },
+  //     });
+  //   }
+  // }
 
-  if (!res.ok) return null;
+  // if (!res.ok) return null;
 
-  const data = await res.json();
-  return data.user;
+  // const data = await res.json();
+  // return data.user;
+
+  return null;
 }
 
 

@@ -12,8 +12,14 @@ const menuData = [
     newTab: false,
     path: '/datasets', // Link to the Datasets section
   },
+  {
+    id: 3,
+    title: 'Publications',
+    newTab: false,
+    path: '/publications', // Link to the Publications section
+  },
   // {
-  //   id: 3,
+  //   id: 4,
   //   title: 'News & Updates',
   //   newTab: false,
   //   submenu: [
@@ -38,7 +44,7 @@ const menuData = [
   //   ],
   // },
   // {
-  //   id: 4,
+  //   id: 5,
   //   title: 'Support Us',
   //   newTab: false,
   //   path: '/',

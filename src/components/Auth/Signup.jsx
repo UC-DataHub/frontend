@@ -8,6 +8,7 @@ import { fetchUser } from '@/redux/authSlice';
 import toast from 'react-hot-toast';
 import LoadingOverlay from '../Datasets/LoadingOverlay';
 import { Eye, EyeOff } from 'lucide-react';
+import axiosInstance from '@/utils/axiosInstance';
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -28,41 +29,86 @@ const Signup = () => {
     setPasswordError('');
   }, [password, confirmPassword]);
 
+  // const submit = async (e) => {
+  //   e.preventDefault();
+  //   setPasswordError('');
+  //   if (password !== confirmPassword) {
+  //     // toast.error("Passwords do not match");
+  //     setPasswordError('Passwords do not match.');
+  //     return;
+  //   }
+
+  //   if (password.length < 8) {
+  //     setPasswordError('Password must be at least 8 characters long.');
+  //     // toast.error("Password must be at least 8 characters long");
+  //     return;
+  //   }
+
+  //   setLoading(true);
+  //   try {
+  //     const response = await axios.post(`${backendURL}/api/auth/register/`, {
+  //       name,
+  //       email,
+  //       password,
+  //     }, { withCredentials: true });
+
+  //     if (response.status === 201 || response.status === 200) {
+  //       await dispatch(fetchUser());
+  //       toast.success(response?.data?.message || 'Registration successful 👋');
+  //       router.push('/');
+  //     }
+  //   } catch (error) {
+  //     console.log('Registration failed:', error.response?.data);
+  //     toast.error(error.response?.data?.email[0] || 'Registration failed');
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
   const submit = async (e) => {
     e.preventDefault();
     setPasswordError('');
+
     if (password !== confirmPassword) {
-      // toast.error("Passwords do not match");
       setPasswordError('Passwords do not match.');
       return;
     }
 
     if (password.length < 8) {
       setPasswordError('Password must be at least 8 characters long.');
-      // toast.error("Password must be at least 8 characters long");
       return;
     }
 
     setLoading(true);
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
     try {
-      const response = await axios.post(`${backendURL}/api/auth/register/`, {
+      const response = await axiosInstance.post('/api/auth/register/', {
         name,
         email,
         password,
-      }, { withCredentials: true });
+      });
 
-      if (response.status === 201 || response.status === 200) {
-        await dispatch(fetchUser());
-        toast.success(response?.data?.message || 'Registration successful 👋');
-        router.push('/');
+      const token = response.data?.access;
+      const refreshToken = response.data?.refresh;
+      if (token) {
+        localStorage.setItem('accessToken', token);
+        localStorage.setItem('refreshToken', refreshToken);
+        axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       }
+
+      await dispatch(fetchUser());
+      toast.success('Registration successful 👋');
+      router.push('/');
     } catch (error) {
       console.log('Registration failed:', error.response?.data);
-      toast.error(error.response?.data?.email[0] || 'Registration failed');
+      toast.error(error.response?.data?.email?.[0] || 'Registration failed');
     } finally {
       setLoading(false);
     }
   };
+
+
 
   return (
     <>

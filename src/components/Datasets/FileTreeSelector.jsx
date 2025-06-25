@@ -17,6 +17,7 @@ import {
 } from 'react-icons/fa';
 import { toast } from 'react-hot-toast';
 import { useSelector } from "react-redux";
+import axiosInstance from '@/utils/axiosInstance';
 
 
 const truncateName = (name, maxLength = 15) => {
@@ -111,11 +112,43 @@ export default function FileTreeSelector({ backendURL, datasetName }) {
     const toastId = toast.loading('Preparing download...');
 
     try {
-      const res = await axios.post(
-        `${backendURL}/api/files/download-selection/`,
+      // const res = await axios.post(
+      //   `${backendURL}/api/files/download-selection/`,
+      //   { paths: checked },
+      //   { withCredentials: true }
+      // );
+
+      const res = await axiosInstance.post(
+        '/api/files/download-selection/',
         { paths: checked },
-        { withCredentials: true }
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            // 'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+          },
+        }
       );
+
+      // const response = await axios.post(
+      //   // `https://datahubbe.onrender.com/api/files/upload-folder/`,
+      //   backendURL + '/api/files/upload-folder/',
+      //   formData,
+      //   {
+      //     headers: { 'Content-Type': 'multipart/form-data' },
+      //     withCredentials: true,
+      //   }
+      // );
+
+      // const accessToken = localStorage.getItem('accessToken');
+      // const response = await axiosInstance.post('/api/files/upload-folder/',
+      //   formData,
+      //   {
+      //     headers: {
+      //       'Content-Type': 'multipart/form-data',
+      //       // 'Authorization': `Bearer ${accessToken}`,
+      //     }
+      //   }
+      // );
 
       const downloadUrl = res.data.url;
       toast.success('Download ready', { id: toastId });

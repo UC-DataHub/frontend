@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
+import axiosInstance from '@/utils/axiosInstance';
 
 const Footer = () => {
 
@@ -36,9 +37,7 @@ const Footer = () => {
         message: form.message,
       };
       // await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/contact/`, form);
-      await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/contact/`, payload, {
-        withCredentials: true,
-      });
+      await axiosInstance.post(`/api/contact/`, payload);
       setStatus('success');
       toast.success('Message sent successfully!');
       setForm({ name: user?.name || '', email: user?.email || '', message: '' });

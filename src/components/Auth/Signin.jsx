@@ -396,72 +396,72 @@ import LoadingOverlay from '@/components/Datasets/LoadingOverlay'
 import { Eye, EyeOff } from 'lucide-react';
 
 const Signin = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(false)
+const [email, setEmail] = useState('')
+const [password, setPassword] = useState('')
+const [showPassword, setShowPassword] = useState(false)
 
-  const router = useRouter()
-  const dispatch = useDispatch()
-  const { loading, error, user } = useSelector((state) => state.auth)
+const router = useRouter()
+const dispatch = useDispatch()
+const { loading, error, user } = useSelector((state) => state.auth)
 
-  const submit = async (e) => {
-    e.preventDefault()
-    const result = await dispatch(login({ email, password }))
-    if (login.fulfilled.match(result)) {
-      router.push('/')
-    }
+const submit = async (e) => {
+  e.preventDefault()
+  const result = await dispatch(login({ email, password }))
+  if (login.fulfilled.match(result)) {
+    router.push('/')
   }
+}
 
-  return (
-    <>
-      <button
-        onClick={() => router.push('/')}
-        className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 dark:hover:text-white"
-      >
-        ✕
-      </button>
-      {loading && <LoadingOverlay message="Logging in..." />}
-      <form
-        className="flex flex-col items-center justify-center h-screen"
-        onSubmit={submit}
-      >
-        <h1 className="text-2xl mb-4">Sign In</h1>
+return (
+  <>
+    <button
+      onClick={() => router.push('/')}
+      className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 dark:hover:text-white"
+    >
+      ✕
+    </button>
+    {loading && <LoadingOverlay message="Logging in..." />}
+    <form
+      className="flex flex-col items-center justify-center h-screen"
+      onSubmit={submit}
+    >
+      <h1 className="text-2xl mb-4">Sign In</h1>
+      <input
+        type="email"
+        placeholder="Email"
+        className="mb-2 p-2 border rounded w-80"
+        required
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <div className="relative w-80 mb-2">
         <input
-          type="email"
-          placeholder="Email"
-          className="mb-2 p-2 border rounded w-80"
+          type={showPassword ? 'text' : 'password'}
+          placeholder="Password (min 8 chars)"
+          className="p-2 border rounded w-full pr-10"
           required
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={e => setPassword(e.target.value)}
         />
-        <div className="relative w-80 mb-2">
-          <input
-            type={showPassword ? 'text' : 'password'}
-            placeholder="Password (min 8 chars)"
-            className="p-2 border rounded w-full pr-10"
-            required
-            onChange={e => setPassword(e.target.value)}
-          />
-          <button
-            type="button"
-            onClick={() => setShowPassword(prev => !prev)}
-            className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-800"
-          >
-            {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-          </button>
-        </div>
-        <button type="submit" className="p-2 bg-blue-500 text-white rounded">
-          {loading ? 'Signing in...' : 'Sign In'}
+        <button
+          type="button"
+          onClick={() => setShowPassword(prev => !prev)}
+          className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-800"
+        >
+          {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
         </button>
-        {error && <p className="text-red-500 mt-2">{error}</p>}
-        <p className="mt-4">
-          Don&apos;t have an account?{' '}
-          <a href="/auth/signup" className="text-blue-500">
-            Sign Up
-          </a>
-        </p>
-      </form>
-    </>
-  )
+      </div>
+      <button type="submit" className="p-2 bg-blue-500 text-white rounded">
+        {loading ? 'Signing in...' : 'Sign In'}
+      </button>
+      {error && <p className="text-red-500 mt-2">{error}</p>}
+      <p className="mt-4">
+        Don&apos;t have an account?{' '}
+        <a href="/auth/signup" className="text-blue-500">
+          Sign Up
+        </a>
+      </p>
+    </form>
+  </>
+)
 }
 
 export default Signin
