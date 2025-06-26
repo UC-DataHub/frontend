@@ -44,7 +44,7 @@ const Header = () => {
     <header
       className={`fixed left-0 top-0 z-50 w-full bg-white shadow dark:bg-black`}
     >
-      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 sm:px-8 sm:flex 2xl:px-0">
+      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 sm:px-8 flex 2xl:px-0">
         <div className="flex w-full mx-4 sm:mx-0 my-0 sm:my-0 items-center justify-between sm:w-1/4 sm:w-1/3">
           <Link href="/" className="flex items-center">
             <div className="sm:w-68 w-32 h-16 sm:h-22 flex items-center">
@@ -92,9 +92,20 @@ const Header = () => {
                 <li key={key} className={menuItem.submenu && 'group relative'}>
                   {menuItem.submenu ? (
                     <>
-                      <button
-                        onClick={() => setDropdownToggler(!dropdownToggler)}
-                        className="flex cursor-pointer items-center justify-between gap-3 hover:text-primary"
+                      <div
+                        // onClick={() => setDropdownToggler(!dropdownToggler)}
+                        onClick={() => {
+                          if (menuItem.path) { // If the menu item has a path, navigate to it
+                            router.push(menuItem.path)
+                          }
+                          setDropdownToggler(!dropdownToggler)
+                        }}
+                        className={`flex cursor-pointer items-center justify-between gap-3 hover:text-primary ${
+                        pathUrl === menuItem.path
+                          ? 'text-primary hover:text-primary'
+                          : 'hover:text-primary'
+                          }
+                        `}
                       >
                         {menuItem.title}
                         <span>
@@ -106,10 +117,22 @@ const Header = () => {
                             <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
                           </svg>
                         </span>
-                      </button>
+                      </div>
 
                       <ul className={`dropdown ${dropdownToggler ? 'flex' : ''}`}>
-                        {menuItem.submenu.map((item, key) => (
+                        <li className="hover:text-primary border-b border-gray-200 pb-4 mb-2">
+                          <Link
+                            href={menuItem.path || '#'}
+                            className={
+                              pathUrl === menuItem.path
+                                ? 'text-primary hover:text-primary'
+                                : 'hover:text-primary'
+                            }
+                          >
+                            {menuItem.title}
+                          </Link>
+                        </li>
+                        {menuItem.submenu.slice(1,).map((item, key) => (
                           <li key={key} className="hover:text-primary">
                             <Link href={item.path || '#'}>{item.title}</Link>
                           </li>

@@ -4,6 +4,26 @@ const menuData = [
     title: 'About Us',
     newTab: false,
     path: '/',
+    submenu: [
+      {
+        id: 11,
+        title: 'About Us',
+        newTab: false,
+        path: '/'
+      },
+      {
+        id: 12,
+        title: 'Publications',
+        newTab: false,
+        path: '/publications',
+      },
+      {
+        id: 13,
+        title: 'How to Cite',
+        newTab: false,
+        path: '/how-to-cite',
+      }
+    ]
   },
 
   {
@@ -12,12 +32,12 @@ const menuData = [
     newTab: false,
     path: '/datasets', // Link to the Datasets section
   },
-  {
-    id: 3,
-    title: 'Publications',
-    newTab: false,
-    path: '/publications', // Link to the Publications section
-  },
+  // {
+  //   id: 3,
+  //   title: 'Publications',
+  //   newTab: false,
+  //   path: '/publications', // Link to the Publications section
+  // },
   // {
   //   id: 4,
   //   title: 'News & Updates',
