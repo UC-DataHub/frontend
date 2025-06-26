@@ -4,6 +4,7 @@
 
 
 export default async function PublicationsPage() {
+  const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://backend-nx4f.onrender.com';
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/publications/`, {
     next: { revalidate: 60 }, // or `cache: 'no-store'`
   });
