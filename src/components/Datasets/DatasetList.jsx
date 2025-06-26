@@ -37,6 +37,12 @@ export default function DatasetList() {
       );
     }
 
+    if (filters.title) {
+      filtered = filtered.filter((dataset) =>
+        dataset.title.toLowerCase().includes(filters.title.toLowerCase())
+      );
+    }
+
     if (filters.description) {
       filtered = filtered.filter((dataset) =>
         dataset.description.toLowerCase().includes(filters.description.toLowerCase())
@@ -81,6 +87,27 @@ export default function DatasetList() {
     fetchDatasets(); // Initial fetch on component mount
   }, [fetchDatasets]);
 
+  // Scroll to and highlight the dataset if hash is present in the URL
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (!hash) return;
+
+    // Delay until after filteredDatasets are rendered
+    const timeout = setTimeout(() => {
+      const targetEl = document.getElementById(hash);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        targetEl.classList.add('ring-4', 'ring-blue-500', 'transition', 'duration-1000');
+
+        setTimeout(() => {
+          targetEl.classList.remove('ring-4', 'ring-blue-500');
+        }, 3000);
+      }
+    }, 500); // Delay to allow rendering
+
+    return () => clearTimeout(timeout);
+  }, [filteredDatasets]);
+
   // Group files under their dataset name
   const groupByDataset = (files) => {
     const datasetMap = {};
@@ -93,6 +120,7 @@ export default function DatasetList() {
         datasetMap[datasetId] = {
           id: datasetId,
           name: dataset.name,
+          title: dataset.title || null, // Use title if available, otherwise use name
           description: dataset.description || 'No description available',
           created_at: dataset.created_at,
           updated_at: dataset.updated_at,
@@ -225,6 +253,7 @@ export default function DatasetList() {
         {filteredDatasets.slice(0, 5).map((dataset) => (
           <motion.div
             key={dataset.id}
+            id={dataset.name}
             variants={{
               hidden: { opacity: 0, y: -10 },
               visible: { opacity: 1, y: 0 },
@@ -263,7 +292,7 @@ export default function DatasetList() {
               className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle sm:text-lg md:text-xl lg:text-2xl
                 break-words sm:break-all md:break-normal md:break-words"
             >
-              {dataset.name
+              {dataset.title || dataset.name
                 ?.split('_')                            // split into words
                 .filter((w, i, arr) =>                  // remove "dataset" if it’s the last word
                   i !== arr.length - 1 || w.toLowerCase() !== 'dataset'
