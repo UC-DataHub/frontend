@@ -362,12 +362,12 @@ export default function DatasetList() {
             className="border-2 border-dashed border-blue-500 p-8 rounded-lg cursor-pointer hover:bg-blue-50 dark:hover:bg-gray-700 transition"
             onClick={() => {
               if (user) {
-                setShowUploadModal(true);
-                // if (user?.is_verified) {
-                //   setShowUploadModal(true);
-                // } else {
-                //   toast.error('Please verify your email to upload files.');
-                // }
+                // setShowUploadModal(true);
+                if (user?.is_verified) {
+                  setShowUploadModal(true);
+                } else {
+                  toast.error('You are not verified yet. Please contact the admin to verify your account.');
+                }
               } else {
                 toast.error('Login required to upload');
               }
