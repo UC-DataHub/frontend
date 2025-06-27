@@ -3,22 +3,6 @@ import toast from 'react-hot-toast'
 import axiosInstance from './axiosInstance'
 
 
-// export async function tryRefreshToken() {
-//   try {
-//     const res = await fetch('/api/auth/refresh', {
-//       method: 'POST',
-//       credentials: 'include',
-//     })
-
-//     const data = await res.json()
-//     return data.success
-//   } catch (e) {
-//     console.error('Token refresh failed:', e)
-//     return false
-//   }
-// }
-
-
 export async function tryRefreshToken() {
   const refresh = localStorage.getItem('refreshToken')
   const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000'

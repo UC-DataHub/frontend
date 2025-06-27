@@ -40,7 +40,7 @@ const About = () => {
 
   return (
     <div className="bg-white dark:bg-gray-900 py-16">
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* About Us Section */}
         <div className="lg:text-center">
@@ -131,7 +131,7 @@ const About = () => {
                 </div>
                 <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-2">
                   {/* {dataset.title} */}
-                  {dataset.name
+                  {dataset.title || dataset.name
                     ?.split('_')                            // split into words
                     .filter((w, i, arr) =>                  // remove "dataset" if it’s the last word
                       i !== arr.length - 1 || w.toLowerCase() !== 'dataset'

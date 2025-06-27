@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const SingleFeature = ({ feature, formatDatasetName }) => {
-  const { icon, name, description } = feature;
+  const { icon, name, title, description } = feature;
 
   return (
     <motion.div
@@ -43,7 +43,7 @@ const SingleFeature = ({ feature, formatDatasetName }) => {
 
       {/* Title */}
       <h3 className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle">
-        {name
+        {title || name
           ?.split('_')                            // split into words
           .filter((w, i, arr) =>                  // remove "dataset" if it’s the last word
             i !== arr.length - 1 || w.toLowerCase() !== 'dataset'
