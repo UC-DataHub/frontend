@@ -25,6 +25,15 @@ const truncateName = (name, maxLength = 15) => {
 };
 
 
+const CustomTooltip = ({ children, tooltipText }) => (
+  <span className="relative group cursor-pointer">
+    {children}
+    <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-1 hidden group-hover:block whitespace-nowrap rounded bg-black px-2 py-1 text-xs text-white z-50">
+      {tooltipText}
+    </span>
+  </span>
+);
+
 
 export default function FileTreeSelector({ backendURL, datasetName }) {
   const [treeData, setTreeData] = useState([]);
@@ -73,10 +82,17 @@ export default function FileTreeSelector({ backendURL, datasetName }) {
 
       return {
         value: node.path,
+        // label: (
+        //   <span title={node.name}>
+        //     {truncateName(node.name)} ({formatSize(node.size || 0)})
+        //   </span>
+        // ),
         label: (
-          <span title={node.name}>
-            {truncateName(node.name)} ({formatSize(node.size || 0)})
-          </span>
+          <CustomTooltip tooltipText={node.name}>
+            <span>
+              {truncateName(node.name)} ({formatSize(node.size || 0)})
+            </span>
+          </CustomTooltip>
         ),
         isFolder,
         // icon: isFolder

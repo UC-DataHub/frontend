@@ -67,21 +67,37 @@ export default function DatasetList() {
   }, [filters, datasets]);
 
   // Fetch and group datasets on mount
+  // const fetchDatasets = useCallback(async () => {
+  //   setLoading(true);
+  //   try {
+  //     // const response = await axios.get(`https://datahubbe.onrender.com/api/files/`);
+  //     const response = await axios.get(backendURL+'/api/files/');
+
+  //     if (response.status === 200) {
+  //       setDatasets(groupByDataset(response.data));
+  //     }
+  //   } catch (error) {
+  //     console.error('Error fetching datasets:', error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }, []);
+
   const fetchDatasets = useCallback(async () => {
     setLoading(true);
     try {
-      // const response = await axios.get(`https://datahubbe.onrender.com/api/files/`);
-      const response = await axios.get(backendURL+'/api/files/');
-
+      const response = await axiosInstance.get('/api/datasets/');  // <-- get pre-annotated, ordered list
       if (response.status === 200) {
-        setDatasets(groupByDataset(response.data));
+        setDatasets(response.data);    // no need for groupBy, data is ready
       }
     } catch (error) {
       console.error('Error fetching datasets:', error);
+      toast.error('Failed to load datasets.');
     } finally {
       setLoading(false);
     }
   }, []);
+
 
   useEffect(() => {
     fetchDatasets(); // Initial fetch on component mount
@@ -109,37 +125,37 @@ export default function DatasetList() {
   }, [filteredDatasets]);
 
   // Group files under their dataset name
-  const groupByDataset = (files) => {
-    const datasetMap = {};
+  // const groupByDataset = (files) => {
+  //   const datasetMap = {};
 
-    files.forEach((file) => {
-      const dataset = file.dataset;
-      const datasetId = dataset.id;
+  //   files.forEach((file) => {
+  //     const dataset = file.dataset;
+  //     const datasetId = dataset.id;
 
-      if (!datasetMap[datasetId]) {
-        datasetMap[datasetId] = {
-          id: datasetId,
-          name: dataset.name,
-          title: dataset.title || null, // Use title if available, otherwise use name
-          description: dataset.description || 'No description available',
-          created_at: dataset.created_at,
-          updated_at: dataset.updated_at,
-          icon: dataset.icon || '/images/icon/BubbleID.png',
-          files: [],
-        };
-      }
+  //     if (!datasetMap[datasetId]) {
+  //       datasetMap[datasetId] = {
+  //         id: datasetId,
+  //         name: dataset.name,
+  //         title: dataset.title || null, // Use title if available, otherwise use name
+  //         description: dataset.description || 'No description available',
+  //         created_at: dataset.created_at,
+  //         updated_at: dataset.updated_at,
+  //         icon: dataset.icon || '/images/icon/BubbleID.png',
+  //         files: [],
+  //       };
+  //     }
 
-      datasetMap[datasetId].files.push({
-        id: file.id,
-        file_name: file.file_name,
-        file_type: file.file_type,
-        file_path: file.file_path,
-        file_size: file.file_size,
-      });
-    });
+  //     datasetMap[datasetId].files.push({
+  //       id: file.id,
+  //       file_name: file.file_name,
+  //       file_type: file.file_type,
+  //       file_path: file.file_path,
+  //       file_size: file.file_size,
+  //     });
+  //   });
 
-    return Object.values(datasetMap);
-  };
+  //   return Object.values(datasetMap);
+  // };
 
   // Toggle dataset details view
   const handleViewDetails = (datasetName) => {
