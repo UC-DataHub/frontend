@@ -26,8 +26,8 @@ const SingleFeature = ({ feature, formatDatasetName }) => {
         {/* <Image src={icon} alt={name} fill className="object-contain" /> */}
         <Image
           src={
-            name === 'Bubble_ID_Dataset'
-              ? '/images/icon/BubbleID.png'
+            name === 'Boiling_Dataset'
+              ? '/images/icon/Boiling.png'
               : name === 'Condensation_Dataset'
               ? '/images/icon/Condensation.png'
               : name === 'Immersion_Cooling_Dataset'

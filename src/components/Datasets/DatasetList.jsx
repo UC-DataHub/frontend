@@ -285,8 +285,8 @@ export default function DatasetList() {
             <div className="relative w-full h-[200px] mx-auto flex items-center justify-center bg-white dark:bg-blacksection">
               <Image
                 src={
-                  dataset.name === 'Bubble_ID_Dataset'
-                    ? '/images/icon/BubbleID.png'
+                  dataset.name === 'Boiling_Dataset'
+                    ? '/images/icon/Boiling.png'
                     : dataset.name === 'Condensation_Dataset'
                     ? '/images/icon/Condensation.png'
                     : dataset.name === 'Immersion_Cooling_Dataset'

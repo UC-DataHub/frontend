@@ -33,3 +33,25 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# Dockerization 🐳
+```
+docker build -t frontend-uc-datahub .
+```
+
+### 🚀 How to run it locally
+Run it with:
+```bash
+docker run -p 3000:3000 frontend-uc-datahub
+```
+Then open: http://localhost:3000
+
+### 📦 How to move this image to your test VM
+```
+docker save -o frontend-uc-datahub.tar frontend-uc-datahub
+```
+Copy the .tar file to your test VM:
+```
+docker load -i frontend-uc-datahub.tar
+docker run -p 3000:3000 frontend-uc-datahub
+```
