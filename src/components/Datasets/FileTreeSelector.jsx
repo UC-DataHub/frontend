@@ -128,49 +128,46 @@ export default function FileTreeSelector({ backendURL, datasetName }) {
     const toastId = toast.loading('Preparing download...');
 
     try {
-      // const res = await axios.post(
-      //   `${backendURL}/api/files/download-selection/`,
-      //   { paths: checked },
-      //   { withCredentials: true }
-      // );
 
+      // ***********************
+      // THIS IS FOR S3 Storage
+      // ***********************
       const res = await axiosInstance.post(
         '/api/files/download-selection/',
         { paths: checked },
         {
           headers: {
             'Content-Type': 'application/json',
-            // 'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
           },
         }
       );
-
-      // const response = await axios.post(
-      //   // `https://datahubbe.onrender.com/api/files/upload-folder/`,
-      //   backendURL + '/api/files/upload-folder/',
-      //   formData,
-      //   {
-      //     headers: { 'Content-Type': 'multipart/form-data' },
-      //     withCredentials: true,
-      //   }
-      // );
-
-      // const accessToken = localStorage.getItem('accessToken');
-      // const response = await axiosInstance.post('/api/files/upload-folder/',
-      //   formData,
-      //   {
-      //     headers: {
-      //       'Content-Type': 'multipart/form-data',
-      //       // 'Authorization': `Bearer ${accessToken}`,
-      //     }
-      //   }
-      // );
-
       const downloadUrl = res.data.url;
       toast.success('Download ready', { id: toastId });
-
-      // Trigger browser download
       window.location.href = downloadUrl;
+      // ***********************
+
+
+
+      // ***********************
+      // THIS IS FOR LOCAL MEDIA Storage
+      // ***********************
+      // const res = await axiosInstance.post(
+      //   `/api/files/download-selection/`,
+      //   { paths: checked },
+      //   { responseType: 'blob' }
+      // );
+      // const blob = new Blob([res.data]);
+      // const url = window.URL.createObjectURL(blob);
+      // const link = document.createElement('a');
+      // link.href = url;
+      // link.setAttribute('download', 'selected_files.zip');
+      // document.body.appendChild(link);
+      // link.click();
+      // link.remove();
+      // toast.success('Download ready', { id: toastId });
+      // ***********************
+
+
     } catch (err) {
       console.error('Download error:', err);
       toast.error('Error preparing download', { id: toastId });

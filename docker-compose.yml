@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres-uc-datahub
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: backend2025
+      POSTGRES_DB: datahubdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./DataHubBE-backend_data_store
+    container_name: backend-uc-datahub
+    command: bash -c "python backend/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./DataHubBE-backend_data_store:/app
+      - media_data:/app/backend/media
+    env_file:
+      - ./DataHubBE-backend_data_store/.env
+    depends_on:
+      - postgres
+    networks:
+      - datahub_net
+    ports:
+      - "8000:8000"  # ✅ expose backend directly for now
+
+  frontend:
+    build:
+      context: ./DataHubGUI-main
+    container_name: frontend-uc-datahub
+    env_file:
+      - ./DataHubGUI-main/.env.local
+    depends_on:
+      - backend
+    networks:
+      - datahub_net
+    ports:
+      - "3000:3000"  # ✅ expose frontend directly for now
+
+volumes:
+  postgres_data:
+  media_data:
+
+networks:
+  datahub_net:
+    driver: bridge
