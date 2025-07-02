@@ -14,6 +14,7 @@ import FileTreeSelector from './FileTreeSelector';
 import { useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import axiosInstance from '@/utils/axiosInstance';
+import { ArrowRight, ArrowRightToLine, ArrowUpRight, LucideAArrowUp } from 'lucide-react';
 
 
 export default function DatasetList() {
@@ -316,7 +317,23 @@ export default function DatasetList() {
                 .join(' ')                              // join back with space
               }
             </h3>
-            <p className="mb-5 sm:h-[160px] overflow-hidden text-ellipsis">{dataset.description}</p>
+            <p className="sm:h-[160px] mb-5 overflow-hidden text-ellipsis">{dataset.description}</p>
+
+            <button
+              className="
+              w- mx-auto block text-center
+              text-sm font-medium
+              text-blue-600 dark:text-blue-400
+              border border-blue-600 dark:border-blue-400
+              rounded-lg py-2 px-4
+              hover:bg-blue-50 dark:hover:bg-blue-900/20
+              transition-colors
+            "
+              onClick={() => window.open(`${backendURL}/media/${dataset.name}/README.pdf`, '_blank')}
+            >
+              Open README.pdf
+              <ArrowUpRight className="inline ml-1" size={16} />
+            </button>
 
             {/* View Details Button */}
             {/* <button
