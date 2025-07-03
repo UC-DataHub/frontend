@@ -28,7 +28,7 @@ export default function DatasetList() {
   const user = useSelector((state) => state.auth.user);
 
   const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://backend-nx4f.onrender.com';
-  const awsBucketURL = process.env.NEXT_PUBLIC_AWS_BUCKET_URL;
+  const awsBucketURL = 'https://uc-datahub-adam.s3.us-east-1.amazonaws.com';
 
   useEffect(() => {
     let filtered = datasets;
