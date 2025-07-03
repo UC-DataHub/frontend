@@ -28,6 +28,7 @@ export default function DatasetList() {
   const user = useSelector((state) => state.auth.user);
 
   const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://backend-nx4f.onrender.com';
+  const awsBucketURL = process.env.NEXT_PUBLIC_AWS_BUCKET_URL;
 
   useEffect(() => {
     let filtered = datasets;
@@ -329,7 +330,9 @@ export default function DatasetList() {
               hover:bg-blue-50 dark:hover:bg-blue-900/20
               transition-colors
             "
-              onClick={() => window.open(`${backendURL}/media/${dataset.name}/README.pdf`, '_blank')}
+              onClick={() => {
+                awsBucketURL ? window.open(`${awsBucketURL}/${dataset.name}/README.pdf`, '_blank') : toast.error('README.pdf currently unavailable, please download it from the dataset folder below.');
+              }}
             >
               Open README.pdf
               <ArrowUpRight className="inline ml-1" size={16} />
