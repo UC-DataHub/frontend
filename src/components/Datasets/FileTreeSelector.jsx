@@ -112,7 +112,7 @@ export default function FileTreeSelector({ backendURL, datasetName }) {
       return;
     }
     if (!user?.is_verified) {
-      toast.error('You are not verified yet. Please contact the admin to verify your account.');
+      toast.error('You are not verified yet. Please contact the administrator using the "CONTACT US” bar below to verify your account.');
       return;
     }
     if (checked.length === 0) {

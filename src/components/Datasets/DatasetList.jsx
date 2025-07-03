@@ -402,7 +402,7 @@ export default function DatasetList() {
                 if (user?.is_verified) {
                   setShowUploadModal(true);
                 } else {
-                  toast.error('You are not verified yet. Please contact the admin to verify your account.');
+                  toast.error('You are not verified yet. Please contact the administrator using the "CONTACT US” bar below to verify your account.');
                 }
               } else {
                 toast.error('Login required to upload');
