@@ -2,6 +2,10 @@
 /* prettier-ignore-file */
 /* eslint-disable */
 
+export const metadata = {
+  title: 'Publications',
+}
+
 
 export default async function PublicationsPage() {
   const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://backend-nx4f.onrender.com';
