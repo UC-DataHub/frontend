@@ -20,10 +20,18 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: {
-    default: "MulphaseHUB",
+    default: "MulphaseHUB | Multiphase Data Hub",
     template: "%s | MulphaseHUB",
   },
-  description: "MulphaseHUB is a collaborative platform for sharing and accessing structured multiphase datasets from simulations and experiments. Upload, browse, and download high-quality datasets with rich metadata and folder hierarchy.",
+  description:
+    "MulphaseHUB is a collaborative multiphase data hub for sharing, accessing, and managing structured multiphase datasets from experiments and simulations. " +
+    "Explore our multiphase data repository, upload new datasets, and collaborate with the community through high-quality metadata, clear folder hierarchy, and versioned downloads.",
+
+  icons: {
+    icon: [
+      { url: '/favicon.ico' }, // Standard
+    ],
+  },
 };
 
 async function getUser() {
