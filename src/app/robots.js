@@ -5,6 +5,6 @@ export default function robots() {
       allow: '/',
       disallow: ['/verify-users/', '/admin/', '/api/'],
     },
-    sitemap: 'https://multiphasehub.org/sitemap.xml',
+    sitemap: 'https://www.multiphasehub.org/sitemap.xml',
   }
 }

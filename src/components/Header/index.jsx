@@ -15,6 +15,7 @@ const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false)
   const [dropdownToggler, setDropdownToggler] = useState(false)
   const [stickyMenu, setStickyMenu] = useState(false)
+  const [pendingCount, setPendingCount] = useState(0);
 
   const user = useSelector((state) => state.auth.user)
 
@@ -22,9 +23,27 @@ const Header = () => {
   const router = useRouter()
   const dispatch = useDispatch()
 
+  // useEffect(() => {
+  //   dispatch(fetchUser()) // ✅ Try to get current user on mount
+  // }, [dispatch])
+
   useEffect(() => {
-    dispatch(fetchUser()) // ✅ Try to get current user on mount
-  }, [dispatch])
+    dispatch(fetchUser());
+
+    const fetchPendingCount = async () => {
+      try {
+        const res = await axiosInstance.get('/api/auth/users/');
+        setPendingCount(res.data.length);
+      } catch (err) {
+        console.error('Failed to fetch pending users count');
+      }
+    };
+
+    if (user?.is_account_verifier) {
+      fetchPendingCount();
+    }
+
+  }, [dispatch]);
 
   const handleLogout = async () => {
     await dispatch(logout())
@@ -163,9 +182,22 @@ const Header = () => {
                 <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
                   Hello, {user.name || user.email} 👋
                 </span>
+                {user?.is_account_verifier && (
+                  <div className="relative">
+                    <Link
+                      href="/verify-users"
+                      className="flex items-center justify-center rounded-lg border border-green-600 px-5 py-2 text-sm text-green-400 hover:bg-green-600 hover:text-white transition"
+                    >
+                      Verify Users
+                    </Link>
+                    {pendingCount > 0 && (
+                      <span className="absolute -top-1 -right-1 inline-flex h-3 w-3 rounded-full bg-red-500 border-2 border-black dark:border-black"></span>
+                    )}
+                  </div>
+                )}
                 <button
                   onClick={handleLogout}
-                  className="flex items-center justify-center rounded-lg bg-primary px-7.5 py-2.5 text-regular text-white ease-in-out hover:bg-primaryho"
+                  className="flex items-center justify-center rounded-lg border border-primary px-7.5 py-2.5 text-regular text-white hover:text-primary ease-in-out hover:border-primaryho"
                 >
                   Logout
                 </button>

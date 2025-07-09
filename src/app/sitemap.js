@@ -6,13 +6,13 @@ export default async function sitemap() {
 
   return [
     {
-      url: 'https://multiphasehub.org/',
+      url: 'https://www.multiphasehub.org',
       lastModified: now,
       changeFrequency: 'daily',
       priority: 1.0,
     },
     {
-      url: 'https://multiphasehub.org/datasets',
+      url: 'https://www.multiphasehub.org/datasets',
       lastModified: now,
       changeFrequency: 'daily',
       priority: 0.9,
@@ -24,25 +24,25 @@ export default async function sitemap() {
     //   priority: 0.8,
     // })),
     {
-      url: 'https://multiphasehub.org/publications',
+      url: 'https://www.multiphasehub.org/publications',
       lastModified: now,
       changeFrequency: 'daily',
       priority: 0.8,
     },
     {
-      url: 'https://multiphasehub.org/how-to-cite',
+      url: 'https://www.multiphasehub.org/how-to-cite',
       lastModified: now,
       changeFrequency: 'daily',
       priority: 0.5,
     },
     {
-      url: 'https://multiphasehub.org/signin',
+      url: 'https://www.multiphasehub.org/signin',
       lastModified: now,
       changeFrequency: 'daily',
       priority: 0.2,
     },
     {
-      url: 'https://multiphasehub.org/signup',
+      url: 'https://www.multiphasehub.org/signup',
       lastModified: now,
       changeFrequency: 'daily',
       priority: 0.2,
