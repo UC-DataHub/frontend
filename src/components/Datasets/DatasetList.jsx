@@ -320,23 +320,47 @@ export default function DatasetList() {
             </h3>
             <p className="sm:h-[160px] mb-5 overflow-hidden text-ellipsis">{dataset.description}</p>
 
-            <button
-              className="
-              w- mx-auto block text-center
-              text-sm font-medium
-              text-blue-600 dark:text-blue-400
-              border border-blue-600 dark:border-blue-400
-              rounded-lg py-2 px-4
-              hover:bg-blue-50 dark:hover:bg-blue-900/20
-              transition-colors
-            "
-              onClick={() => {
-                awsBucketURL ? window.open(`${awsBucketURL}/${dataset.name}/README.pdf`, '_blank') : toast.error('README.pdf currently unavailable, please download it from the dataset folder below.');
-              }}
-            >
-              Open README.pdf
-              <ArrowUpRight className="inline ml-1" size={16} />
-            </button>
+            <div className="flex flex-col items-center justify-between mt-auto gap-4">
+              <button
+                className="
+                mx-auto block text-center
+                text-sm font-medium
+                text-blue-600 dark:text-blue-400
+                border border-blue-600 dark:border-blue-400
+                rounded-lg py-2 px-4
+                hover:bg-blue-50 dark:hover:bg-blue-900/20
+                transition-colors
+              "
+                onClick={() => {
+                  awsBucketURL ? window.open(`${awsBucketURL}/${dataset.name}/README.pdf`, '_blank') : toast.error('README.pdf currently unavailable, please download it from the dataset folder below.');
+                }}
+              >
+                Open README.pdf
+                <ArrowUpRight className="inline ml-1" size={16} />
+              </button>
+
+              {
+                dataset.name === 'Condensation_Dataset' && (
+                  <button
+                    className="
+                      mx-auto block text-center
+                      text-sm font-medium
+                      text-primary
+                      border border-primary
+                      rounded-lg py-2 px-4
+                      hover:bg-primary/10
+                      transition-colors
+                    "
+                    onClick={() => {
+                      window.open('https://colab.research.google.com/drive/1gcy1rJ9nVLGaoEcYvkf3sCZQIPFoQeAk?usp=sharing', '_blank');
+                    }}
+                  >
+                    Open Colab Notebook
+                    <ArrowUpRight className="inline ml-1" size={16} />
+                  </button>
+                )
+              }
+            </div>
 
             {/* View Details Button */}
             {/* <button
