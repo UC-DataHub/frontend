@@ -197,7 +197,7 @@ const Header = () => {
                 )}
                 <button
                   onClick={handleLogout}
-                  className="flex items-center justify-center rounded-lg border border-primary px-7.5 py-2.5 text-regular text-white hover:text-primary ease-in-out hover:border-primaryho"
+                  className="flex items-center justify-center rounded-lg border border-primary px-7.5 py-2.5 text-regular dark:text-white text-primary hover:text-primary ease-in-out hover:border-primaryho"
                 >
                   Logout
                 </button>

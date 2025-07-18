@@ -14,7 +14,8 @@ import FileTreeSelector from './FileTreeSelector';
 import { useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import axiosInstance from '@/utils/axiosInstance';
-import { ArrowRight, ArrowRightToLine, ArrowUpRight, LucideAArrowUp } from 'lucide-react';
+import { ArrowRight, ArrowRightToLine, ArrowUpRight, LucideAArrowUp, Route } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 
 export default function DatasetList() {
@@ -26,6 +27,7 @@ export default function DatasetList() {
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [loading, setLoading] = useState(true);
   const user = useSelector((state) => state.auth.user);
+  const router = useRouter();
 
   const backendURL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://backend-nx4f.onrender.com';
   const awsBucketURL = 'https://uc-datahub-adam.s3.us-east-1.amazonaws.com';
@@ -321,6 +323,30 @@ export default function DatasetList() {
             <p className="sm:h-[160px] mb-5 overflow-hidden text-ellipsis">{dataset.description}</p>
 
             <div className="flex flex-col items-center justify-between mt-auto gap-4">
+            {
+                // dataset.name === 'Condensation_Dataset' || dataset.name === 'Boiling_Dataset' && (
+                ['Condensation_Dataset', 'Boiling_Dataset'].includes(dataset.name) && (
+                  <button
+                    className="
+                      mx-auto block text-center
+                      text-sm font-medium
+                      text-primary
+                      border border-primary
+                      rounded-lg py-2 px-4
+                      hover:bg-primary/10
+                      transition-colors
+                    "
+                    onClick={() => {
+                      // window.open('https://colab.research.google.com/drive/1gcy1rJ9nVLGaoEcYvkf3sCZQIPFoQeAk?usp=sharing', '_blank');
+                      router.push(`/notebook/${dataset.name}`);
+                    }}
+                  >
+                    Open Jupyter Notebook
+                    <ArrowUpRight className="inline ml-1" size={16} />
+                  </button>
+                )
+              }
+              
               <button
                 className="
                 mx-auto block text-center
@@ -339,27 +365,7 @@ export default function DatasetList() {
                 <ArrowUpRight className="inline ml-1" size={16} />
               </button>
 
-              {
-                dataset.name === 'Condensation_Dataset' && (
-                  <button
-                    className="
-                      mx-auto block text-center
-                      text-sm font-medium
-                      text-primary
-                      border border-primary
-                      rounded-lg py-2 px-4
-                      hover:bg-primary/10
-                      transition-colors
-                    "
-                    onClick={() => {
-                      window.open('https://colab.research.google.com/drive/1gcy1rJ9nVLGaoEcYvkf3sCZQIPFoQeAk?usp=sharing', '_blank');
-                    }}
-                  >
-                    Open Colab Notebook
-                    <ArrowUpRight className="inline ml-1" size={16} />
-                  </button>
-                )
-              }
+
             </div>
 
             {/* View Details Button */}

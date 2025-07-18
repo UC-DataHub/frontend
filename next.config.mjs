@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.ipynb$/,
+      use: 'json-loader',
+      type: 'javascript/auto',
+    });
+    return config;
+  },
   images: {
     remotePatterns: [
       {
