@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 
 export default function NotebookListPage() {
-  const notebooksDir = path.join(process.cwd(), 'src', 'app', '(site)', 'notebook', '[dataset]');
+  const notebooksDir = path.join(process.cwd(), 'src', 'app', '(site)', 'notebooks', '[dataset]');
   const files = fs.readdirSync(notebooksDir);
   const ipynbFiles = files.filter(file => file.endsWith('.json'));
 
@@ -17,7 +17,7 @@ export default function NotebookListPage() {
           return (
             <li key={idx}>
               <Link
-                href={`/notebook/${name.replace(/\.ipynb$/, '')}`}
+                href={`/notebooks/${name.replace(/\.ipynb$/, '')}`}
                 className="block p-4 rounded bg-white hover:bg-gray-50 transition border border-gray-200"
               >
                 <span className="text-lg font-medium text-blue-600">{name}</span>

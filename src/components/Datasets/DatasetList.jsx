@@ -338,7 +338,7 @@ export default function DatasetList() {
                     "
                     onClick={() => {
                       // window.open('https://colab.research.google.com/drive/1gcy1rJ9nVLGaoEcYvkf3sCZQIPFoQeAk?usp=sharing', '_blank');
-                      router.push(`/notebook/${dataset.name}`);
+                      router.push(`/notebooks/${dataset.name}`);
                     }}
                   >
                     Open Jupyter Notebook
@@ -346,7 +346,7 @@ export default function DatasetList() {
                   </button>
                 )
               }
-              
+
               <button
                 className="
                 mx-auto block text-center

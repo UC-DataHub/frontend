@@ -1,6 +1,6 @@
 'use client';
 
-import NotebookPage from "@/react-jupyter/NotebookPage";
+// import NotebookPage from "@/react-jupyter/NotebookPage";
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import toast from "react-hot-toast";
@@ -41,7 +41,7 @@ export default function NotebookPageWrapper() {
             Open in Google Colab
             <FaGoogle className="inline ml-1" />
           </a>
-          <NotebookPage ipynb={notebook} />
+          {/* <NotebookPage ipynb={notebook} /> */}
         </>
 
       )
