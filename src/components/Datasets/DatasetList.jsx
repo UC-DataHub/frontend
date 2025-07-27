@@ -321,9 +321,11 @@ export default function DatasetList() {
               }
             </h3>
             <p className="sm:h-[160px] mb-5 overflow-hidden text-ellipsis">{dataset.description}{' '}
-              <span onClick={() => router.push(`/datasets/${dataset.name}`)} className="text-sm text-blue-600 dark:text-blue-400 hover:underline cursor-pointer">
-                More Info
-              </span>
+              {['Condensation_Dataset', 'Drop_Impact_Dataset', 'Particle_Deposition_Dataset'].includes(dataset.name) && (
+                <span onClick={() => router.push(`/datasets/${dataset.name}`)} className="text-sm text-blue-600 dark:text-blue-400 hover:underline cursor-pointer">
+                  More Info
+                </span>
+              )}
             </p>
 
 
