@@ -1,0 +1,70 @@
+{
+  "name": "Particle_Deposition_Dataset",
+  "path": "Particle_Deposition_Dataset",
+  "type": "folder",
+  "size": 3332057,
+  "children": [
+    {
+      "name": "deposition_ellipsoidal_particles.avi",
+      "path": "Particle_Deposition_Dataset/deposition_ellipsoidal_particles.avi",
+      "type": "file",
+      "size": 268866,
+      "attributes": {
+        "shape": "ellipsoidal",
+        "aspect_ratio": 6.5,
+        "humidity": 40,
+        "concentration": 1.0,
+        "wettability": null,
+        "recording_method": "fluorescence"
+      }
+    },
+    {
+      "name": "deposition_spherical_particles.avi",
+      "path": "Particle_Deposition_Dataset/deposition_spherical_particles.avi",
+      "type": "file",
+      "size": 1005904,
+      "attributes": {
+        "shape": "spherical",
+        "aspect_ratio": 1.0,
+        "humidity": 40,
+        "concentration": 1.0,
+        "wettability": null,
+        "recording_method": "fluorescence"
+      }
+    },
+    {
+      "name": "deposition_carboxylPS_nano_particles.avi",
+      "path": "Particle_Deposition_Dataset/deposition_carboxylPS_nano_particles.avi",
+      "type": "file",
+      "size": 286786,
+      "attributes": {
+        "shape": "spherical",
+        "aspect_ratio": null,
+        "humidity": 35,
+        "concentration": 0.25,
+        "wettability": 74,
+        "recording_method": "interferometry"
+      }
+    },
+    {
+      "name": "deposition_carboxylatePS_nano_particles.avi",
+      "path": "Particle_Deposition_Dataset/deposition_carboxylatePS_nano_particles.avi",
+      "type": "file",
+      "size": 1613362,
+      "attributes": {
+        "shape": "spherical",
+        "aspect_ratio": null,
+        "humidity": 35,
+        "concentration": 0.25,
+        "wettability": 34,
+        "recording_method": "interferometry"
+      }
+    },
+    {
+      "name": "README.pdf",
+      "path": "Particle_Deposition_Dataset/README.pdf",
+      "type": "file",
+      "size": 157139
+    }
+  ]
+}

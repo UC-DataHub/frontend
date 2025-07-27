@@ -1,0 +1,113 @@
+{
+  "name": "Drop_Impact_Dataset",
+  "path": "Drop_Impact_Dataset",
+  "type": "folder",
+  "size": 103567289,
+  "children": [
+    {
+      "name": "mul_1cP_We_3p6_TIRM.gif",
+      "path": "Drop_Impact_Dataset/mul_1cP_We_3p6_TIRM.gif",
+      "type": "file",
+      "size": 98153,
+      "attributes": {
+        "mul": 1,
+        "We": 3.6,
+        "view": "TIRM"
+      }
+    },
+    {
+      "name": "mul_3cP_We_3p6_TIRM.gif",
+      "path": "Drop_Impact_Dataset/mul_3cP_We_3p6_TIRM.gif",
+      "type": "file",
+      "size": 1442992,
+      "attributes": {
+        "mul": 3,
+        "We": 3.6,
+        "view": "TIRM"
+      }
+    },
+    {
+      "name": "mul_10cP_We_3p7_TIRM.gif",
+      "path": "Drop_Impact_Dataset/mul_10cP_We_3p7_TIRM.gif",
+      "type": "file",
+      "size": 26090974,
+      "attributes": {
+        "mul": 10,
+        "We": 3.7,
+        "view": "TIRM"
+      }
+    },
+    {
+      "name": "mul_1cP_We_3p6_sideview.gif",
+      "path": "Drop_Impact_Dataset/mul_1cP_We_3p6_sideview.gif",
+      "type": "file",
+      "size": 3778736,
+      "attributes": {
+        "mul": 1,
+        "We": 3.6,
+        "view": "sideview"
+      }
+    },
+    {
+      "name": "mul_3cP_We_3p6_sideview.gif",
+      "path": "Drop_Impact_Dataset/mul_3cP_We_3p6_sideview.gif",
+      "type": "file",
+      "size": 1344399,
+      "attributes": {
+        "mul": 3,
+        "We": 3.6,
+        "view": "sideview"
+      }
+    },
+    {
+      "name": "mul_10cP_We_3p7_sideview.gif",
+      "path": "Drop_Impact_Dataset/mul_10cP_We_3p7_sideview.gif",
+      "type": "file",
+      "size": 29681901,
+      "attributes": {
+        "mul": 10,
+        "We": 3.7,
+        "view": "sideview"
+      }
+    },
+    {
+      "name": "mul_1cP_We_3p6_airfilm.gif",
+      "path": "Drop_Impact_Dataset/mul_1cP_We_3p6_airfilm.gif",
+      "type": "file",
+      "size": 3816832,
+      "attributes": {
+        "mul": 1,
+        "We": 3.6,
+        "view": "airfilm"
+      }
+    },
+    {
+      "name": "mul_3cP_We_3p6_airfilm.gif",
+      "path": "Drop_Impact_Dataset/mul_3cP_We_3p6_airfilm.gif",
+      "type": "file",
+      "size": 1583498,
+      "attributes": {
+        "mul": 3,
+        "We": 3.6,
+        "view": "airfilm"
+      }
+    },
+    {
+      "name": "mul_10cP_We_3p7_airfilm.gif",
+      "path": "Drop_Impact_Dataset/mul_10cP_We_3p7_airfilm.gif",
+      "type": "file",
+      "size": 30839377,
+      "attributes": {
+        "mul": 10,
+        "We": 3.7,
+        "view": "airfilm"
+      }
+    },
+    {
+      "name": "README.pdf",
+      "path": "Drop_Impact_Dataset/README.pdf",
+      "type": "file",
+      "size": 98153
+    }
+  ]
+}

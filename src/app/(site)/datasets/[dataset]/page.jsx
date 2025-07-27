@@ -368,8 +368,14 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
-import fileTreeJson from './CondensationData/condensation_file_tree.json';
-import filterMeta from './CondensationData/condensation_filter_metadata.json';
+import fileTreeJson_Condensation from './CondensationData/condensation_file_tree.json';
+import filterMeta_Condensation from './CondensationData/condensation_filter_metadata.json';
+import fileTreeJson_DropImpact from './DropImpactData/drop_impact_file_tree.json';
+import filterMeta_DropImpact from './DropImpactData/drop_impact_filter_metadata.json';
+import fileTreeJson_ParticleDeposition from './ParticleDepositionData/particle_deposition_file_tree.json';
+import filterMeta_ParticleDeposition from './ParticleDepositionData/particle_deposition_filter_metadata.json';
+import { useParams } from 'next/navigation';
+
 
 const collectFilteredFiles = (node, activeFilters, inheritedAttrs = {}) => {
   const attrs = node.attributes || inheritedAttrs;
@@ -397,11 +403,28 @@ const formatSize = (bytes) => {
 };
 
 export default function CondensationDatasetPage() {
+  const dataset = useParams().dataset;
   const user = useSelector((state) => state.auth.user);
   const [filters, setFilters] = useState({});
   const [checked, setChecked] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+
+  // const fileTreeJson = dataset === 'Condensation_Dataset' ? fileTreeJson_Condensation : fileTreeJson_DropImpact;
+  // const filterMeta = dataset === 'Condensation_Dataset' ? filterMeta_Condensation : filterMeta_DropImpact;
+  let fileTreeJson, filterMeta;
+  if (dataset === 'Condensation_Dataset') {
+    fileTreeJson = fileTreeJson_Condensation;
+    filterMeta = filterMeta_Condensation;
+  } else if (dataset === 'Drop_Impact_Dataset') {
+    fileTreeJson = fileTreeJson_DropImpact;
+    filterMeta = filterMeta_DropImpact;
+  } else if (dataset === 'Particle_Deposition_Dataset') {
+    fileTreeJson = fileTreeJson_ParticleDeposition;
+    filterMeta = filterMeta_ParticleDeposition;
+  } else {
+    return <p>Dataset not found</p>;
+  }
 
   const filteredFiles = collectFilteredFiles(fileTreeJson, filters);
   const visibleFiles = searchQuery
@@ -440,7 +463,7 @@ export default function CondensationDatasetPage() {
 
   return (
     <main className="max-w-[90%] mx-auto p-6 text-gray-800 dark:text-white mt-32 mb-12">
-      <h1 className="text-3xl font-bold mb-6">Condensation Dataset Page</h1>
+      <h1 className="text-3xl font-bold mb-6">{dataset?.replace(/_/g, ' ')} Page</h1>
       <div className="flex w-full gap-6 p-6 max-w-[1200px] mx-auto">
         <aside className="w-[300px] shrink-0 sticky top-28 h-fit bg-white dark:bg-dark-900 border rounded p-4">
           <div className="flex justify-between items-center mb-4">

@@ -1,0 +1,56 @@
+{
+  "shape": {
+    "description": "shape of the particles in the colloidal drop",
+    "unit": "enum",
+    "type": "enum",
+    "options": [
+      "ellipsoidal",
+      "spherical"
+    ]
+  },
+  "aspect_ratio": {
+    "description": "aspect ratio of the ellipsoidal particles",
+    "unit": "unitless",
+    "type": "numeric",
+    "options": [
+      1.0,
+      6.5
+    ]
+  },
+  "humidity": {
+    "description": "ambient relative humidity",
+    "unit": "%",
+    "type": "numeric",
+    "options": [
+      35,
+      40
+    ]
+  },
+  "concentration": {
+    "description": "particle volume fraction in the drop",
+    "unit": "%",
+    "type": "numeric",
+    "options": [
+      0.25,
+      1.0
+    ]
+  },
+  "wettability": {
+    "description": "particle surface contact angle with water",
+    "unit": "degrees",
+    "type": "numeric",
+    "options": [
+      34,
+      74
+    ]
+  },
+  "recording_method": {
+    "description": "method used to record the deposition process",
+    "unit": "enum",
+    "type": "enum",
+    "options": [
+      "fluorescence",
+      "interferometry"
+    ]
+  }
+}
