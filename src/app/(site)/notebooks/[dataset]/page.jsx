@@ -8,19 +8,26 @@ import toast from "react-hot-toast";
 /* DATASET NOTEBOOKS SHOULD BE IN JSON FORMAT, NOT IPYNB */
 import condensationNotebook from './Condensation_Dataset.json';
 import boilingNotebook from './Boiling_Dataset.json';
+import immersionCoolingNotebook from './Immersion_Cooling_Dataset.json';
 import { FaGoogle } from "react-icons/fa";
+// import "react-ipynb-renderer/dist/styles/dorkula.css";
+import { useRef } from "react";
+import NotebookPage from "@/react-jupyter/NotebookPage";
 
 
 export default function NotebookPageWrapper() {
 
   const { dataset } = useParams();
   const [notebook, setNotebook] = useState(null);
+  const ref = useRef(null);
 
   useEffect(() => {
     if (dataset === "Condensation_Dataset") {
       setNotebook(condensationNotebook);
     } else if (dataset === "Boiling_Dataset") {
       setNotebook(boilingNotebook);
+    } else if (dataset === "Immersion_Cooling_Dataset") {
+      setNotebook(immersionCoolingNotebook);
     } else {
       setNotebook(null);
     }
@@ -41,7 +48,15 @@ export default function NotebookPageWrapper() {
             Open in Google Colab
             <FaGoogle className="inline ml-1" />
           </a>
-          {/* <NotebookPage ipynb={notebook} /> */}
+          <NotebookPage ipynb={notebook} />
+          {/* <IpynbRenderer
+            ipynb={notebook}
+            // syntaxTheme={"darcula"}
+            // onLoad={() => {
+            //   console.log("loaded", ref.current);
+            // }}
+            ref={ref}
+          /> */}
         </>
 
       )

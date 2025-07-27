@@ -159,3 +159,20 @@ html::-webkit-scrollbar {
 .dark .rct-title:hover {
   background-color: #2c2c2c;
 }
+
+
+/* For light mode */
+.prose pre {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+}
+
+/* For dark mode */
+.dark .prose pre {
+  background-color: #1e293b;
+  /* slate-800 */
+  color: #e2e8f0;
+  /* slate-200 */
+}

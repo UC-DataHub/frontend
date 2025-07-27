@@ -1,0 +1,1264 @@
+{
+  "name": "Condensation_Dataset",
+  "path": "Condensation_Dataset",
+  "type": "folder",
+  "size": 67038223596,
+  "children": [
+    {
+      "name": "Gnpfh10_0_Gw25_x0_60_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_60_dirVD_p18_9",
+      "type": "folder",
+      "size": 3321700724,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_60_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 913914112,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_60_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 456944078,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_60_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 589877,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_60_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 455790038,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_60_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 590119,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_60_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2380140316,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_60_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27646296,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 10.0,
+        "Gw": 25.0,
+        "x": 0.6,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh10_0_Gw25_x0_80_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_80_dirVD_p18_9",
+      "type": "folder",
+      "size": 4989421762,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_80_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 1354622302,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_80_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 671944958,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_80_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 867451,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_80_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 680928406,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_80_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 881487,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_80_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 3607021747,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x0_80_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27777713,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 10.0,
+        "Gw": 25.0,
+        "x": 0.8,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh10_0_Gw25_x1_15_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x1_15_dirVD_p18_9",
+      "type": "folder",
+      "size": 3359470133,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x1_15_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 904258461,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x1_15_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 452261244,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x1_15_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 583705,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x1_15_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 450829928,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x1_15_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 583584,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x1_15_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2427359689,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh10_0_Gw25_x1_15_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27851983,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 10.0,
+        "Gw": 25.0,
+        "x": 1.15,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh11_2_Gw25_x1_00_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_00_dirVD_p18_9",
+      "type": "folder",
+      "size": 3611097174,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_00_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 970749139,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_00_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 485287571,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_00_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 627144,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_00_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 484207643,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_00_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 626781,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_00_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2612526045,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_00_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27821990,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 11.2,
+        "Gw": 25.0,
+        "x": 1.0,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh11_2_Gw25_x1_15_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_15_dirVD_p18_9",
+      "type": "folder",
+      "size": 3411628862,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_15_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 911657041,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_15_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 455816486,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_15_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 588666,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_15_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 454663223,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_15_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 588666,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_15_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2472157016,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh11_2_Gw25_x1_15_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27814805,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 11.2,
+        "Gw": 25.0,
+        "x": 1.15,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh11_8_Gw25_x0_60_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh11_8_Gw25_x0_60_dirVD_p18_9",
+      "type": "folder",
+      "size": 3447224445,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh11_8_Gw25_x0_60_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 945661212,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh11_8_Gw25_x0_60_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 472755718,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh11_8_Gw25_x0_60_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 610568,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh11_8_Gw25_x0_60_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 471684358,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh11_8_Gw25_x0_60_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 610568,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh11_8_Gw25_x0_60_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2473765548,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh11_8_Gw25_x0_60_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27797685,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 11.8,
+        "Gw": 25.0,
+        "x": 0.6,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh12_6_Gw25_x0_80_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh12_6_Gw25_x0_80_dirVD_p18_9",
+      "type": "folder",
+      "size": 3338258196,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh12_6_Gw25_x0_80_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 908105086,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh12_6_Gw25_x0_80_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 450675558,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh12_6_Gw25_x0_80_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 581286,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh12_6_Gw25_x0_80_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 456257518,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh12_6_Gw25_x0_80_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 590724,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh12_6_Gw25_x0_80_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2402299638,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh12_6_Gw25_x0_80_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27853472,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 12.6,
+        "Gw": 25.0,
+        "x": 0.8,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh14_2_Gw25_x0_80_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh14_2_Gw25_x0_80_dirVD_p18_9",
+      "type": "folder",
+      "size": 3275251539,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh14_2_Gw25_x0_80_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 894833035,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh14_2_Gw25_x0_80_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 447212321,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh14_2_Gw25_x0_80_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 578503,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh14_2_Gw25_x0_80_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 446464313,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh14_2_Gw25_x0_80_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 577898,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh14_2_Gw25_x0_80_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2352639274,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh14_2_Gw25_x0_80_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27779230,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 14.2,
+        "Gw": 25.0,
+        "x": 0.8,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh14_9_Gw25_x0_60_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh14_9_Gw25_x0_60_dirVD_p18_9",
+      "type": "folder",
+      "size": 3452670088,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh14_9_Gw25_x0_60_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 940051856,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh14_9_Gw25_x0_60_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 470026565,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh14_9_Gw25_x0_60_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 607301,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh14_9_Gw25_x0_60_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 468811052,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh14_9_Gw25_x0_60_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 606938,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh14_9_Gw25_x0_60_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2484857394,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh14_9_Gw25_x0_60_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27760838,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 14.9,
+        "Gw": 25.0,
+        "x": 0.6,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh16_7_Gw25_x0_60_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh16_7_Gw25_x0_60_dirVD_p18_9",
+      "type": "folder",
+      "size": 3346884073,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh16_7_Gw25_x0_60_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 915971752,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh16_7_Gw25_x0_60_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 453763038,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh16_7_Gw25_x0_60_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 586126,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh16_7_Gw25_x0_60_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 461025814,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh16_7_Gw25_x0_60_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 596774,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh16_7_Gw25_x0_60_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2403043853,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh16_7_Gw25_x0_60_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27868468,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 16.7,
+        "Gw": 25.0,
+        "x": 0.6,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh4_6_Gw25_x1_15_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh4_6_Gw25_x1_15_dirVD_p18_9",
+      "type": "folder",
+      "size": 4616366240,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh4_6_Gw25_x1_15_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 1251047255,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh4_6_Gw25_x1_15_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 620767638,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh4_6_Gw25_x1_15_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 801748,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh4_6_Gw25_x1_15_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 628664142,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh4_6_Gw25_x1_15_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 813727,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh4_6_Gw25_x1_15_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 3337511741,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh4_6_Gw25_x1_15_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27807244,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 4.6,
+        "Gw": 25.0,
+        "x": 1.15,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh5_0_Gw25_x0_60_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_60_dirVD_p18_9",
+      "type": "folder",
+      "size": 3546518875,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_60_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 949522859,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_60_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 470416718,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_60_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 606817,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_60_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 477880649,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_60_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 618675,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_60_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2569535221,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_60_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27460795,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 5.0,
+        "Gw": 25.0,
+        "x": 0.6,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh5_0_Gw25_x0_80_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_80_dirVD_p18_9",
+      "type": "folder",
+      "size": 3641419378,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_80_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 988084725,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_80_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 493993838,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_80_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 638398,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_80_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 492814454,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_80_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 638035,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_80_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2625705443,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x0_80_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27629210,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 5.0,
+        "Gw": 25.0,
+        "x": 0.8,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh5_0_Gw25_x1_00_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x1_00_dirVD_p18_9",
+      "type": "folder",
+      "size": 3319009560,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x1_00_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 912874248,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x1_00_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 456284281,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x1_00_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 589150,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x1_00_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 455411183,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x1_00_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 589634,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x1_00_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2378313392,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh5_0_Gw25_x1_00_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27821920,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 5.0,
+        "Gw": 25.0,
+        "x": 1.0,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh6_8_Gw25_x0_60_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh6_8_Gw25_x0_60_dirVD_p18_9",
+      "type": "folder",
+      "size": 3425745363,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh6_8_Gw25_x0_60_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 922433807,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh6_8_Gw25_x0_60_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 457037638,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh6_8_Gw25_x0_60_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 590603,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh6_8_Gw25_x0_60_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 464204678,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh6_8_Gw25_x0_60_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 600888,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh6_8_Gw25_x0_60_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2475760930,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh6_8_Gw25_x0_60_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27550626,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 6.8,
+        "Gw": 25.0,
+        "x": 0.6,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh7_3_Gw25_x1_00_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_00_dirVD_p18_9",
+      "type": "folder",
+      "size": 3330186610,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_00_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 905475184,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_00_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 452729039,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_00_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 583705,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_00_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 451577888,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_00_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 584552,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_00_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2397043077,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_00_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27668349,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 7.3,
+        "Gw": 25.0,
+        "x": 1.0,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh7_3_Gw25_x1_15_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_15_dirVD_p18_9",
+      "type": "folder",
+      "size": 3223791052,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_15_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 867554128,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_15_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 427098438,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_15_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 552125,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_15_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 439334742,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_15_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 568823,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_15_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2328449076,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh7_3_Gw25_x1_15_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27787848,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 7.3,
+        "Gw": 25.0,
+        "x": 1.15,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh8_5_Gw25_x0_80_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x0_80_dirVD_p18_9",
+      "type": "folder",
+      "size": 3005343130,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x0_80_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 808838235,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x0_80_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 401088758,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x0_80_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 518366,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x0_80_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 406704638,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x0_80_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 526473,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x0_80_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2168865314,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x0_80_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27639581,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 8.5,
+        "Gw": 25.0,
+        "x": 0.8,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "Gnpfh8_5_Gw25_x1_00_dirVD_p18_9",
+      "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x1_00_dirVD_p18_9",
+      "type": "folder",
+      "size": 3375781548,
+      "children": [
+        {
+          "name": "AE",
+          "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x1_00_dirVD_p18_9/AE",
+          "type": "folder",
+          "size": 915682905,
+          "children": [
+            {
+              "name": "inlet",
+              "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x1_00_dirVD_p18_9/AE/inlet",
+              "type": "file",
+              "size": 457781225,
+              "children": null
+            },
+            {
+              "name": "inlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x1_00_dirVD_p18_9/AE/inlet_primary.txt",
+              "type": "file",
+              "size": 590360,
+              "children": null
+            },
+            {
+              "name": "outlet",
+              "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x1_00_dirVD_p18_9/AE/outlet",
+              "type": "file",
+              "size": 456720113,
+              "children": null
+            },
+            {
+              "name": "outlet_primary.txt",
+              "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x1_00_dirVD_p18_9/AE/outlet_primary.txt",
+              "type": "file",
+              "size": 591207,
+              "children": null
+            }
+          ]
+        },
+        {
+          "name": "Acce.txt",
+          "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x1_00_dirVD_p18_9/Acce.txt",
+          "type": "file",
+          "size": 2432338809,
+          "children": null
+        },
+        {
+          "name": "Thermal Data.xlsx",
+          "path": "Condensation_Dataset/Gnpfh8_5_Gw25_x1_00_dirVD_p18_9/Thermal Data.xlsx",
+          "type": "file",
+          "size": 27759834,
+          "children": null
+        }
+      ],
+      "attributes": {
+        "Gnpfh": 8.5,
+        "Gw": 25.0,
+        "x": 1.0,
+        "dir": "VD",
+        "p": 18.9
+      }
+    },
+    {
+      "name": "README.pdf",
+      "path": "Condensation_Dataset/README.pdf",
+      "type": "file",
+      "size": 131702,
+      "children": null
+    },
+    {
+      "name": "code.py",
+      "path": "Condensation_Dataset/code.py",
+      "type": "file",
+      "size": 3018,
+      "children": null
+    },
+    {
+      "name": "sensor_locations.xlsx",
+      "path": "Condensation_Dataset/sensor_locations.xlsx",
+      "type": "file",
+      "size": 320124,
+      "children": null
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "Gnpfh": {
+    "description": "nPFH (condensing vapor) mass flowrate in grams/second",
+    "unit": "g/s",
+    "type": "numeric",
+    "options": [
+      4.6,
+      5.0,
+      6.8,
+      7.3,
+      8.5,
+      10.0,
+      11.2,
+      11.8,
+      12.6,
+      14.2,
+      14.9,
+      16.7
+    ]
+  },
+  "Gw": {
+    "description": "cooling water mass flowrate in grams/second",
+    "unit": "g/s",
+    "type": "numeric",
+    "options": [
+      25.0
+    ]
+  },
+  "x": {
+    "description": "target inlet vapor quality, unitless",
+    "unit": "unitless",
+    "type": "numeric",
+    "options": [
+      0.6,
+      0.8,
+      1.0,
+      1.15
+    ]
+  },
+  "dir": {
+    "description": "condenser orientation",
+    "unit": "enum",
+    "type": "enum",
+    "options": [
+      "VD"
+    ]
+  },
+  "p": {
+    "description": "target inlet pressure in pounds per square inch absolute",
+    "unit": "psia",
+    "type": "numeric",
+    "options": [
+      18.9
+    ]
+  }
+}

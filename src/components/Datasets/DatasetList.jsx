@@ -14,7 +14,7 @@ import FileTreeSelector from './FileTreeSelector';
 import { useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import axiosInstance from '@/utils/axiosInstance';
-import { ArrowRight, ArrowRightToLine, ArrowUpRight, LucideAArrowUp, Route } from 'lucide-react';
+import { ArrowRight, ArrowRightToLine, ArrowUpRight, Link, LucideAArrowUp, Route } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 
@@ -320,12 +320,17 @@ export default function DatasetList() {
                 .join(' ')                              // join back with space
               }
             </h3>
-            <p className="sm:h-[160px] mb-5 overflow-hidden text-ellipsis">{dataset.description}</p>
+            <p className="sm:h-[160px] mb-5 overflow-hidden text-ellipsis">{dataset.description}{' '}
+              <span onClick={() => router.push(`/datasets/${dataset.name}`)} className="text-sm text-blue-600 dark:text-blue-400 hover:underline cursor-pointer">
+                More Info
+              </span>
+            </p>
+
 
             <div className="flex flex-col items-center justify-between mt-auto gap-4">
             {
                 // dataset.name === 'Condensation_Dataset' || dataset.name === 'Boiling_Dataset' && (
-                ['Condensation_Dataset', 'Boiling_Dataset'].includes(dataset.name) && (
+                ['Condensation_Dataset', 'Boiling_Dataset', 'Immersion_Cooling_Dataset'].includes(dataset.name) && (
                   <button
                     className="
                       mx-auto block text-center
