@@ -332,26 +332,24 @@ export default function DatasetList() {
             <div className="flex flex-col items-center justify-between mt-auto gap-4">
             {
                 // dataset.name === 'Condensation_Dataset' || dataset.name === 'Boiling_Dataset' && (
-                ['Condensation_Dataset', 'Boiling_Dataset', 'Immersion_Cooling_Dataset'].includes(dataset.name) && (
-                  <button
-                    className="
-                      mx-auto block text-center
-                      text-sm font-medium
-                      text-primary
-                      border border-primary
-                      rounded-lg py-2 px-4
-                      hover:bg-primary/10
-                      transition-colors
-                    "
-                    onClick={() => {
-                      // window.open('https://colab.research.google.com/drive/1gcy1rJ9nVLGaoEcYvkf3sCZQIPFoQeAk?usp=sharing', '_blank');
-                      router.push(`/notebooks/${dataset.name}`);
-                    }}
-                  >
-                    Open Jupyter Notebook
-                    <ArrowUpRight className="inline ml-1" size={16} />
-                  </button>
-                )
+                <button
+                  className="
+                    mx-auto block text-center
+                    text-sm font-medium
+                    text-primary
+                    border border-primary
+                    rounded-lg py-2 px-4
+                    hover:bg-primary/10
+                    transition-colors
+                  "
+                  onClick={() => {
+                    // window.open('https://colab.research.google.com/drive/1gcy1rJ9nVLGaoEcYvkf3sCZQIPFoQeAk?usp=sharing', '_blank');
+                    window.open(`/notebooks/${dataset.name}`, '_blank');
+                  }}
+                >
+                  Open Jupyter Notebook
+                  <ArrowUpRight className="inline ml-1" size={16} />
+                </button>
               }
 
               <button

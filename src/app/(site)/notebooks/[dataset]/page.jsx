@@ -9,6 +9,8 @@ import toast from "react-hot-toast";
 import condensationNotebook from './Condensation_Dataset.json';
 import boilingNotebook from './Boiling_Dataset.json';
 import immersionCoolingNotebook from './Immersion_Cooling_Dataset.json';
+import dropImpactDataset from './Drop_Impact_Dataset.json';
+import particleDepositionDataset from './Particle_Deposition_Dataset.json';
 import { FaGoogle } from "react-icons/fa";
 // import "react-ipynb-renderer/dist/styles/dorkula.css";
 import { useRef } from "react";
@@ -28,6 +30,10 @@ export default function NotebookPageWrapper() {
       setNotebook(boilingNotebook);
     } else if (dataset === "Immersion_Cooling_Dataset") {
       setNotebook(immersionCoolingNotebook);
+    } else if (dataset === "Drop_Impact_Dataset") {
+      setNotebook(dropImpactDataset);
+    } else if (dataset === "Particle_Deposition_Dataset") {
+      setNotebook(particleDepositionDataset);
     } else {
       setNotebook(null);
     }
@@ -49,14 +55,6 @@ export default function NotebookPageWrapper() {
             <FaGoogle className="inline ml-1" />
           </a>
           <NotebookPage ipynb={notebook} />
-          {/* <IpynbRenderer
-            ipynb={notebook}
-            // syntaxTheme={"darcula"}
-            // onLoad={() => {
-            //   console.log("loaded", ref.current);
-            // }}
-            ref={ref}
-          /> */}
         </>
 
       )

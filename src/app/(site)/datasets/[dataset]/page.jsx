@@ -423,7 +423,13 @@ export default function CondensationDatasetPage() {
     fileTreeJson = fileTreeJson_ParticleDeposition;
     filterMeta = filterMeta_ParticleDeposition;
   } else {
-    return <p>Dataset not found</p>;
+    return (
+      <main className="max-w-4xl mx-auto p-6 text-gray-800 dark:text-white mt-32 mb-12">
+        <h1 className="text-3xl font-bold mb-6">
+          We are working on this dataset page!
+        </h1>
+    </main>
+    );
   }
 
   const filteredFiles = collectFilteredFiles(fileTreeJson, filters);
