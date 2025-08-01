@@ -374,6 +374,10 @@ import fileTreeJson_DropImpact from './DropImpactData/drop_impact_file_tree.json
 import filterMeta_DropImpact from './DropImpactData/drop_impact_filter_metadata.json';
 import fileTreeJson_ParticleDeposition from './ParticleDepositionData/particle_deposition_file_tree.json';
 import filterMeta_ParticleDeposition from './ParticleDepositionData/particle_deposition_filter_metadata.json';
+import filterTreeJson_ImmersionCooling from './ImmersionCoolingData/immersion_cooling_file_tree.json';
+import filterMeta_ImmersionCooling from './ImmersionCoolingData/immersion_cooling_filter_metadata.json';
+import filterTreeJson_Boiling from './BoilingData/boiling_file_tree.json';
+import filterMeta_Boiling from './BoilingData/boiling_filter_metadata.json';
 import { useParams } from 'next/navigation';
 
 
@@ -422,6 +426,12 @@ export default function CondensationDatasetPage() {
   } else if (dataset === 'Particle_Deposition_Dataset') {
     fileTreeJson = fileTreeJson_ParticleDeposition;
     filterMeta = filterMeta_ParticleDeposition;
+  } else if (dataset === 'Immersion_Cooling_Dataset') {
+    fileTreeJson = filterTreeJson_ImmersionCooling;
+    filterMeta = filterMeta_ImmersionCooling;
+  } else if (dataset === 'Boiling_Dataset') {
+    fileTreeJson = filterTreeJson_Boiling;
+    filterMeta = filterMeta_Boiling;
   } else {
     return (
       <main className="max-w-4xl mx-auto p-6 text-gray-800 dark:text-white mt-32 mb-12">

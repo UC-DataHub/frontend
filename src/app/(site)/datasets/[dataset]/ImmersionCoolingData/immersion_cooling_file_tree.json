@@ -1,0 +1,649 @@
+{
+  "name": "Immersion_Cooling_Dataset",
+  "path": "Immersion_Cooling_Dataset",
+  "type": "folder",
+  "children": [
+    {
+      "name": "Immersion_cooler_50W_HFE-7100_flat",
+      "path": "Immersion_cooler_50W_HFE-7100_flat",
+      "type": "folder",
+      "children": [
+        {
+          "name": "HFE_50W_Max_T.csv",
+          "type": "file",
+          "path": "Immersion_cooler_50W_HFE-7100_flat/HFE_50W_Max_T.csv",
+          "size": 2329349,
+          "attributes": {
+            "power": 50,
+            "fluid": "HFE-7100",
+            "cooling_method": "flat",
+            "fan": "No_Fan"
+          }
+        },
+        {
+          "name": "50W_hfe.lvm",
+          "type": "file",
+          "path": "Immersion_cooler_50W_HFE-7100_flat/50W_hfe.lvm",
+          "size": 85704774,
+          "attributes": {
+            "power": 50,
+            "fluid": "HFE-7100",
+            "cooling_method": "flat",
+            "fan": "No_Fan"
+          }
+        },
+        {
+          "name": "IR video_HFE-7100_50W.mp4",
+          "type": "file",
+          "path": "Immersion_cooler_50W_HFE-7100_flat/IR video_HFE-7100_50W.mp4",
+          "size": 41842978,
+          "attributes": {
+            "power": 50,
+            "fluid": "HFE-7100",
+            "cooling_method": "flat",
+            "fan": "No_Fan"
+          }
+        },
+        {
+          "name": "plot_ir_temp.m",
+          "type": "file",
+          "path": "Immersion_cooler_50W_HFE-7100_flat/plot_ir_temp.m",
+          "size": 1020,
+          "attributes": {
+            "power": 50,
+            "fluid": "HFE-7100",
+            "cooling_method": "flat",
+            "fan": "No_Fan"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Base_plate_temperature_from_IR_water_microchannels",
+      "path": "Base_plate_temperature_from_IR_water_microchannels",
+      "type": "folder",
+      "children": [
+        {
+          "name": "MaxT_100W_2_MC_F100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/MaxT_100W_2_MC_F100.csv",
+          "size": 703505,
+          "attributes": {
+            "power": 100,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "MaxT_90W_MC_F100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/MaxT_90W_MC_F100.csv",
+          "size": 2308705,
+          "attributes": {
+            "power": 90,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "MaxT_123W_MC_F100_cooling_curve.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/MaxT_123W_MC_F100_cooling_curve.csv",
+          "size": 1959320,
+          "attributes": {
+            "power": 123,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "Polyfit_data.xlsx",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/Polyfit_data.xlsx",
+          "size": 14329,
+          "attributes": {
+            "power": 123,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "MaxT_10W_MC_F100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/MaxT_10W_MC_F100.csv",
+          "size": 2288809,
+          "attributes": {
+            "power": 10,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "MaxT_80W_MC_F100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/MaxT_80W_MC_F100.csv",
+          "size": 1987214,
+          "attributes": {
+            "power": 80,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "Immersion_raw.m",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/Immersion_raw.m",
+          "size": 7426,
+          "attributes": {
+            "power": 50,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "MaxT_60W_MC_F100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/MaxT_60W_MC_F100.csv",
+          "size": 2512403,
+          "attributes": {
+            "power": 60,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "MaxT_50W_MC_F100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/MaxT_50W_MC_F100.csv",
+          "size": 2312133,
+          "attributes": {
+            "power": 50,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "MaxT_20W_MC_F100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/MaxT_20W_MC_F100.csv",
+          "size": 2320480,
+          "attributes": {
+            "power": 20,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "MaxT_110W_MC_F100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/MaxT_110W_MC_F100.csv",
+          "size": 2304936,
+          "attributes": {
+            "power": 110,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "MaxT_70W_MC_F100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/MaxT_70W_MC_F100.csv",
+          "size": 2761512,
+          "attributes": {
+            "power": 70,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "Immersion cooler with MC data.tif",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/Immersion cooler with MC data.tif",
+          "size": 43795,
+          "attributes": {
+            "power": 50,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "MaxT_40W_MC_F100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/MaxT_40W_MC_F100.csv",
+          "size": 2358239,
+          "attributes": {
+            "power": 40,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "MaxT_30W_MC_F100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_microchannels/MaxT_30W_MC_F100.csv",
+          "size": 2293221,
+          "attributes": {
+            "power": 30,
+            "fluid": "Water",
+            "cooling_method": "microchannels",
+            "fan": "Fan_100"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Base_plate_temperature_from_IR_water_flat",
+      "path": "Base_plate_temperature_from_IR_water_flat",
+      "type": "folder",
+      "children": [
+        {
+          "name": "Max_T_80W_Fan_100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_80W_Fan_100.csv",
+          "size": 2539645,
+          "attributes": {
+            "power": 80,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "Max_T_30W_Fan_100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_30W_Fan_100.csv",
+          "size": 1784541,
+          "attributes": {
+            "power": 30,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "Max_T_20W_Fan_50.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_20W_Fan_50.csv",
+          "size": 1784894,
+          "attributes": {
+            "power": 20,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_50"
+          }
+        },
+        {
+          "name": "Max_T_80W_Fan_50.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_80W_Fan_50.csv",
+          "size": 1611988,
+          "attributes": {
+            "power": 80,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_50"
+          }
+        },
+        {
+          "name": "Max_T_30W_No_Fan.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_30W_No_Fan.csv",
+          "size": 2597473,
+          "attributes": {
+            "power": 30,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "No_Fan"
+          }
+        },
+        {
+          "name": "Max_T_90W_Fan_100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_90W_Fan_100.csv",
+          "size": 870226,
+          "attributes": {
+            "power": 90,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "Max_T_60W_Fan_50.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_60W_Fan_50.csv",
+          "size": 2502175,
+          "attributes": {
+            "power": 60,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_50"
+          }
+        },
+        {
+          "name": "Max_T_10W_No_Fan.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_10W_No_Fan.csv",
+          "size": 1323036,
+          "attributes": {
+            "power": 10,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "No_Fan"
+          }
+        },
+        {
+          "name": "Max_T_40W_Fan_50.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_40W_Fan_50.csv",
+          "size": 2578856,
+          "attributes": {
+            "power": 40,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_50"
+          }
+        },
+        {
+          "name": "Max_T_70W_Fan_50.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_70W_Fan_50.csv",
+          "size": 2781788,
+          "attributes": {
+            "power": 70,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_50"
+          }
+        },
+        {
+          "name": "Max_T_20W_Fan_100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_20W_Fan_100.csv",
+          "size": 1815805,
+          "attributes": {
+            "power": 20,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "Max_T_60W_Fan_100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_60W_Fan_100.csv",
+          "size": 1835004,
+          "attributes": {
+            "power": 60,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "Immersion_cooler_temperature.m",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Immersion_cooler_temperature.m",
+          "size": 3810
+        },
+        {
+          "name": "Max_T_110W_Fan_100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_110W_Fan_100.csv",
+          "size": 2590913,
+          "attributes": {
+            "power": 110,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "Max_T_50W_Fan_50.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_50W_Fan_50.csv",
+          "size": 2607622,
+          "attributes": {
+            "power": 50,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_50"
+          }
+        },
+        {
+          "name": "Max_T_83_5_W_Fan_50.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_83_5_W_Fan_50.csv",
+          "size": 2401660,
+          "attributes": {
+            "power": 83.5,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_50"
+          }
+        },
+        {
+          "name": "Max_T_30W_Fan_50.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_30W_Fan_50.csv",
+          "size": 1857566,
+          "attributes": {
+            "power": 30,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_50"
+          }
+        },
+        {
+          "name": "Max_T_70W_Fan_100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_70W_Fan_100.csv",
+          "size": 2484540,
+          "attributes": {
+            "power": 70,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "Max_T_50W_Fan_100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_50W_Fan_100.csv",
+          "size": 1786283,
+          "attributes": {
+            "power": 50,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "Max_T_100W_fan_100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_100W_fan_100.csv",
+          "size": 1108496,
+          "attributes": {
+            "power": 100,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "Max_T_40W_Fan_100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_40W_Fan_100.csv",
+          "size": 1777290,
+          "attributes": {
+            "power": 40,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_100"
+          }
+        },
+        {
+          "name": "Max_T_20W_No_Fan.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_20W_No_Fan.csv",
+          "size": 2494987,
+          "attributes": {
+            "power": 20,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "No_Fan"
+          }
+        },
+        {
+          "name": "Max_T_10W_Fan_50.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_10W_Fan_50.csv",
+          "size": 1797242,
+          "attributes": {
+            "power": 10,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_50"
+          }
+        },
+        {
+          "name": "Max_T_35W_No_Fan.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_35W_No_Fan.csv",
+          "size": 113297,
+          "attributes": {
+            "power": 35,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "No_Fan"
+          }
+        },
+        {
+          "name": "Max_T_10W_Fan_100.csv",
+          "type": "file",
+          "path": "Base_plate_temperature_from_IR_water_flat/Max_T_10W_Fan_100.csv",
+          "size": 1795501,
+          "attributes": {
+            "power": 10,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "Fan_100"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Immersion_cooler_50W_water_flat",
+      "path": "Immersion_cooler_50W_water_flat",
+      "type": "folder",
+      "children": [
+        {
+          "name": "50W_Max_T_Test_1.csv",
+          "type": "file",
+          "path": "Immersion_cooler_50W_water_flat/50W_Max_T_Test_1.csv",
+          "size": 670865,
+          "attributes": {
+            "power": 50,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "No_Fan"
+          }
+        },
+        {
+          "name": "plot_ir_temp.m",
+          "type": "file",
+          "path": "Immersion_cooler_50W_water_flat/plot_ir_temp.m",
+          "size": 1033
+        },
+        {
+          "name": "50W_Test_1_water.lvm",
+          "type": "file",
+          "path": "Immersion_cooler_50W_water_flat/50W_Test_1_water.lvm",
+          "size": 54805774,
+          "attributes": {
+            "power": 50,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "No_Fan"
+          }
+        },
+        {
+          "name": "IR video_Water_50W.mp4",
+          "type": "file",
+          "path": "Immersion_cooler_50W_water_flat/IR video_Water_50W.mp4",
+          "size": 33047405,
+          "attributes": {
+            "power": 50,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "No_Fan"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Immersion_cooler_100W_water_flat",
+      "path": "Immersion_cooler_100W_water_flat",
+      "type": "folder",
+      "children": [
+        {
+          "name": "IR video_Water_100W.mp4",
+          "type": "file",
+          "path": "Immersion_cooler_100W_water_flat/IR video_Water_100W.mp4",
+          "size": 15466489,
+          "attributes": {
+            "power": 100,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "No_Fan"
+          }
+        },
+        {
+          "name": "100W_Max_T_Test_1.csv",
+          "type": "file",
+          "path": "Immersion_cooler_100W_water_flat/100W_Max_T_Test_1.csv",
+          "size": 865549,
+          "attributes": {
+            "power": 100,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "No_Fan"
+          }
+        },
+        {
+          "name": "plot_ir_temp.m",
+          "type": "file",
+          "path": "Immersion_cooler_100W_water_flat/plot_ir_temp.m",
+          "size": 1021
+        },
+        {
+          "name": "100W_Test_1_water.lvm",
+          "type": "file",
+          "path": "Immersion_cooler_100W_water_flat/100W_Test_1_water.lvm",
+          "size": 43154774,
+          "attributes": {
+            "power": 100,
+            "fluid": "Water",
+            "cooling_method": "flat",
+            "fan": "No_Fan"
+          }
+        }
+      ]
+    }
+  ],
+  "size": 1158933182
+}

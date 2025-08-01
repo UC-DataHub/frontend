@@ -1,0 +1,277 @@
+{
+  "name": "Boiling_Dataset",
+  "path": "Boiling_Dataset",
+  "type": "folder",
+  "size": 1158933182,
+  "children": [
+    {
+      "path": "Boiling_Dataset/README.md",
+      "name": "README.md",
+      "type": "file",
+      "size": 157422,
+      "attributes": {
+        "description": "Boiling dataset containing various test scenarios and data types.",
+        "data_type": "annotation"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/AnnotatedData/Classes-1/Test",
+      "name": "Test",
+      "type": "file",
+      "size": 21335432,
+      "attributes": {
+        "annotation_class": "Classes-1",
+        "annotation_split": "Test",
+        "data_type": "annotation"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/AnnotatedData/Classes-1/Train",
+      "name": "Train",
+      "type": "file",
+      "size": 214324921,
+      "attributes": {
+        "annotation_class": "Classes-1",
+        "annotation_split": "Train",
+        "data_type": "annotation"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/AnnotatedData/Classes-1/Unseen-Test",
+      "name": "Unseen-Test",
+      "type": "file",
+      "size": 27086530,
+      "attributes": {
+        "annotation_class": "Classes-1",
+        "annotation_split": "Unseen-Test",
+        "data_type": "annotation"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/AnnotatedData/Classes-2",
+      "name": "Classes-2",
+      "type": "file",
+      "size": 294522818,
+      "attributes": {
+        "annotation_class": "Classes-2",
+        "data_type": "annotation"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/SteadyStateTest/120W.avi",
+      "name": "120W.avi",
+      "type": "file",
+      "size": 170473472,
+      "attributes": {
+        "power": 120,
+        "test_type": "SteadyStateTest",
+        "data_type": "video"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/SteadyStateTest/Images-120W",
+      "name": "Images-120W",
+      "type": "file",
+      "size": 45750368,
+      "attributes": {
+        "power": 120,
+        "test_type": "SteadyStateTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Boiling-93.avi",
+      "name": "Boiling-93.avi",
+      "type": "file",
+      "size": 4682240,
+      "attributes": {
+        "power": 93,
+        "test_type": "TransientSmallTest",
+        "data_type": "video"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000000.jpg",
+      "name": "S10-40W-Img000000.jpg",
+      "type": "file",
+      "size": 81167,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000001.jpg",
+      "name": "S10-40W-Img000001.jpg",
+      "type": "file",
+      "size": 79606,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000002.jpg",
+      "name": "S10-40W-Img000002.jpg",
+      "type": "file",
+      "size": 80328,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000003.jpg",
+      "name": "S10-40W-Img000003.jpg",
+      "type": "file",
+      "size": 81191,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000004.jpg",
+      "name": "S10-40W-Img000004.jpg",
+      "type": "file",
+      "size": 81664,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000005.jpg",
+      "name": "S10-40W-Img000005.jpg",
+      "type": "file",
+      "size": 81965,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000006.jpg",
+      "name": "S10-40W-Img000006.jpg",
+      "type": "file",
+      "size": 82240,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000007.jpg",
+      "name": "S10-40W-Img000007.jpg",
+      "type": "file",
+      "size": 83019,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000008.jpg",
+      "name": "S10-40W-Img000008.jpg",
+      "type": "file",
+      "size": 84376,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000009.jpg",
+      "name": "S10-40W-Img000009.jpg",
+      "type": "file",
+      "size": 84383,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000010.jpg",
+      "name": "S10-40W-Img000010.jpg",
+      "type": "file",
+      "size": 85830,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000011.jpg",
+      "name": "S10-40W-Img000011.jpg",
+      "type": "file",
+      "size": 86087,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000012.jpg",
+      "name": "S10-40W-Img000012.jpg",
+      "type": "file",
+      "size": 85972,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000013.jpg",
+      "name": "S10-40W-Img000013.jpg",
+      "type": "file",
+      "size": 84596,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/TestData/TransientSmallTest/Images/S10-40W-Img000014.jpg",
+      "name": "S10-40W-Img000014.jpg",
+      "type": "file",
+      "size": 83939,
+      "attributes": {
+        "power": 40,
+        "test_type": "TransientSmallTest",
+        "data_type": "image_sequence"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/Models/class_model.pth",
+      "name": "class_model.pth",
+      "type": "file",
+      "size": 28088907,
+      "attributes": {
+        "data_type": "model"
+      }
+    },
+    {
+      "path": "Boiling_Dataset/Models/seg_model.pth",
+      "name": "seg_model.pth",
+      "type": "file",
+      "size": 351060339,
+      "attributes": {
+        "data_type": "model"
+      }
+    }
+  ]
+}

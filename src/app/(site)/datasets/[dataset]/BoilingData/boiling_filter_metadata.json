@@ -1,0 +1,51 @@
+{
+  "power": {
+    "description": "Applied heat flux or power level in watts during boiling experiment",
+    "unit": "W",
+    "type": "numeric",
+    "options": [
+      40,
+      93,
+      120
+    ]
+  },
+  "test_type": {
+    "description": "Type of boiling test scenario",
+    "unit": "enum",
+    "type": "enum",
+    "options": [
+      "SteadyStateTest",
+      "TransientSmallTest"
+    ]
+  },
+  "data_type": {
+    "description": "Data format or purpose",
+    "unit": "enum",
+    "type": "enum",
+    "options": [
+      "video",
+      "image_sequence",
+      "model",
+      "annotation"
+    ]
+  },
+  "annotation_class": {
+    "description": "Class label setup for annotated data",
+    "unit": "enum",
+    "type": "enum",
+    "options": [
+      "Classes-1",
+      "Classes-2"
+    ]
+  },
+  "annotation_split": {
+    "description": "Subset of data used for training or evaluation in annotated datasets",
+    "unit": "enum",
+    "type": "enum",
+    "options": [
+      "Train",
+      "Test",
+      "Unseen-Test"
+    ]
+  }
+}
