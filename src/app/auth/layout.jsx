@@ -43,6 +43,9 @@ import StoreProvider from '@/redux/StoreProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://www.multiphasehub.org'
+  ),
   title: 'Auth | MultiphaseHUB',
   description: 'Login or register on MultiphaseHUB',
 }

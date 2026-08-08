@@ -16,7 +16,10 @@ export async function middleware(req) {
   }
 
   try {
-    await jwtVerify(jwt, new TextEncoder().encode('secret'))  // must match Django JWT key
+    // Must match Django's SIMPLE_JWT signing key (its DJANGO_SECRET_KEY).
+    // Set JWT_SIGNING_KEY in the environment to the same value on both sides.
+    const signingKey = process.env.JWT_SIGNING_KEY || 'secret'
+    await jwtVerify(jwt, new TextEncoder().encode(signingKey))
     return NextResponse.next()
   } catch (err) {
     return NextResponse.redirect(new URL('/auth/signin', req.url))

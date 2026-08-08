@@ -19,6 +19,9 @@ import AuthWatcher from '@/components/Auth/AuthWatcher';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://www.multiphasehub.org'
+  ),
   title: {
     default: "MulphaseHUB | Multiphase Data Hub",
     template: "%s | MulphaseHUB",
